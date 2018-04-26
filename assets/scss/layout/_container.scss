@@ -1,0 +1,40 @@
+$gutter-compensation: $gutter-width * .5 * -1;
+$half-gutter-width: $gutter-width * .5;
+
+.ni-container {
+  max-width: pxem($container-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: relative;
+  z-index: $content-z;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: pxem(30);
+  padding-right: pxem(30);
+
+  @include mq($from: $breakpoint-small) {
+    padding-left: $gutter-width * .5+rem;
+    padding-right: $gutter-width * .5+rem;
+  }
+}
+
+.nav-container {
+  max-width: pxem(1340);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: relative;
+  z-index: $z10;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: pxem(30);
+  padding-right: pxem(30);
+
+  @include mq($from: $breakpoint-small) {
+    padding-left: pxem(50);
+    padding-right: pxem(50);
+  }
+}

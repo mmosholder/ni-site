@@ -1,0 +1,72 @@
+.ni-feature {
+  
+  &-container {
+    @include col(12);
+    display: flex;
+    flex-wrap: wrap;
+
+    hr {
+      width: 100%;
+      margin: pxem(40) 0;
+      height: 5px;
+      background-color: $color-red;
+    }
+
+    .ni-row {
+      justify-content: space-between;
+    }
+  }
+
+  h2 {
+    width: 100%;
+    text-align: left;
+    @include q-40($dark-text);
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      text-align: center;
+    }
+  }
+
+  &-text {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(7);
+      margin-bottom: 0;
+    }
+
+    p {
+      @include regular-20($dark-text);
+      margin-bottom: pxem(15);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-image {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      @include offset(1);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: none;
+
+      @include mq($from: $breakpoint-small) {
+        display: block;
+      }
+    }
+  }
+}

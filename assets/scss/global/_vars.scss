@@ -1,0 +1,87 @@
+//Colors
+$color-white:                 #FFFFFF;
+$color-black:                 #000000;
+$color-body:                  #F5F5F5;
+$color-almost-black:          #282828;
+$color-gray:                  #D8D8D8;
+$color-red:                   #C42329;
+$color-green:                 #CACB66;
+
+// Applied colors
+$body-bg: $color-body;
+$dark-text: $color-almost-black;
+$border-gray: $color-gray;
+
+// Transitions
+$t-1:                   			cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+// Shadows
+
+
+// Filters
+$header:                      rgba(0,0,0,0.45);
+
+// z-index
+$z1: 100;
+$z2: 200;
+$z3: 300;
+$z4: 400;
+$z5: 500;
+$z6: 600;
+$z7: 700;
+$z8: 800;
+$z9: 900;
+$z10: 1000;
+
+// Applied z's
+$dropdown-z: $z9;
+$nav-z: $z8;
+$content-z: $z2;
+
+// Breakpoints
+$breakpoint-xsmall:                500px;
+$breakpoint-small:                 768px;
+$breakpoint-medium:                992px;
+$breakpoint-grid:                  1170px;
+$breakpoint-laptop:                1100px;
+$breakpoint-large:                 1260px;
+$breakpoint-xlarge:                1440px;
+
+$breakpoint-map: (
+"default": 0,
+"xs":      $breakpoint-xsmall,
+"sm":      $breakpoint-small,
+"md":      $breakpoint-medium,
+"grid":      $breakpoint-grid,
+"lg":      $breakpoint-large,
+"xl":      $breakpoint-xlarge,
+);
+
+// Flexboxgrid Variables
+
+// Set the number of columns you want to use on your layout.
+$grid-columns: 12 !default;
+
+// Set the gutter between columns.
+$gutter-width: 1.875 !default;
+
+
+// Set the mobile gutter between columns.
+$mobile-gutter-width: .625 !default;
+
+// Set a margin for the container sides.
+$outer-margin: 0 !default;
+
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+$breakpoints:
+  xs $breakpoint-xsmall 100%,
+  sm $breakpoint-small 100%,
+  md $breakpoint-medium 100%,
+  grid $breakpoint-medium 100%,
+  lg $breakpoint-large 100%,
+  xl $breakpoint-xlarge 100%;
+$flexboxgrid-max-width: 1230 !default;
+
+$container-width: 1230;

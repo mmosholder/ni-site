@@ -1,0 +1,112 @@
+.ni-footer {
+  padding-top: pxem(50);
+
+  &-col {
+    @include col(12);
+    margin-bottom: pxem(50);
+
+    @include mq($from: 600px) {
+      @include col(6);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(2);
+      margin-bottom: 0;
+    }
+
+    &-left {
+      @include mq($from: $breakpoint-medium) {
+        @include col(6);
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      
+      &:nth-of-type(even) {
+        margin: pxem(30) 0 0 0;
+      }
+
+      li {      
+        padding: pxem(5) 0;
+
+        a {
+          @include regular-16($dark-text);
+          padding: pxem(4) 0 0 0;
+          text-transform: uppercase;
+          border-bottom: 1px solid transparent;
+
+          &:hover {
+            color: lighten($dark-text, 15%);
+            border-color: $dark-text;
+          }
+        }
+      }
+    }
+
+    h4 {
+      @include regular-16($dark-text);
+      text-transform: uppercase;
+      margin-bottom: pxem(10);
+    }
+
+    &-time {
+      margin-bottom: pxem(10);
+
+      h5 {
+        @include regular-18($dark-text);
+      }
+
+      p {
+        @include bold-22($dark-text);
+      }
+    }
+  }
+
+  &-logo {
+    width: pxem(230);
+    height: auto;
+    margin-bottom: pxem(25);
+
+    svg path {
+      fill: $color-black;
+    }
+  }
+
+  &-text {
+    @include regular-18($dark-text);
+    width: 100%;
+    margin-bottom: pxem(25);
+
+    @include mq($from: $breakpoint-medium) {
+      width: 83%;
+    }
+  }
+
+  &-social {
+    display: flex;
+  }
+
+  &-bottom {
+    margin-top: pxem(50);
+    @include col(12);
+
+    @include mq($from: $breakpoint-medium) {
+      margin-top: pxem(90);
+    }
+
+    &-text {
+      width: 100%;
+      border-top: 2px solid $border-gray;
+      padding: pxem(20) 0;
+      text-align: center;
+
+      p {
+        @include bold-18($dark-text);
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.ni-text-image {
+  padding: pxem(40) 0;
+
+  .ni-row {
+    align-items: center;
+  }
+
+  &-img {
+    @include col(12);
+    margin-left: 0;
+    margin-bottom: pxem(30);
+    position: relative;
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+      margin-bottom: 0;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      @include offset(1);
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+      position: relative;
+    }
+
+    h2 {
+      @include q-40($color-white);
+      position: absolute;
+      top: pxem(30);
+      left: 11%;
+      width: pxem(200);
+
+      @include mq($from: $breakpoint-small) {
+        left: 11%;
+      }
+    }
+  }
+
+  &-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(5);
+      @include offset(1);
+    }
+
+    p {
+      @include regular-20($dark-text);
+      margin-bottom: pxem(15);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

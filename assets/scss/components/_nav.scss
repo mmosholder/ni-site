@@ -1,0 +1,51 @@
+.ni-nav {
+  z-index: 1000;
+  padding: pxem(35) 0 pxem(25) 0;
+  background-color: transparent;
+  margin-bottom: pxem(-106);
+
+  .ni-row {
+    justify-content: space-between
+  }
+
+  &-logo {
+    max-width: pxem(195);
+    width: 100%;
+    height: auto;
+  }
+
+  &-links {
+    list-style: none;
+    display: none;
+    @include col(7);
+    justify-content: flex-end;
+
+    @include mq($from: $breakpoint-small) {
+      display: flex;
+    }
+
+    li {
+      padding: 0 pxem(20);
+      display: flex;
+      align-items: flex-end;
+
+      &:last-of-type {
+        padding: 0 0 0 pxem(20);
+      }
+
+      a {
+        @include bold-16($color-white);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-dark {
+      li {
+        a {
+          @include bold-16($dark-text);
+        }
+      }
+    }
+  }
+}

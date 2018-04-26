@@ -1,0 +1,54 @@
+.ni-header {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: pxem(135) 0 pxem(145) 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: pxem(40);
+
+  &-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: $header;
+  }
+
+  &-triangle {
+    position: absolute;
+    bottom: pxem(320);
+    left: pxem(50);
+    width: pxem(415);
+    height: 0;
+  }
+
+  &-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(7);
+    }
+
+    h1 {
+      @include q-80;
+      margin-bottom: pxem(10);
+    }
+
+    p {
+      @include semi-30($color-white);
+    }
+  }
+
+  &-logo {
+    width: pxem(215);
+    height: auto;
+    position: absolute;
+    // opacity: 0.13;
+    z-index: 1;
+    right: 0;
+    bottom: pxem(-110);
+  }
+}

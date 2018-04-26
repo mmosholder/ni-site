@@ -1,0 +1,15 @@
+.button {
+  transition: color 240ms $t-1, background-color 240ms $t-1, border-color 240ms $t-1, box-shadow 240ms $t-1;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+
+  &-green {
+    background-color: $color-green;
+    padding: pxem(17) 0;
+    width: 100%;
+    @include bold-26($color-white);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+}

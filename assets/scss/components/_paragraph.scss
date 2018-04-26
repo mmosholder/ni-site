@@ -1,0 +1,13 @@
+.ni-paragraph {
+  padding: pxem(40) 0;
+
+  p {
+    @include col(12);
+    @include regular-24($dark-text);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(10);
+      @include offset(1);
+    }
+  }
+}

@@ -1,0 +1,126 @@
+$gutter-compensation: $gutter-width * .5 * -1;
+$half-gutter-width: $gutter-width * .5;
+
+$mobile-gutter-compensation: $mobile-gutter-width * .5 * -1;
+$mobile-half-gutter-width: $mobile-gutter-width * .5;
+
+@mixin col($col) {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: $mobile-half-gutter-width+rem;
+  padding-left: $mobile-half-gutter-width+rem;
+  flex-basis: auto;
+  width: 100% / $grid-columns * $col;
+  max-width: 100% / $grid-columns * $col;
+
+  @include mq($from: $breakpoint-small) {
+    padding-right: $half-gutter-width+rem;
+    padding-left: $half-gutter-width+rem;
+  }
+}
+
+@mixin span($col) {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: pxem(1);
+  padding-left: pxem(1);
+  flex-basis: auto;
+  width: 100% / $grid-columns * $col;
+  max-width: 100% / $grid-columns * $col;
+}
+
+// For Community Grid
+@mixin spanCG($col) {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: 0;
+  padding-left: 0;
+  flex-basis: auto;
+  width: 100% / $grid-columns * $col;
+  max-width: 100% / $grid-columns * $col;
+}
+
+@mixin offset($col) {
+  @if $col == 0 {
+    margin-left: 0;
+  }
+  @else {
+    margin-left: 100% / $grid-columns * $col;
+  }
+}
+
+@mixin spacer($col) {
+  @if $col == 0 {
+    margin-right: 0;
+  }
+  @else {
+    margin-right: 100% / $grid-columns * $col;
+  }
+}
+
+@mixin row {
+  box-sizing: border-box;
+  min-height: 1px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: $mobile-gutter-compensation+rem;
+  margin-left: $mobile-gutter-compensation+rem;
+
+  @include mq($from: $breakpoint-small) {
+    margin-right: $gutter-compensation+rem;
+    margin-left: $gutter-compensation+rem;
+  }
+}
+
+.ni-row {
+  @include row;
+
+  &.-end {
+    align-items: flex-end;
+  }
+
+  &.-no-margin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &.-full {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &-columns {
+    flex-direction: column;
+  }
+}
+
+@for $i from 1 through 6 {
+  .su-col-#{$i} {
+    @include col($i);
+  }
+}
+
+@for $i from 1 through 6 {
+  .su-span-#{$i} {
+    @include span($i);
+  }
+}
+
+@for $i from 1 through 6 {
+  .su-offset-#{$i} {
+    @include offset($i);
+  }
+}
+
+@for $i from 1 through 6 {
+  .su-spacer-#{$i} {
+    @include spacer($i);
+  }
+}

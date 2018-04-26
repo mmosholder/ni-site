@@ -1,0 +1,63 @@
+// margin bottom
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .mb-#{$i} {
+    margin-bottom: ($i)+px;
+  }
+}
+
+// negative margin bottom
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .nmb-#{$i} {
+    margin-bottom: -($i)+px;
+  }
+}
+
+// margin top
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .mt-#{$i} {
+    margin-top: ($i)+px;
+  }
+}
+
+// negative margin top
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .nmt-#{$i} {
+    margin-top: -($i)+px;
+  }
+}
+
+// padding bottom
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .pb-#{$i} {
+    padding-bottom: ($i)+px;
+  }
+}
+
+// negative padding bottom
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .npb-#{$i} {
+    padding-bottom: -($i)+px;
+  }
+}
+
+// padding top
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .pt-#{$i} {
+    padding-top: ($i)+px;
+  }
+}
+
+// negative padding top
+@for $i from 1 through 50 {
+  $i: $i * 5;
+  .npt-#{$i} {
+    padding-top: -($i)+px;
+  }
+}

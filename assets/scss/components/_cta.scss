@@ -1,0 +1,69 @@
+.ni-cta {
+  margin-top: pxem(40);
+  padding: pxem(60) 0;
+  background-image: url('~/assets/images/newsletter-cta-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include mq($from: $breakpoint-small) {
+    padding: pxem(80) 0 pxem(100) 0;
+  }
+
+  @include mq($from: $breakpoint-medium) {
+    padding: pxem(140) 0 pxem(140) 0;
+  }
+
+  &-content {
+    @include col(12);
+    margin-bottom: pxem(50);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      @include offset(2);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(5);
+      margin-bottom: 0;
+      @include offset(1);
+    }
+
+    h2 {
+      @include q-50($color-green);
+      margin-bottom: pxem(10);
+    }
+
+    p {
+      @include semi-22($color-white);
+    }
+  }
+
+  &-signup {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      @include offset(2);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      margin-bottom: 0;
+      @include offset(1);
+    }
+
+    form {
+      width: 100%;
+
+      input {
+        border: 2px solid $color-green;
+        padding: pxem(15);
+        color: $color-white;
+        width: 100%;
+        @include semi-22($color-white);
+        margin-bottom: pxem(10);
+      }
+    }
+  }
+}
