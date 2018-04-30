@@ -2,10 +2,14 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: pxem(135) 0 pxem(145) 0;
+  padding: pxem(120) 0 pxem(80) 0;
   position: relative;
   overflow: hidden;
   margin-bottom: pxem(40);
+
+  @include mq($from: $breakpoint-small) {
+    padding: pxem(135) 0 pxem(145) 0;
+  }
 
   &-filter {
     position: absolute;

@@ -34,7 +34,7 @@ main.home {
   outline: none;
 }
 
-a:not(.su-button) {
+a:not(.button) {
   transition: color 240ms $t-1, border-color 240ms $t-1;
 }
 

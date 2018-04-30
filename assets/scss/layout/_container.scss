@@ -21,7 +21,7 @@ $half-gutter-width: $gutter-width * .5;
 }
 
 .nav-container {
-  max-width: pxem(1340);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -33,7 +33,7 @@ $half-gutter-width: $gutter-width * .5;
   padding-left: pxem(30);
   padding-right: pxem(30);
 
-  @include mq($from: $breakpoint-small) {
+  @include mq($from: 1230px) {
     padding-left: pxem(50);
     padding-right: pxem(50);
   }

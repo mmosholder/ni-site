@@ -1,0 +1,62 @@
+.ni-nav-mobile {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -110%;
+  transition: right 240ms $t-1;
+  z-index: 800;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.95);
+
+  @include mq($from: $breakpoint-small) {
+    display: none;
+  }
+
+  &-logo {
+    display: flex;
+    width: 100%;
+    padding: pxem(34) 0 pxem(50) pxem(30);
+    opacity: 0;
+    transition: opacity 240ms 240ms $t-1;
+  }
+
+  &-content {
+    height: calc(100vh - 126px);
+    overflow-y: auto;
+  }
+
+  .ni-nav-links {
+    display: block;
+    width: 100%;
+
+    &-mobile {
+      margin-bottom: pxem(30);
+      opacity: 0;
+      transition: opacity 240ms 240ms $t-1;
+
+      li {
+        margin: pxem(12) 0;
+        padding: 0 pxem(30);
+        width: 100%;
+
+        &:hover {
+          a {
+            color: darken($color-white, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  &-open {
+    right: 0%;
+    transition: right 240ms $t-1;
+
+    .ni-nav-mobile-logo,
+    .ni-nav-links-mobile {
+      opacity: 1;
+      transition: opacity 240ms 240ms $t-1;
+    }
+  }
+}

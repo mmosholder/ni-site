@@ -1,0 +1,56 @@
+.ni-image-grid {
+
+  &-two {
+    .ni-image-grid-item {
+      margin-bottom: 2px;
+      @include span(12);
+
+      @include mq($from: 370px) {
+        @include span(6);
+      }
+
+      @include mq($from: $breakpoint-small) {
+        @include span(6);
+      }
+
+      .bg-image {
+        width: 100%;
+        padding-top: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include mq($from: 370px) {
+          padding-top: 66%;
+        }
+      }
+    }
+  }
+
+  &-three {
+    .ni-image-grid-item {
+      @include span(12);
+      margin-bottom: 2px;
+
+      @include mq($from: 370px) {
+        @include span(4);
+      }
+
+      @include mq($from: $breakpoint-small) {
+        @include span(4);
+      }
+
+      .bg-image {
+        width: 100%;
+        padding-top: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include mq($from: 370px) {
+          padding-top: 100%;
+        }
+      }
+    }
+  }
+}

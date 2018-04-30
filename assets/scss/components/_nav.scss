@@ -1,11 +1,15 @@
 .ni-nav {
   z-index: 1000;
-  padding: pxem(35) 0 pxem(25) 0;
+  padding: pxem(34) 0 pxem(25) 0;
   background-color: transparent;
   margin-bottom: pxem(-106);
+  position: relative;
+  z-index: 1000;
 
-  .ni-row {
-    justify-content: space-between
+  .nav-container {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
   }
 
   &-logo {
@@ -14,10 +18,38 @@
     height: auto;
   }
 
+  &-icon {
+    display: block;
+    z-index: 99999;
+
+    &-dark {
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $color-black;
+        opacity: 1;
+      }
+    }
+
+    @include mq($from: $breakpoint-small) {
+      display: none;
+    }
+  }
+
+  .hamburger--slider.is-active .hamburger-inner,
+  .hamburger--slider.is-active .hamburger-inner::before,
+  .hamburger--slider.is-active .hamburger-inner::after {
+    background-color: #fff;
+  }
+
+  .hamburger:hover {
+    opacity: 1;
+  }
+
   &-links {
     list-style: none;
     display: none;
-    @include col(7);
+    width: 50%;
     justify-content: flex-end;
 
     @include mq($from: $breakpoint-small) {
@@ -25,16 +57,16 @@
     }
 
     li {
-      padding: 0 pxem(20);
+      padding: 0 pxem(15);
       display: flex;
       align-items: flex-end;
 
       &:last-of-type {
-        padding: 0 0 0 pxem(20);
+        padding: 0 0 0 pxem(15);
       }
 
       a {
-        @include bold-16($color-white);
+        @include bold-nav-16($color-white);
         text-transform: uppercase;
         letter-spacing: 1px;
       }
@@ -43,7 +75,7 @@
     &-dark {
       li {
         a {
-          @include bold-16($dark-text);
+          @include bold-nav-16($dark-text);
         }
       }
     }

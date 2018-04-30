@@ -6,6 +6,10 @@ $color-almost-black:          #282828;
 $color-gray:                  #D8D8D8;
 $color-red:                   #C42329;
 $color-green:                 #CACB66;
+$color-orange:                #E49842;
+$color-maroon:                #602418;
+$color-gold:                  #EAC11D;
+$color-medium-gray:           #979797;
 
 // Applied colors
 $body-bg: $color-body;
@@ -65,9 +69,8 @@ $grid-columns: 12 !default;
 // Set the gutter between columns.
 $gutter-width: 1.875 !default;
 
-
 // Set the mobile gutter between columns.
-$mobile-gutter-width: .625 !default;
+$mobile-gutter-width: 1.875 !default;
 
 // Set a margin for the container sides.
 $outer-margin: 0 !default;

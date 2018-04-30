@@ -1,0 +1,50 @@
+.ni-text-block {
+  padding: pxem(40) 0;
+
+  &-content {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+      margin-bottom: 0;
+    }
+
+    h2 {
+      @include q-40($dark-text);
+      margin-bottom: pxem(15);
+    }
+
+    p {
+      @include regular-20($dark-text);
+    }
+  }
+
+  &-right {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(5);
+      @include offset(1);
+    }
+  }
+
+  &-button {
+    width: 100%;
+    text-align: center;
+
+    @include mq($from: $breakpoint-small) {
+      margin-top: pxem(70);
+    }
+
+    .button-green {
+      padding: pxem(17) 0;
+      width: 100%;
+
+      @include mq($from: $breakpoint-medium) {
+        padding: pxem(17) pxem(65);
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,10 +1,17 @@
+const axios = require('axios');
+
 module.exports = {
   modules: [
     [
       "storyblok-nuxt",
-      { accessToken: "YhyWNXIZZrl7cMygbmgJYgtt", cacheProvider: "memory" }
+      { accessToken: process.env.NODE_ENV == 'production' ? "LnX8nlr2iiejA5zBOCt8Zgtt" : "YhyWNXIZZrl7cMygbmgJYgtt", cacheProvider: "memory" }
     ]
   ],
+
+  build: {
+    vendor: ["lodash"]
+  },
+
   plugins: ["~/plugins/components"],
 
   router: {
@@ -15,7 +22,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "{{ name }}",
+    title: "New Image Brewing",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -26,6 +33,26 @@ module.exports = {
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+  },
+
+  generate: {
+    routes: function() {
+      return axios
+        .get(
+          "https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=beers&cv=" +
+            Math.floor(Date.now() / 1e3)
+        )
+        .then(r => {
+          const beerPages = r.data.stories.map(page => page.full_slug);
+          return [
+            '/',
+            '/about',
+            '/brewpub',
+            '/beers',
+            ...beerPages
+          ];
+        });
+    }
   },
   /*
   ** Customize the progress bar color

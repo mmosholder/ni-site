@@ -1,0 +1,238 @@
+.ni-profile {
+  padding: pxem(120) 0 pxem(80) 0;
+
+  @include mq($from: $breakpoint-small) {
+    padding: pxem(180) 0 pxem(80) 0;
+  }
+
+  &-orange {
+    border-top: 5px solid $color-orange;
+  }
+
+  &-gold {
+    border-top: 5px solid $color-gold;
+  }
+
+  &-green {
+    border-top: 5px solid $color-green;
+  }
+
+  &-maroon {
+    border-top: 5px solid $color-maroon;
+  }
+
+  &-red {
+    border-top: 5px solid $color-red;
+  }
+
+  &-left {
+    @include col(12);
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq($from: $breakpoint-small) {
+      @include col(4);
+      order: 0;
+    }
+
+    @include mq($from: $breakpoint-grid) {
+      @include col(4);
+    }
+
+    .-logo {
+      max-width: pxem(300);
+      width: 100%;
+      height: auto;
+      margin-bottom: pxem(50);
+
+      @include mq($from: $breakpoint-small) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .-can {
+      max-width: pxem(225);
+      height: auto;
+      margin-bottom: pxem(50);
+    }
+
+    &-link {
+      @include bold-18($dark-text);
+      align-self: flex-start;
+      padding-bottom: pxem(3);
+
+      &-orange {
+        @include pretty-text-underline($color-orange, 2);
+      }
+
+      &-gold {
+        @include pretty-text-underline($color-gold, 2);
+      }
+
+      &-green {
+        @include pretty-text-underline($color-green, 2);
+      }
+
+      &-maroon {
+        @include pretty-text-underline($color-maroon, 2);
+      }
+
+      &-red {
+        @include pretty-text-underline($color-red, 2);
+      }
+    }
+  }
+
+  &-right {
+    @include col(12);
+    order: 0;
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      order: 1;
+      margin-bottom: 0;
+      margin-top: pxem(50);
+    }
+
+    @include mq($from: $breakpoint-grid) {
+      @include offset(1);
+      @include col(6);
+    }
+  }
+
+  &-title {
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      margin-bottom: pxem(40);
+    }
+
+    h1 {
+      @include extra-50($dark-text);
+      text-transform: uppercase;
+    }
+
+    p {
+      @include regular-italic-20($dark-text);
+    }
+  }
+
+  &-science {
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      margin-bottom: pxem(40);
+    }
+
+    h2 {
+      @include q-32($dark-text);
+      margin-bottom: pxem(5);
+    }
+
+    p {
+      @include regular-18($dark-text);
+      margin-bottom: pxem(20);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: pxem(20);
+        padding-left: pxem(20);
+        display: flex;
+        align-items: center;
+
+        &:last-of-type {
+          margin-bottom: 0;
+
+          img {
+            height: pxem(25);
+            width: auto;
+          }
+        }
+
+        img {
+          height: pxem(35);
+          width: auto;
+          margin: 0 pxem(20) 0 0;
+        }
+
+        p {
+          @include regular-18($dark-text);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-story {
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      margin-bottom: pxem(40);
+    }
+
+    h2 {
+      @include q-32($dark-text);
+      margin-bottom: pxem(5);
+    }
+
+    p {
+      @include regular-18($dark-text);
+    }
+  }
+
+  &-info {
+
+    h2 {
+      @include q-32($dark-text);
+      margin-bottom: pxem(5);
+    }
+
+    p {
+      @include regular-18($dark-text);
+      margin-bottom: pxem(15);
+
+      a {
+        @include bold-18($dark-text);
+      }
+    }
+
+    &-orange {
+      a {
+        @include pretty-text-underline($color-orange, 2);
+      }
+    }
+
+    &-gold {
+      a {
+        @include pretty-text-underline($color-gold, 2);
+      }
+    }
+
+    &-green {
+      a {
+        @include pretty-text-underline($color-green, 2);
+      }
+    }
+
+    &-maroon {
+      a {
+        @include pretty-text-underline($color-maroon, 2);
+      }
+    }
+
+    &-red {
+      a {
+        @include pretty-text-underline($color-red, 2);
+      }
+    }
+  }
+}

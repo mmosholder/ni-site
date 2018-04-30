@@ -1,0 +1,24 @@
+.ni-full-image {
+  padding: pxem(40) 0;
+
+  &-item {
+    @include span(12);
+    padding-left: 0px;
+    padding-right: 0px;
+
+    @include mq($from: $breakpoint-small) {
+      @include col(12);
+    }
+
+    .bg-image {
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+      padding-top: 60%;
+
+      @include mq($from: $breakpoint-small) {
+        padding-top: 32%;
+      }
+    }
+  }
+}

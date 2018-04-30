@@ -55,9 +55,29 @@
   }
 }
 
-// Source Bold
+@mixin q-32($color) {
+  @include qanelas;
+  $map: (576px: 28px, 992px: 32px);
+  line-height: 1.25;
+  letter-spacing: .27px;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+  text-transform: uppercase;
+}
+
+// Open Extra bold
+@mixin extra-50($color) {
+  @include open-extra;
+  $map: (576px: 42px, 992px: 50px);
+  line-height: 1;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+  letter-spacing: .75px;
+}
+
+// Open Bold
 @mixin bold-36($color) {
-  @include source-bold;
+  @include open-bold;
   $map: (576px: 30px, 992px: 36px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
@@ -65,7 +85,7 @@
 }
 
 @mixin bold-26($color) {
-  @include source-bold;
+  @include open-bold;
   $map: (576px: 20px, 992px: 26px);
   line-height: 1.3;
   @include poly-fluid-sizing('font-size', $map);
@@ -73,29 +93,37 @@
 }
 
 @mixin bold-22($color) {
-  @include source-bold;
+  @include open-bold;
   font-size: pxem(18);
-  line-height: 1;  
+  line-height: 1;
   color: $color;
 }
 
 @mixin bold-18($color) {
-  @include source-bold;
+  @include open-bold;
   font-size: pxem(18);
-  line-height: 1;  
+  line-height: 1;
   color: $color;
 }
 
 @mixin bold-16($color) {
-  @include source-bold;
+  @include open-bold;
   font-size: pxem(16);
-  line-height: 1;  
+  line-height: 1;
   color: $color;
 }
 
-// Source Semi
+@mixin bold-nav-16($color) {
+  @include open-bold;
+  $map: (576px: 18px, 768px: 16px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1;
+  color: $color;
+}
+
+// Open Semi
 @mixin semi-30($color) {
-  @include source-semi;
+  @include open-semi;
   $map: (576px: 26px, 768px: 30px);
   line-height: 1.1;
   @include poly-fluid-sizing('font-size', $map);
@@ -103,7 +131,7 @@
 }
 
 @mixin semi-24($color) {
-  @include source-semi;
+  @include open-semi;
   $map: (576px: 20px, 768px: 24px);
   line-height: 1.29;
   @include poly-fluid-sizing('font-size', $map);
@@ -111,7 +139,7 @@
 }
 
 @mixin semi-22($color) {
-  @include source-semi;
+  @include open-semi;
   $map: (576px: 18px, 768px: 22px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
@@ -119,16 +147,24 @@
 }
 
 @mixin semi-20($color) {
-  @include source-semi;
+  @include open-semi;
   $map: (576px: 16px, 768px: 20px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
-// Source Regular
+@mixin semi-18($color) {
+  @include open-semi;
+  $map: (576px: 16px, 768px: 18px);
+  line-height: 1.33;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
+// Open Regular
 @mixin regular-24($color) {
-  @include source-regular;
+  @include open-regular;
   $map: (576px: 20px, 768px: 24px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.3;
@@ -136,7 +172,7 @@
 }
 
 @mixin regular-20($color) {
-  @include source-regular;
+  @include open-regular;
   $map: (576px: 18px, 768px: 20px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.5;
@@ -144,132 +180,24 @@
 }
 
 @mixin regular-18($color) {
-  @include source-regular;
+  @include open-regular;
   font-size: pxem(18);
   line-height: 1.27;
   color: $color;
 }
 
 @mixin regular-16($color) {
-  @include source-regular;
+  @include open-regular;
   font-size: 16px;
   line-height: 1.19;
   color: $color;
 }
 
-// Semibold
-// @mixin semi-48($color) {
-//   @include source-semi;
-//   $map: (576px: 36px, 768px: 48px);
-//   line-height: .92;
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin large-line-semi-48($color) {
-//   @include source-semi;
-//   $map: (576px: 36px, 768px: 48px);
-//   line-height: 1.19;
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin semi-40($color) {
-//   @include source-semi;
-//   $map: (576px: 36px, 768px: 40px);
-//   line-height: 1.1;
-//   letter-spacing: -1;
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin semi-38($color) {
-//   @include source-semi;
-//   $map: (576px: 32px, 768px: 38px);
-//   line-height: 1.16;
-//   letter-spacing: -1;
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin semi-24($color) {
-//   @include source-semi;
-//   font-size: 24px;
-//   line-height: 1.16;
-//   color: $color;
-// }
-
-// @mixin semi-nav-24($color) {
-//   @include source-semi;
-//   $map: (576px: 18px, 768px: 24px);
-//   line-height: 2.16;
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin semi-22($color) {
-//   @include source-semi;
-//   font-size: 22px;
-//   line-height: 1.16;
-//   letter-spacing: -0.6;
-//   color: $color;
-// }
-
-// @mixin semi-20($color) {
-//   @include source-semi;
-//   font-size: 20px;
-//   line-height: 1;
-//   letter-spacing: -0.5;
-//   color: $color;
-// }
-
-// @mixin semi-18($color) {
-//   @include source-semi;
-//   font-size: 18px;
-//   line-height: 1.1;
-//   color: $color;
-// }
-
-// @mixin semi-16($color) {
-//   @include source-semi;
-//   font-size: 16px;
-//   line-height: 1.375;
-//   color: $color;
-// }
-
-// @mixin semi-14($color) {
-//   @include source-semi;
-//   font-size: 14px;
-//   line-height: 1.375;
-//   color: $color;
-// }
-
-
-// // Regular
-// @mixin regular-48($color) {
-//   @include source-regular;
-//   $map: (576px: 32px, 768px: 48px);
-//   @include poly-fluid-sizing('font-size', $map);
-//   color: $color;
-// }
-
-// @mixin large-line-regular-16($color) {
-//   @include source-regular;
-//   font-size: 16px;
-//   line-height: 1.5;
-//   color: $color;
-// }
-
-// @mixin regular-16($color) {
-//   @include source-regular;
-//   font-size: 16px;
-//   line-height: 1.375;
-//   color: $color;
-// }
-
-// @mixin regular-14($color) {
-//   @include source-regular;
-//   font-size: 14px;
-//   line-height: 1.42;
-//   color: $color;
-// }
+// Regular Italic
+@mixin regular-italic-20($color) {
+  @include open-regular-italic;
+  $map: (576px: 18px, 768px: 20px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1.5;
+  color: $color;
+}

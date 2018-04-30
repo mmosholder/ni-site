@@ -3,8 +3,9 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _0c6f8e5a = () => import('../pages/about.vue' /* webpackChunkName: "pages/about" */).then(m => m.default || m)
 const _21274c93 = () => import('../pages/beers/index.vue' /* webpackChunkName: "pages/beers/index" */).then(m => m.default || m)
+const _1eca695d = () => import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */).then(m => m.default || m)
+const _3914f1cb = () => import('../pages/brewpub/index.vue' /* webpackChunkName: "pages/brewpub/index" */).then(m => m.default || m)
 const _1f70ab4b = () => import('../pages/beers/_slug.vue' /* webpackChunkName: "pages/beers/_slug" */).then(m => m.default || m)
 const _2c27691f = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -67,14 +68,19 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/about",
-			component: _0c6f8e5a,
-			name: "about"
-		},
-		{
 			path: "/beers",
 			component: _21274c93,
 			name: "beers"
+		},
+		{
+			path: "/about",
+			component: _1eca695d,
+			name: "about"
+		},
+		{
+			path: "/brewpub",
+			component: _3914f1cb,
+			name: "brewpub"
 		},
 		{
 			path: "/beers/:slug",

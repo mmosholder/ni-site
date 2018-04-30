@@ -1,0 +1,169 @@
+.ni-beer {
+  padding: pxem(40) 0;
+
+  &-title {
+    margin-bottom: pxem(38);
+    @include col(12);
+    text-align: center;
+
+    &-container {
+      position: relative;
+      padding: 0 pxem(8);
+      background-color: $body-bg;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    h2 {
+      @include q-32($dark-text);
+      position: relative;
+    }
+
+    hr {
+      z-index: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-medium-gray;
+      margin-top: pxem(-22);
+    }
+  }
+
+  .ni-row {
+    margin-bottom: pxem(80);
+  }
+
+  &-item {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    @include mq($from: 600px) {
+      @include col(6);
+    }
+
+    @include mq($from: $breakpoint-small) {
+      @include col(4);
+      height: pxem(315);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(3);
+    }
+
+    &-content {
+      background-color: $color-white;
+      border: 1px solid $border-gray;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding-top: pxem(45);
+      padding-bottom: pxem(45);
+
+      img {
+        width: auto;
+        height: 100%;
+        max-height: pxem(350);
+        position: relative;
+        z-index: 0;
+
+        @include mq($from: $breakpoint-small) {
+          max-height: pxem(225);
+        }
+      }
+
+      // &:hover,
+      // &:active {
+      //   .ni-beer-item-overlay {
+      //     opacity: 1;
+      //     transition: opacity 240ms $t-1;
+      //   }
+      // }
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(95, 96, 101, 0.8);
+      transition: opacity 240ms $t-1;
+      z-index: 1;
+      padding: pxem(20);
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+
+      h3 {
+        @include bold-26($color-white);
+        padding-bottom: pxem(2);
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+        text-transform: uppercase;
+        margin-bottom: pxem(15);
+        line-height: 1.1;
+      }
+
+      p {
+        @include regular-16($color-white);
+        margin-bottom: pxem(30);
+      }
+
+      a {
+        @include bold-18($color-white);
+        align-self: flex-start;
+      }
+
+      &-orange {
+        h3 {
+          border-bottom-color: $color-orange;
+        }
+
+        a {
+          @include grow-text-underline($color-orange);
+        }
+      }
+
+      &-gold {
+        h3 {
+          border-bottom-color: $color-gold;
+        }
+
+        a {
+          @include grow-text-underline($color-gold);
+        }
+      }
+
+      &-green {
+        h3 {
+          border-bottom-color: $color-green;
+        }
+
+        a {
+          @include grow-text-underline($color-green);
+        }
+      }
+
+      &-maroon {
+        h3 {
+          border-bottom-color: $color-maroon;
+        }
+
+        a {
+          @include grow-text-underline($color-maroon);
+        }
+      }
+
+      &-red {
+        h3 {
+          border-bottom-color: $color-red;
+        }
+
+        a {
+          @include grow-text-underline($color-red);
+        }
+      }
+    }
+  }
+}

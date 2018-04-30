@@ -11,7 +11,7 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"title":"{{ name }}","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"{{escape description }}"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[{"src":"\u002F\u002Fapp.storyblok.com\u002Ff\u002Fstoryblok-latest.js?t=YhyWNXIZZrl7cMygbmgJYgtt"}]},
+  head: {"title":"New Image Brewing","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"{{escape description }}"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[{"src":"\u002F\u002Fapp.storyblok.com\u002Ff\u002Fstoryblok-latest.js?t=YhyWNXIZZrl7cMygbmgJYgtt"}]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

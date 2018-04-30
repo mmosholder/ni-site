@@ -15,7 +15,7 @@ const createStore = () => {
     actions: {
       loadHeader({ commit }, context) {
         return this.$storyapi
-          .get(`cdn/stories/beers-header`, {
+          .get(`cdn/stories/beer-header`, {
             version: context.version
           })
           .then(res => {
