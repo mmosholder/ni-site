@@ -1,6 +1,12 @@
 {
   "version": "1.0.0",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3333"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -8,9 +14,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.10",
+    "marked": "^0.3.19",
     "nuxt": "^1.0.0",
-    "storyblok-nuxt": "0.0.3"
+    "storyblok-nuxt": "0.0.3",
+    "vue2-google-maps": "^0.9.6"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -11,6 +11,10 @@
     padding: pxem(135) 0 pxem(145) 0;
   }
 
+  @include mq($from: $breakpoint-xlarge) {
+    padding: pxem(175) 0;
+  }
+
   &-filter {
     position: absolute;
     top: 0;
@@ -32,17 +36,17 @@
   &-content {
     @include col(12);
 
-    @include mq($from: $breakpoint-small) {
+    @include mq($from: $breakpoint-medium) {
       @include col(7);
     }
 
     h1 {
-      @include q-80;
+      @include calafia-120($color-white);
       margin-bottom: pxem(10);
     }
 
     p {
-      @include semi-30($color-white);
+      @include semi-24($color-white);
     }
   }
 

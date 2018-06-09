@@ -1,21 +1,7 @@
 form {
 
-	.form-content {
-		@include col(12);
-		margin-bottom: pxem(30);
-
-		h2 {
-			// @include semi-24($color-blue);
-			margin-bottom: pxem(15);
-		}
-
-		p {
-			@include regular-16($color-gray);
-		}
-	}
-
 	.form-group {
-		margin-bottom: pxem(25);
+		margin-bottom: pxem(20);
 		@include col(12);
 
 		@include mq($from: $breakpoint-small) {
@@ -36,12 +22,12 @@ form {
 			width: 100%;
 		}
 
-		label {			
-			@include semi-20($dark-text);
+		label {
+			@include semi-18($dark-text);
 		}
 
 		> label {
-			margin-bottom: pxem(15);
+			margin-bottom: pxem(10);
 		}
 
 		input,
@@ -49,10 +35,10 @@ form {
 		textarea {
 			border-color: $color-gray;
 			border-style: solid;
-			border-width: 1px;
+			border-width: 2px;
 			border-radius: pxem(3);
-			padding: pxem(12) pxem(20);
-			@include regular-16($dark-text);
+			padding: pxem(15);
+			@include regular-20($dark-text);
 
 			&:focus,
 			&:active {
@@ -64,7 +50,7 @@ form {
 			height: pxem(145);
 		}
 
-		.-error {			
+		.-error {
 			margin-top: pxem(5);
 			display: none;
 			@include regular-16(red);
@@ -72,7 +58,7 @@ form {
 	}
 
 	.-form-error {
-	  @include regular-16(red);	  
+	  @include regular-16(red);
 	  margin: pxem(5) 0;
 	}
 
@@ -98,4 +84,42 @@ button {
 .select {
 	position: relative;
 	display: block;
+}
+
+label,
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+}
+
+label {
+  @include semi-18($dark-text);
+}
+
+input,
+select,
+textarea {
+  border-color: $color-gray;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: pxem(3);
+  padding: pxem(15);
+  @include regular-20($dark-text);
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 3px $color-green;
+  }
+}
+
+textarea {
+  height: pxem(145);
+}
+
+.-error {
+  margin-top: pxem(5);
+  display: none;
+  @include regular-16(red);
 }

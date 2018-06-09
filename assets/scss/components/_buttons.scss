@@ -5,12 +5,43 @@
   transition: background-color 240ms $t-1;
 
   &-green {
-    background-color: $color-green;
-    padding: pxem(17) 0;
+    background-color: rgba($color-green, 1.0);
+    padding: pxem(15) 0;
+    border: 2px solid $color-green;
     width: 100%;
-    @include bold-26($color-white);
+    @include semi-24($color-white);
     text-transform: uppercase;
-    letter-spacing: .5px;
+
+    &:hover {
+      background-color: rgba($color-green, 0.0);
+      color: $color-green;
+    }
+  }
+
+  &-knockout {
+    background-color: rgba($color-green, 0.0);
+    border: 2px solid $color-green;
+    padding: pxem(15) 0;
+    width: 100%;
+    @include semi-24($color-green);
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgba($color-green, 1);
+      color: $color-white;
+    }
+  }
+
+  &-submit {
+    background-color: $color-green;
+    padding: pxem(15) pxem(40);
+    width: 100%;
+    @include semi-22($color-white);
+    text-transform: uppercase;
+
+    @include mq($from: $breakpoint-small) {
+      width: auto;
+    }
 
     &:hover {
       background-color: darken($color-green, 15%);

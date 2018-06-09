@@ -1,0 +1,61 @@
+.ni-contact-top {
+  padding: pxem(40) 0 pxem(80) 0;
+
+  .ni-row {
+    @include mq($from: $breakpoint-small) {
+      align-items: center;
+    }
+  }
+
+  &-content {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(4);
+      margin-bottom: 0;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(3);
+      @include offset(1);
+    }
+
+    h2 {
+      @include bold-40($dark-text);
+      margin-bottom: pxem(30);
+    }
+  }
+
+  &-map {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(7);
+    }
+  }
+
+  .ni-address-hours.-contact {
+
+    .ni-address-hours-address {
+      margin-bottom: pxem(20);
+    }
+
+    .ni-address-hours-hours {
+      ul {
+
+        li {
+          margin-bottom: pxem(15);
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

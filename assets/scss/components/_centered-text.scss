@@ -1,0 +1,17 @@
+.ni-centered {
+  padding: pxem(40) 0;
+  background-color: $body-bg;
+
+  &-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(10);
+      @include offset(1);
+    }
+
+    p {
+      @include regular-20($dark-text);
+    }
+  }
+}

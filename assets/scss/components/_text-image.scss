@@ -28,7 +28,7 @@
     }
 
     h2 {
-      @include q-40($color-white);
+      @include bold-40($color-white);
       position: absolute;
       top: pxem(30);
       left: 11%;

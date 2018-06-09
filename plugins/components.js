@@ -14,6 +14,12 @@ import SingleImage from "~/components/SingleImage";
 import OnTap from "~/components/OnTap";
 import FullImage from "~/components/FullImage";
 import TextWithButton from "~/components/TextWithButton";
+import LocationsMap from "~/components/LocationsMap";
+import ContactForm from "~/components/ContactForm";
+import ContactAddressHours from "~/components/ContactAddressHours";
+import BeerToGo from "~/components/BeerToGo";
+import CenteredText from "~/components/CenteredText";
+
 
 Vue.component("page", Page);
 Vue.component("heading", Header);
@@ -30,3 +36,8 @@ Vue.component("SingleImage", SingleImage);
 Vue.component("OnTap", OnTap);
 Vue.component("full_image", FullImage);
 Vue.component("text_with_button", TextWithButton);
+Vue.component("locations_map", LocationsMap);
+Vue.component("contact_form", ContactForm);
+Vue.component("contact_address_hours", ContactAddressHours);
+Vue.component("beer_to_go", BeerToGo);
+Vue.component("centered_text", CenteredText);

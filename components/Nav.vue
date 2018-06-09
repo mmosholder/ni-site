@@ -7,10 +7,10 @@
       </a>
       <ul :class="[this.$route.name == 'beers-slug' ? 'ni-nav-links ni-nav-links-dark' : 'ni-nav-links']">
         <li><a href="/about">About</a></li>
-        <li><a href="#">Brewery</a></li>
         <li><a href="/brewpub">Brewpub</a></li>
         <li><a href="/beers">Our Beers</a></li>
-        <li><a href="#">Location</a></li>
+        <li><a href="/beerfinder">Beerfinder</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"
         aria-label="Menu" aria-controls="navigation" aria-expanded="false">
@@ -24,21 +24,20 @@
         </div>
         <div class="ni-nav-mobile-content">
           <ul class="ni-nav-links ni-nav-links-mobile">
-            <li @click="navOpen = false"><a href="#">Brewery</a></li>
+            <!-- <li @click="navOpen = false"><a href="#">Brewery</a></li> -->
             <li @click="navOpen = false"><nuxt-link :to="'beers'">Our Beers</nuxt-link></li>
-            <li @click="navOpen = false"><a href="#">Beerfinder</a></li>
+            <li @click="navOpen = false"><a href="/beerfinder">Beerfinder</a></li>
             <li @click="navOpen = false"><a href="#">Sales</a></li>
           </ul>
           <ul class="ni-nav-links ni-nav-links-mobile">
             <li @click="navOpen = false"><nuxt-link :to="'about'">About</nuxt-link></li>
-            <li @click="navOpen = false"><a href="#">Contact</a></li>
+            <li @click="navOpen = false"><a href="/contact">Contact</a></li>
             <li @click="navOpen = false"><a href="#">Careers</a></li>
           </ul>
           <ul class="ni-nav-links ni-nav-links-mobile">
             <li @click="navOpen = false"><nuxt-link :to="'brewpub'">Brewpub</nuxt-link></li>
             <li @click="navOpen = false"><a href="#">Beers on Tap</a></li>
             <li @click="navOpen = false"><a href="#">Team</a></li>
-            <li @click="navOpen = false"><a href="#">Location</a></li>
             <li @click="navOpen = false"><a href="#">Events</a></li>
           </ul>
         </div>

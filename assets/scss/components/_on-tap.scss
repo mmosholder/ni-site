@@ -9,7 +9,7 @@
     justify-content: space-between;
 
     h2 {
-      @include q-40($dark-text);
+      @include bold-40($dark-text);
       margin-bottom: pxem(15);
 
       @include mq($from: 500px) {

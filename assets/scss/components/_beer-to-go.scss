@@ -1,0 +1,51 @@
+.to-go {
+  background-color: $color-white;
+  margin: pxem(80) 0;
+  padding: pxem(75) 0;
+
+  &-title {
+    @include col(12);
+    margin-bottom: pxem(30);
+    margin-top: pxem(-140);
+
+    h2 {
+      @include calafia-120($color-green)
+    }
+  }
+
+  .centered {
+    align-items: center;
+  }
+
+  &-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(5);
+      @include offset(1);
+    }
+
+    p {
+      @include regular-20($dark-text);
+      margin-bottom: pxem(30);
+
+      @include mq($from: $breakpoint-small) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-image {
+    @include col(8);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(4);
+      @include offset(1);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

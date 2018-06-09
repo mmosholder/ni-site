@@ -15,7 +15,7 @@
     }
 
     h2 {
-      @include q-32($dark-text);
+      @include bold-36($dark-text);
       position: relative;
     }
 

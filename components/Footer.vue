@@ -27,7 +27,6 @@
             <li><a href="#">Brewpub</a></li>
             <li><a href="#">Beers on Tap</a></li>
             <li><a href="#">Team</a></li>
-            <li><a href="#">Location</a></li>
             <li><a href="#">Events</a></li>
           </ul>
         </div>
@@ -64,7 +63,7 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 

@@ -1,0 +1,63 @@
+.ni-form {
+
+  &-container {
+    @include col(12);
+
+    hr {
+      width: 100%;
+      height: 5px;
+      background-color: $color-gray;
+    }
+  }
+
+  &-sales {
+
+    &-title {
+      padding-top: pxem(40);
+      @include col(12);
+      margin-bottom: pxem(50);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(10);
+        @include offset(1);
+        padding-top: pxem(80);
+      }
+
+
+      h2 {
+        @include bold-40($color-green);
+        margin-bottom: 10px;
+      }
+
+      p {
+        @include regular-20($color-black);
+
+        a {
+          @include pretty-text-underline($color-green, 2);
+          @include semi-20($dark-text);
+
+          &:hover {
+            color: lighten($dark-text, 15%);
+          }
+        }
+      }
+    }
+
+    &-form {
+      @include col(12);
+      padding-bottom: pxem(40);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(10);
+        @include offset(1);
+        padding-bottom: pxem(80);
+      }
+    }
+  }
+
+  &-form {
+    &-submit {
+      @include col(12);
+    }
+  }
+}

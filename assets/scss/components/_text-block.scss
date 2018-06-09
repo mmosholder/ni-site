@@ -11,7 +11,7 @@
     }
 
     h2 {
-      @include q-40($dark-text);
+      @include bold-40($dark-text);
       margin-bottom: pxem(15);
     }
 
@@ -44,6 +44,52 @@
       @include mq($from: $breakpoint-medium) {
         padding: pxem(17) pxem(65);
         width: auto;
+      }
+    }
+  }
+
+  .ni-address-hours.-taproom {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include offset(1);
+      @include col(5);
+    }
+
+    .ni-address-hours-address {
+      width: auto;
+    }
+
+    .ni-address-hours-item {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: pxem(15);
+      margin-bottom: pxem(15);
+      border-bottom: 3px solid $color-green;
+
+      &:last-of-type {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      &-title {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: pxem(5);
+        flex-basis: auto;
+        @include regular-20($dark-text);
+
+        @include mq($from: 370px) {
+          width: 31%;
+          max-width: 31%;
+          margin-bottom: 0;
+        }
       }
     }
   }

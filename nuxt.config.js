@@ -4,18 +4,20 @@ module.exports = {
   modules: [
     [
       "storyblok-nuxt",
-      { accessToken: process.env.NODE_ENV == 'production' ? "LnX8nlr2iiejA5zBOCt8Zgtt" : "YhyWNXIZZrl7cMygbmgJYgtt", cacheProvider: "memory" }
+      {
+        accessToken:
+          process.env.NODE_ENV == "production"
+            ? "LnX8nlr2iiejA5zBOCt8Zgtt"
+            : "YhyWNXIZZrl7cMygbmgJYgtt",
+        cacheProvider: "memory"
+      }
     ]
   ],
 
-  build: {
-    vendor: ["lodash"]
-  },
-
-  plugins: ["~/plugins/components"],
+  plugins: ["~/plugins/components", "~/plugins/map"],
 
   router: {
-    middleware: "headerDetection"
+    middleware: ["headerDetection", "salesFormDetection"]
   },
 
   /*
@@ -32,7 +34,7 @@ module.exports = {
         content: "{{escape description }}"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
   generate: {
@@ -44,36 +46,32 @@ module.exports = {
         )
         .then(r => {
           const beerPages = r.data.stories.map(page => page.full_slug);
-          return [
-            '/',
-            '/about',
-            '/brewpub',
-            '/beers',
-            ...beerPages
-          ];
+          return ["/", "/about", "/brewpub", "/beers", "/beerfinder", "/contact", ...beerPages];
         });
     }
   },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: "#3B8070" }
+  loading: { color: "#3B8070" },
   /*
   ** Build configuration
   */
-  // build: {
-  //   /*
-  //   ** Run ESLint on save
-  //   */
-  //   extend(config, { isDev, isClient }) {
-  //     if (isDev && isClient) {
-  //       config.module.rules.push({
-  //         enforce: "pre",
-  //         test: /\.(js|vue)$/,
-  //         loader: "eslint-loader",
-  //         exclude: /(node_modules)/
-  //       });
-  //     }
-  //   }
-  // }
+  build: {
+    vendor: ["lodash"],
+
+    extend(config, { isDev, isClient }) {
+      if (!isClient) {
+        // This instructs Webpack to include `vue2-google-maps`'s Vue files
+        // for server-side rendering
+        config.externals.splice(0, 0, function (context, request, callback) {
+          if (/^vue2-google-maps($|\/)/.test(request)) {
+            callback(null, false)
+          } else {
+            callback()
+          }
+        })
+      }
+    }
+  }
 };

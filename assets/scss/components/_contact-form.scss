@@ -1,0 +1,33 @@
+.ni-form {
+  &-contact {
+    padding-top: pxem(50);
+    padding-bottom: pxem(100);
+
+    &-title {
+      @include col(12);
+      margin-bottom: pxem(30);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(10);
+        @include offset(1);
+      }
+
+      h2 {
+        @include bold-40($dark-text);
+      }
+
+      p {
+        @include regular-18($dark-text);
+      }
+    }
+
+    &-form {
+      @include col(12);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(10);
+        @include offset(1);
+      }
+    }
+  }
+}

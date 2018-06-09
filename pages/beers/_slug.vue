@@ -37,8 +37,8 @@
             </div>
             <div class="ni-profile-info">
               <h2>Gotta Have It?</h2>
-              <p :class="['ni-profile-info-' + story.content.color]">Check out or <a href="#">Beerfinder</a> to find a bar or retailer near you</p>
-              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="">Get directions</a></p>
+              <p :class="['ni-profile-info-' + story.content.color]">Check out or <a href="/beerfinder">Beerfinder</a> to find a bar or retailer near you</p>
+              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="/contact">See our location.</a></p>
             </div>
           </div>
         </div>
@@ -47,15 +47,21 @@
     <section class="ni-cta ni-cta-newsletter">
       <div class="ni-container">
         <div class="ni-row">
-          <div class="ni-cta-content">
-            <h2>We're Pretty Fun</h2>
-            <p>And we want you to have fun with us! Words about registering for our newsletter so you don’t miss out because missing out is lame.</p>
-          </div>
-          <div class="ni-cta-signup">
-            <form>
-              <input type="email" placeholder="yourname@email.com">
-              <button class="button button-green" type="submit">Keep Me in The Loop</button>
-            </form>
+          <div class="ni-cta-card">
+            <div class="ni-cta-content-wrapper">
+              <div class="ni-row">
+                <div class="ni-cta-content">
+                  <h2>We're pretty fun</h2>
+                  <p>And we want you to have fun with us! Sign up to receive our newsletter, which includes perks and first to know updated about new beers &amp; events.</p>
+                  <div class="ni-cta-signup">
+                    <form>
+                      <input class="cta-input" type="email" placeholder="yourname@email.com">
+                      <button class="button button-green" type="submit">Sign Me Up</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

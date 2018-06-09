@@ -22,12 +22,9 @@ body {
   }
 }
 
-main.home {
-  padding-top: pxem(120);
-
-  @include mq($from: $breakpoint-small) {
-    padding-top: pxem(186);
-  }
+#__layout {
+  max-width: pxem(1600);
+  margin: 0 auto;
 }
 
 * {

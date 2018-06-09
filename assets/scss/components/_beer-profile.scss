@@ -6,23 +6,63 @@
   }
 
   &-orange {
-    border-top: 5px solid $color-orange;
+    &:before {
+      width: 100%;
+      content: '';
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-orange;
+    }
   }
 
   &-gold {
-    border-top: 5px solid $color-gold;
+    &:before {
+      width: 100%;
+      content: '';
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-gold;
+    }
   }
 
   &-green {
-    border-top: 5px solid $color-green;
+    &:before {
+      width: 100%;
+      content: '';
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-green;
+    }
   }
 
   &-maroon {
-    border-top: 5px solid $color-maroon;
+    &:before {
+      width: 100%;
+      content: '';
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-maroon;
+    }
   }
 
   &-red {
-    border-top: 5px solid $color-red;
+    &:before {
+      width: 100%;
+      content: '';
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-red;
+    }
   }
 
   &-left {
@@ -113,7 +153,7 @@
 
     h1 {
       @include extra-50($dark-text);
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
 
     p {
@@ -129,7 +169,7 @@
     }
 
     h2 {
-      @include q-32($dark-text);
+      @include bold-36($dark-text);
       margin-bottom: pxem(5);
     }
 
@@ -180,7 +220,7 @@
     }
 
     h2 {
-      @include q-32($dark-text);
+      @include bold-36($dark-text);
       margin-bottom: pxem(5);
     }
 
@@ -192,7 +232,7 @@
   &-info {
 
     h2 {
-      @include q-32($dark-text);
+      @include bold-36($dark-text);
       margin-bottom: pxem(5);
     }
 

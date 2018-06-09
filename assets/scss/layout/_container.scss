@@ -13,11 +13,6 @@ $half-gutter-width: $gutter-width * .5;
   flex-direction: column;
   padding-left: pxem(30);
   padding-right: pxem(30);
-
-  @include mq($from: $breakpoint-small) {
-    padding-left: $gutter-width * .5+rem;
-    padding-right: $gutter-width * .5+rem;
-  }
 }
 
 .nav-container {

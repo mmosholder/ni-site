@@ -1,0 +1,103 @@
+.ni-finder {
+  padding: pxem(40) 0;
+
+  &-search {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    label {
+      display: block;
+      margin-bottom: pxem(5);
+    }
+
+    input {
+      background-color: $color-white;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-list {
+    @include col(12);
+    max-height: pxem(700);
+    height: auto;
+    overflow-y: auto;
+    order: 1;
+    margin: pxem(30) 0;
+
+    @include mq($from: $breakpoint-small) {
+      order: 0;
+      margin: 0;
+      @include col(3);
+      max-height: auto;
+      height: pxem(700);
+    }
+
+    &-none {
+      @include regular-italic-20($dark-text);
+      padding: 0 pxem(20);
+    }
+
+    &-wrapper {
+      padding: 0 pxem(20);
+      background-color: $color-white;
+    }
+
+    &-item {
+      padding: pxem(20) 0;
+      border-bottom: 1px solid $color-medium-gray;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        @include semi-18($dark-text);
+      }
+
+      &-types {
+        margin: pxem(10) 0;
+        border-left: 3px solid $color-green;
+        padding: pxem(7) 0;
+
+        p {
+          @include regular-italic-20($dark-text);
+          margin-bottom: pxem(4);
+          padding-left: pxem(10);
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      p {
+        @include regular-16(#5F6065)
+      }
+    }
+  }
+
+  &-map {
+    @include col(12);
+    order: 0;
+
+    @include mq($from: $breakpoint-small) {
+      order: 1;
+      @include col(9);
+    }
+
+    .vue-map-container {
+      width: 100%;
+      height: pxem(500);
+
+      @include mq($from: $breakpoint-small) {
+        height: pxem(700);
+      }
+    }
+  }
+}

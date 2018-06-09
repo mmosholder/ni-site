@@ -3,23 +3,38 @@
 // Additional mixins with -no-scale provided for some font instances where mobile scaling isn't necessary
 
 // Quanelas
-@mixin q-110 {
-  @include qanelas;
-  $map: (576px: 60px, 768px: 90px, 992px: 110px);
-  line-height: .85;
-  letter-spacing: .5px;
+@mixin calafia-200 {
+  @include calafia;
+  $map: (576px: 100px, 768px: 150px, 992px: 200px);
+  line-height: 1.2;
+  // letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
-  color: #fff;
-  text-transform: uppercase;
+  color: $color-green;
 
-  @include mq($from: $breakpoint-small) {
-    letter-spacing: 3.25px;
-  }
+  // @include mq($from: $breakpoint-small) {
+  //   letter-spacing: 3.25px;
+  // }
+}
+
+@mixin calafia-120($color) {
+  @include calafia;
+  $map: (576px: 60px, 768px: 100px, 992px: 120px);
+  line-height: 1;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
+@mixin calafia-110($color) {
+  @include calafia;
+  $map: (576px: 50px, 768px: 90px, 992px: 110px);
+  line-height: 1;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
 }
 
 @mixin q-80 {
   @include qanelas;
-  $map: (576px: 60px, 768px: 70px, 992px: 80px);
+  $map: (576px: 40px, 768px: 70px, 992px: 80px);
   line-height: .94;
   letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
@@ -33,7 +48,7 @@
 
 @mixin q-50($color) {
   @include qanelas;
-  $map: (576px: 42px, 992px: 50px);
+  $map: (576px: 25px, 992px: 50px);
   line-height: 1;
   letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
@@ -43,7 +58,7 @@
 
 @mixin q-40($color) {
   @include qanelas;
-  $map: (576px: 36px, 992px: 40px);
+  $map: (576px: 30px, 992px: 40px);
   line-height: 1.25;
   letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
@@ -57,7 +72,7 @@
 
 @mixin q-32($color) {
   @include qanelas;
-  $map: (576px: 28px, 992px: 32px);
+  $map: (576px: 20px, 992px: 32px);
   line-height: 1.25;
   letter-spacing: .27px;
   @include poly-fluid-sizing('font-size', $map);
@@ -65,27 +80,35 @@
   text-transform: uppercase;
 }
 
-// Open Extra bold
+// Roboto Extra bold
 @mixin extra-50($color) {
-  @include open-extra;
-  $map: (576px: 42px, 992px: 50px);
+  @include plex-extra;
+  $map: (576px: 25px, 992px: 50px);
   line-height: 1;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
   letter-spacing: .75px;
 }
 
-// Open Bold
+// Roboto Bold
+@mixin bold-40($color) {
+  @include plex-bold;
+  $map: (576px: 30px, 992px: 40px);
+  line-height: 1.25;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
 @mixin bold-36($color) {
-  @include open-bold;
-  $map: (576px: 30px, 992px: 36px);
+  @include plex-bold;
+  $map: (576px: 20px, 992px: 36px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
 @mixin bold-26($color) {
-  @include open-bold;
+  @include plex-bold;
   $map: (576px: 20px, 992px: 26px);
   line-height: 1.3;
   @include poly-fluid-sizing('font-size', $map);
@@ -93,45 +116,55 @@
 }
 
 @mixin bold-22($color) {
-  @include open-bold;
-  font-size: pxem(18);
+  @include plex-bold;
+  $map: (576px: 20px, 992px: 22px);
+  @include poly-fluid-sizing('font-size', $map);
   line-height: 1;
   color: $color;
 }
 
+@mixin bold-20($color) {
+  @include plex-bold;
+  $map: (576px: 18px, 768px: 20px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1.2;
+  color: $color;
+}
+
 @mixin bold-18($color) {
-  @include open-bold;
-  font-size: pxem(18);
+  @include plex-bold;
+  $map: (576px: 16px, 992px: 18px);
+  @include poly-fluid-sizing('font-size', $map);
   line-height: 1;
   color: $color;
 }
 
 @mixin bold-16($color) {
-  @include open-bold;
+  @include plex-bold;
   font-size: pxem(16);
   line-height: 1;
   color: $color;
 }
 
 @mixin bold-nav-16($color) {
-  @include open-bold;
+  @include plex-bold;
   $map: (576px: 18px, 768px: 16px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1;
   color: $color;
 }
 
-// Open Semi
+// Roboto Semi
 @mixin semi-30($color) {
-  @include open-semi;
-  $map: (576px: 26px, 768px: 30px);
+  @include plex-semi;
+  $map: (576px: 20px, 768px: 30px);
   line-height: 1.1;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
 @mixin semi-24($color) {
-  @include open-semi;
+  @include plex-semi;
   $map: (576px: 20px, 768px: 24px);
   line-height: 1.29;
   @include poly-fluid-sizing('font-size', $map);
@@ -139,40 +172,56 @@
 }
 
 @mixin semi-22($color) {
-  @include open-semi;
-  $map: (576px: 18px, 768px: 22px);
+  @include plex-semi;
+  $map: (576px: 20px, 768px: 22px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
 @mixin semi-20($color) {
-  @include open-semi;
-  $map: (576px: 16px, 768px: 20px);
+  @include plex-semi;
+  $map: (576px: 18px, 768px: 20px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
 @mixin semi-18($color) {
-  @include open-semi;
+  @include plex-semi;
   $map: (576px: 16px, 768px: 18px);
   line-height: 1.33;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }
 
-// Open Regular
+// Roboto Regular
+@mixin regular-26($color) {
+  @include plex-regular;
+  $map: (576px: 20px, 992px: 26px);
+  line-height: 1.3;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
 @mixin regular-24($color) {
-  @include open-regular;
+  @include plex-regular;
   $map: (576px: 20px, 768px: 24px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.3;
   color: $color;
 }
 
+@mixin regular-22($color) {
+  @include plex-regular;
+  $map: (576px: 18px, 768px: 22px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1.25;
+  color: $color;
+}
+
 @mixin regular-20($color) {
-  @include open-regular;
+  @include plex-regular;
   $map: (576px: 18px, 768px: 20px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.5;
@@ -180,14 +229,15 @@
 }
 
 @mixin regular-18($color) {
-  @include open-regular;
-  font-size: pxem(18);
+  @include plex-regular;
+  $map: (576px: 16px, 992px: 18px);
+  @include poly-fluid-sizing('font-size', $map);
   line-height: 1.27;
   color: $color;
 }
 
 @mixin regular-16($color) {
-  @include open-regular;
+  @include plex-regular;
   font-size: 16px;
   line-height: 1.19;
   color: $color;
@@ -195,9 +245,16 @@
 
 // Regular Italic
 @mixin regular-italic-20($color) {
-  @include open-regular-italic;
-  $map: (576px: 18px, 768px: 20px);
+  @include plex-regular-italic;
+  $map: (576px: 18px, 992px: 20px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.5;
+  color: $color;
+}
+
+@mixin regular-italic-16($color) {
+  @include plex-regular-italic;
+  font-size: 16px;
+  line-height: 1.375;
   color: $color;
 }

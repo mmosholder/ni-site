@@ -1,0 +1,26 @@
+.ni-address-hours {
+  &-address {
+    width: 100%;
+
+    p {
+      @include bold-20($dark-text);
+    }
+  }
+
+  &-hours {
+
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+
+    p {
+      @include regular-20($dark-text);
+      line-height: 1.1;
+    }
+
+    h3 {
+      @include bold-20($dark-text);
+    }
+  }
+}

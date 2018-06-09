@@ -93,15 +93,17 @@
         </div>
       </div>
     </section>
+    <BeersCTA v-if="beers.length" />
   </section>
 </template>
 
 <script>
   import BeerHeader from '~/components/BeerHeader'
+  import BeersCTA from '~/components/BeersCTA'
   import _ from 'lodash'
 
   export default {
-    components: { BeerHeader },
+    components: { BeerHeader, BeersCTA },
 
     data () {
       return {

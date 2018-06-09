@@ -7,63 +7,76 @@
   background-repeat: no-repeat;
 
   @include mq($from: $breakpoint-small) {
-    padding: pxem(80) 0 pxem(100) 0;
+    padding:pxem(100) 0;
   }
 
-  @include mq($from: $breakpoint-medium) {
-    padding: pxem(140) 0 pxem(140) 0;
+  @include mq($from: $breakpoint-large) {
+    padding: pxem(140) 0;
+  }
+
+  .ni-container {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include mq($from: $breakpoint-small) {
+      padding-left: pxem(30);
+      padding-right: pxem(30);
+    }
+  }
+
+  &-card {
+    @include span(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(10);
+      @include offset(1);
+    }
   }
 
   &-content {
     @include col(12);
-    margin-bottom: pxem(50);
 
     @include mq($from: $breakpoint-small) {
       @include col(8);
       @include offset(2);
     }
 
-    @include mq($from: $breakpoint-medium) {
-      @include col(5);
-      margin-bottom: 0;
-      @include offset(1);
+    &-wrapper {
+      background-color: $color-white;
+      padding: pxem(40) pxem(30);
+
+      @include mq($from: $breakpoint-small) {
+        padding: pxem(50) 0;
+      }
     }
 
     h2 {
-      @include q-50($color-green);
+      @include bold-40($dark-text);
       margin-bottom: pxem(10);
     }
 
     p {
-      @include semi-22($color-white);
+      @include regular-22($dark-text);
+      margin-bottom: pxem(30);
     }
   }
 
   &-signup {
-    @include col(12);
-
-    @include mq($from: $breakpoint-small) {
-      @include col(8);
-      @include offset(2);
-    }
-
-    @include mq($from: $breakpoint-medium) {
-      @include col(4);
-      margin-bottom: 0;
-      @include offset(1);
-    }
 
     form {
       width: 100%;
 
-      input {
-        border: 2px solid $color-green;
+      .cta-input {
+        border: 2px solid $color-gray;
         padding: pxem(15);
-        color: $color-white;
         width: 100%;
-        @include semi-22($color-white);
+        @include semi-22($dark-text);
         margin-bottom: pxem(10);
       }
+    }
+
+    .button {
+      display: block;
     }
   }
 }

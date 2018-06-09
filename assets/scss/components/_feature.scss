@@ -1,5 +1,5 @@
 .ni-feature {
-  
+
   &-container {
     @include col(12);
     display: flex;
@@ -20,7 +20,7 @@
   h2 {
     width: 100%;
     text-align: left;
-    @include q-40($dark-text);
+    @include bold-40($dark-text);
     margin-bottom: pxem(30);
 
     @include mq($from: $breakpoint-small) {

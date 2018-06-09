@@ -1,51 +1,41 @@
 .home {
   background-size: cover;
-  min-width: 100%;
-  min-height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: auto;
+  width: 100%;
   background-image: url('~/assets/images/home-bg.jpg');
   position: relative;
+  overflow-y: hidden;
 
   &-filter-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0);
+    height: 100%;
+    background: rgba(0,0,0,0.66);
   }
 
   &-title-text {
+    @include col(12);
+    padding-top: pxem(125);
+    padding-bottom: pxem(160);
+    @include calafia-200;
+
+    // @include mq($from: $breakpoint-small ) {
+    //   padding: pxem(186) 0 0 11%;
+    // }
+  }
+
+  &-logo {
+    width: pxem(215);
+    height: auto;
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: pxem(120) pxem(30);
-    background: rgba(0,0,0,0.66);
-    @include q-110;
-    color: white;
-    mix-blend-mode: multiply;
-    width: 100%;
-    height: 100%;
-
-    &:after,
-    &:before {
-      height: 100%;
-      width: 1000px;
-      background-color:rgba(0,0,0,0.66);
-    }
-
-    &:after {
-      right: 0;
-      top: 0;
-    }
-
-    &:before {
-      left: 0;
-      top: 0;
-    }
-
-    @include mq($from: $breakpoint-small ) {
-      padding: pxem(186) 0 0 11%;
-    }
+    // opacity: 0.13;
+    z-index: 1;
+    right: 0;
+    bottom: pxem(-90);
   }
 
   // &-title {

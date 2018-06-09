@@ -1,0 +1,46 @@
+.ni-beer-cta {
+  background-color: $color-white;
+  margin-top: pxem(50);
+
+  .ni-container {
+    padding-top: pxem(80);
+    padding-bottom: pxem(80);
+  }
+
+  .centered {
+    align-items: center;
+  }
+
+  &-title {
+    @include col(12);
+    margin-bottom: pxem(30);
+    margin-top: pxem(-150);
+
+    h2 {
+      @include calafia-120($color-green)
+    }
+  }
+
+  &-button {
+    @include col(12);
+    margin-bottom: pxem(30);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(5);
+      margin-bottom: 0;
+
+      &:first-of-type {
+        @include offset(1);
+      }
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(4);
+      margin-bottom: 0;
+
+      &:first-of-type {
+        @include offset(2);
+      }
+    }
+  }
+}

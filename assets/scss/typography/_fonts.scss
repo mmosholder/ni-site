@@ -1,36 +1,41 @@
-@mixin open-regular {
-	font-family: 'Open Sans', sans-serif;
+@mixin plex-regular {
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: 400;
 }
 
-@mixin open-regular-italic {
-	font-family: 'Open Sans', sans-serif;
+@mixin plex-regular-italic {
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: 400;
 	font-style: italic;
 }
 
-@mixin open-semi {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+@mixin plex-semi {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 500;
 }
 
-@mixin open-semi-italic {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+@mixin plex-semi-italic {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 500;
 	font-style: italic;
 }
 
-@mixin open-bold {
-	font-family: 'Open Sans', sans-serif;
+@mixin plex-bold {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 600;
+}
+
+@mixin plex-extra {
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: 700;
-}
-
-@mixin open-extra {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 800;
 }
 
 @mixin qanelas {
 	font-family: 'qanelas_soft_demoextrabold', sans-serif;
 	font-weight: 800;
+}
+
+@mixin calafia {
+	font-family: 'calafiaregular', sans-serif;
+	font-weight: 400;
 }
