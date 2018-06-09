@@ -1,6 +1,6 @@
-# {{ name }}
+# New Image Brewing Website
 
-> {{ description }}
+> A new website and design for New Image Brewing, created with Nuxt.js, Vue.js, and Storyblok CMS
 
 ## Build Setup
 
