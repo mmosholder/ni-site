@@ -32,9 +32,9 @@
   color: $color;
 }
 
-@mixin q-80 {
+@mixin q-60 {
   @include qanelas;
-  $map: (576px: 40px, 768px: 70px, 992px: 80px);
+  $map: (576px: 40px, 768px: 70px, 992px: 60px);
   line-height: .94;
   letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
@@ -80,7 +80,24 @@
   text-transform: uppercase;
 }
 
+@mixin q-18($color) {
+  @include qanelas;
+  $map: (576px: 16px, 992px: 18px);
+  line-height: 0.8;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+  text-transform: uppercase;
+}
+
 // Roboto Extra bold
+@mixin extra-80($color) {
+  @include plex-extra;
+  $map: (576px: 50px, 992px: 80px);
+  line-height: 0.8;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
 @mixin extra-50($color) {
   @include plex-extra;
   $map: (576px: 25px, 992px: 50px);
@@ -88,6 +105,14 @@
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
   letter-spacing: .75px;
+}
+
+@mixin extra-18($color) {
+  @include plex-extra;
+  $map: (576px: 16px, 992px: 18px);
+  line-height: 1;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
 }
 
 // Roboto Bold

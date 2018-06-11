@@ -15,6 +15,12 @@
       left: 0;
       background-color: $color-orange;
     }
+
+    svg {
+      path {
+        fill: $color-orange;
+      }
+    }
   }
 
   &-gold {
@@ -26,6 +32,12 @@
       top: 0;
       left: 0;
       background-color: $color-gold;
+    }
+
+    svg {
+      path {
+        fill: $color-gold;
+      }
     }
   }
 
@@ -39,6 +51,12 @@
       left: 0;
       background-color: $color-green;
     }
+
+    svg {
+      path {
+        fill: $color-green;
+      }
+    }
   }
 
   &-maroon {
@@ -51,6 +69,12 @@
       left: 0;
       background-color: $color-maroon;
     }
+
+    svg {
+      path {
+        fill: $color-maroon;
+      }
+    }
   }
 
   &-red {
@@ -62,6 +86,12 @@
       top: 0;
       left: 0;
       background-color: $color-red;
+    }
+
+    svg {
+      path {
+        fill: $color-red;
+      }
     }
   }
 
@@ -191,16 +221,9 @@
 
         &:last-of-type {
           margin-bottom: 0;
-
-          img {
-            height: pxem(25);
-            width: auto;
-          }
         }
 
-        img {
-          height: pxem(35);
-          width: auto;
+        svg {
           margin: 0 pxem(20) 0 0;
         }
 

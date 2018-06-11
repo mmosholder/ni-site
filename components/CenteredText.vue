@@ -1,5 +1,5 @@
 <template>
-  <section class="ni-centered">
+  <section class="ni-centered" v-editable="blok">
     <div class="ni-container">
       <div class="ni-row">
         <div class="ni-centered-text">

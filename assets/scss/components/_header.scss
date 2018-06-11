@@ -33,16 +33,20 @@
     height: 0;
   }
 
-  &-content {
+  &-title {
     @include col(12);
-
-    @include mq($from: $breakpoint-medium) {
-      @include col(7);
-    }
 
     h1 {
       @include calafia-120($color-white);
       margin-bottom: pxem(10);
+    }
+  }
+
+  &-text {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(7);
     }
 
     p {

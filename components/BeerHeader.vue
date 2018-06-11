@@ -2,8 +2,10 @@
   <header class="ni-header" :style="{backgroundImage: 'url(' + $store.state.globalHeading.background_image + ')'}" v-if="$store.state.globalHeading" v-editable="$store.state.globalHeading">
     <div class="ni-container">
       <div class="ni-row">
-        <div class="ni-header-content">
+        <div class="ni-header-title">
           <h1>{{ $store.state.globalHeading.title }}</h1>
+        </div>
+        <div class="ni-header-text">
           <p>{{ $store.state.globalHeading.text }}</p>
         </div>
       </div>

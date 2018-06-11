@@ -2,14 +2,15 @@
   <section class="ni-form ni-form-sales" v-editable="$store.state.salesForm" v-if="$store.state.salesForm">
     <div class="ni-container">
       <div class="ni-form-container">
-        <hr>
         <div class="ni-row">
           <div class="ni-form-sales-title">
             <h2>{{$store.state.salesForm.title}}</h2>
-            <div v-html="text"></div>
           </div>
         </div>
         <div class="ni-row">
+          <div class="ni-form-sales-text">
+            <div v-html="text"></div>
+          </div>
           <div class="ni-form-form ni-form-sales-form">
             <form action="">
               <div class="ni-row">

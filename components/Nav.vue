@@ -6,10 +6,10 @@
         <img v-else src="~/assets/images/ni-logo-dark@4x.png" alt="New Image Brewing logo">
       </a>
       <ul :class="[this.$route.name == 'beers-slug' ? 'ni-nav-links ni-nav-links-dark' : 'ni-nav-links']">
-        <li><a href="/about">About</a></li>
-        <li><a href="/brewpub">Brewpub</a></li>
+        <li><a href="/brewpub">Taproom</a></li>
         <li><a href="/beers">Our Beers</a></li>
         <li><a href="/beerfinder">Beerfinder</a></li>
+        <li><a href="/events">Events</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"

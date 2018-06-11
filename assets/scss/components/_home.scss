@@ -32,20 +32,8 @@
     width: pxem(215);
     height: auto;
     position: absolute;
-    // opacity: 0.13;
     z-index: 1;
     right: 0;
-    bottom: pxem(-90);
+    bottom: pxem(-10);
   }
-
-  // &-title {
-  //   @include col(12);
-
-  //   &-text {
-  //     @include q-110;
-  //     color: white;
-  //     mix-blend-mode: darken;
-  //     background-color: rgba(0,0,0,0.66);
-  //   }
-  // }
 }

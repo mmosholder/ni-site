@@ -19,7 +19,8 @@ import ContactForm from "~/components/ContactForm";
 import ContactAddressHours from "~/components/ContactAddressHours";
 import BeerToGo from "~/components/BeerToGo";
 import CenteredText from "~/components/CenteredText";
-
+import EventsForm from "~/components/EventsForm";
+import AwardsBlock from "~/components/AwardsBlock";
 
 Vue.component("page", Page);
 Vue.component("heading", Header);
@@ -41,3 +42,5 @@ Vue.component("contact_form", ContactForm);
 Vue.component("contact_address_hours", ContactAddressHours);
 Vue.component("beer_to_go", BeerToGo);
 Vue.component("centered_text", CenteredText);
+Vue.component("events_form", EventsForm);
+Vue.component("awards_block", AwardsBlock);
