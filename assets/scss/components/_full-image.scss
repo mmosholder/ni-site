@@ -14,7 +14,7 @@
       width: 100%;
       background-position: center center;
       background-size: cover;
-      padding-top: 60%;
+      padding-top: 50%;
 
       @include mq($from: $breakpoint-small) {
         padding-top: 39%;

@@ -3,8 +3,23 @@
   margin-top: pxem(50);
 
   .ni-container {
-    padding-top: pxem(80);
-    padding-bottom: pxem(80);
+    padding-top: pxem(60);
+    padding-bottom: pxem(60);
+
+    @include mq($from: $breakpoint-small) {
+      padding-top: pxem(80);
+      padding-bottom: pxem(80);
+    }
+  }
+
+  &.home-cta {
+    margin-top: 0;
+    padding-top: pxem(90);
+    background-color: $color-body;
+
+    .ni-container {
+      background-color: $color-white;
+    }
   }
 
   .centered {
@@ -14,7 +29,11 @@
   &-title {
     @include col(12);
     margin-bottom: pxem(30);
-    margin-top: pxem(-150);
+    margin-top: pxem(-95);
+
+    @include mq($from: $breakpoint-small) {
+      margin-top: pxem(-150);
+    }
 
     h2 {
       @include calafia-120($color-green)

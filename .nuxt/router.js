@@ -3,12 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _5c1024f0 = () => import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */).then(m => m.default || m)
+const _b2d38b64 = () => import('../pages/taproom/index.vue' /* webpackChunkName: "pages/taproom/index" */).then(m => m.default || m)
+const _0c3e9ec2 = () => import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */).then(m => m.default || m)
 const _21274c93 = () => import('../pages/beers/index.vue' /* webpackChunkName: "pages/beers/index" */).then(m => m.default || m)
 const _ef32fbc8 = () => import('../pages/beerfinder/index.vue' /* webpackChunkName: "pages/beerfinder/index" */).then(m => m.default || m)
 const _1eca695d = () => import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */).then(m => m.default || m)
-const _3914f1cb = () => import('../pages/brewpub/index.vue' /* webpackChunkName: "pages/brewpub/index" */).then(m => m.default || m)
-const _0c3e9ec2 = () => import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */).then(m => m.default || m)
+const _5c1024f0 = () => import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */).then(m => m.default || m)
 const _1f70ab4b = () => import('../pages/beers/_slug.vue' /* webpackChunkName: "pages/beers/_slug" */).then(m => m.default || m)
 const _2c27691f = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -71,9 +71,14 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/contact",
-			component: _5c1024f0,
-			name: "contact"
+			path: "/taproom",
+			component: _b2d38b64,
+			name: "taproom"
+		},
+		{
+			path: "/events",
+			component: _0c3e9ec2,
+			name: "events"
 		},
 		{
 			path: "/beers",
@@ -91,14 +96,9 @@ export function createRouter () {
 			name: "about"
 		},
 		{
-			path: "/brewpub",
-			component: _3914f1cb,
-			name: "brewpub"
-		},
-		{
-			path: "/events",
-			component: _0c3e9ec2,
-			name: "events"
+			path: "/contact",
+			component: _5c1024f0,
+			name: "contact"
 		},
 		{
 			path: "/beers/:slug",

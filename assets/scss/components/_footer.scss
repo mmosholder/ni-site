@@ -21,6 +21,13 @@
       }
     }
 
+    &-hours {
+      @include mq($from: $breakpoint-medium) {
+        @include col(3);
+        @include offset(1);
+      }
+    }
+
     ul {
       margin: 0;
       padding: 0;

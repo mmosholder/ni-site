@@ -6,7 +6,7 @@
         <img v-else src="~/assets/images/ni-logo-dark@4x.png" alt="New Image Brewing logo">
       </a>
       <ul :class="[this.$route.name == 'beers-slug' ? 'ni-nav-links ni-nav-links-dark' : 'ni-nav-links']">
-        <li><a href="/brewpub">Taproom</a></li>
+        <li><a href="/taproom">Taproom</a></li>
         <li><a href="/beers">Our Beers</a></li>
         <li><a href="/beerfinder">Beerfinder</a></li>
         <li><a href="/events">Events</a></li>
@@ -26,19 +26,20 @@
           <ul class="ni-nav-links ni-nav-links-mobile">
             <!-- <li @click="navOpen = false"><a href="#">Brewery</a></li> -->
             <li @click="navOpen = false"><nuxt-link :to="'beers'">Our Beers</nuxt-link></li>
-            <li @click="navOpen = false"><a href="/beerfinder">Beerfinder</a></li>
-            <li @click="navOpen = false"><a href="#">Sales</a></li>
+            <li @click="navOpen = false"><nuxt-link :to="'beerfinder'">Beerfinder</nuxt-link></li>
+            <li @click="navOpen = false"><a href="/beerfinder#sales">Sales</a></li>
+            <li @click="navOpen = false"><nuxt-link :to="'contact'">Contact</nuxt-link></li>
           </ul>
-          <ul class="ni-nav-links ni-nav-links-mobile">
+          <!-- <ul class="ni-nav-links ni-nav-links-mobile">
             <li @click="navOpen = false"><nuxt-link :to="'about'">About</nuxt-link></li>
-            <li @click="navOpen = false"><a href="/contact">Contact</a></li>
+            <li @click="navOpen = false"><nuxt-link :to="'contact'">Contact</nuxt-link></li>
             <li @click="navOpen = false"><a href="#">Careers</a></li>
-          </ul>
+          </ul> -->
           <ul class="ni-nav-links ni-nav-links-mobile">
-            <li @click="navOpen = false"><nuxt-link :to="'brewpub'">Brewpub</nuxt-link></li>
-            <li @click="navOpen = false"><a href="#">Beers on Tap</a></li>
-            <li @click="navOpen = false"><a href="#">Team</a></li>
-            <li @click="navOpen = false"><a href="#">Events</a></li>
+            <li @click="navOpen = false"><nuxt-link :to="'taproom'">Taproom</nuxt-link></li>
+            <li @click="navOpen = false"><a href="/taproom#onTap">Beers on Tap</a></li>
+            <!-- <li @click="navOpen = false"><a href="#">Team</a></li> -->
+            <li @click="navOpen = false"><nuxt-link :to="'events'">Events</nuxt-link></li>
           </ul>
         </div>
       </div>

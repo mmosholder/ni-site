@@ -1,12 +1,20 @@
 .to-go {
   background-color: $color-white;
   margin: pxem(80) 0;
-  padding: pxem(75) 0;
+  padding: pxem(50) 0;
+
+  @include mq($from: $breakpoint-small) {
+    padding: pxem(75) 0;
+  }
 
   &-title {
     @include col(12);
     margin-bottom: pxem(30);
-    margin-top: pxem(-140);
+    margin-top: pxem(-85);
+
+    @include mq($from: $breakpoint-small) {
+      margin-top: pxem(-140);
+    }
 
     h2 {
       @include calafia-120($color-green)

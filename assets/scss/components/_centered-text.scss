@@ -6,6 +6,11 @@
     @include col(12);
 
     @include mq($from: $breakpoint-small) {
+      @include col(10);
+      @include offset(1);
+    }
+
+    @include mq($from: $breakpoint-medium) {
       @include col(8);
       @include offset(2);
     }

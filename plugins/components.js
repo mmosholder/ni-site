@@ -21,6 +21,9 @@ import BeerToGo from "~/components/BeerToGo";
 import CenteredText from "~/components/CenteredText";
 import EventsForm from "~/components/EventsForm";
 import AwardsBlock from "~/components/AwardsBlock";
+import BeersCTABlock from "~/components/BeersCTABlock";
+import HomeGrid from "~/components/HomeGrid";
+import Testimonial from "~/components/Testimonial";
 
 Vue.component("page", Page);
 Vue.component("heading", Header);
@@ -44,3 +47,6 @@ Vue.component("beer_to_go", BeerToGo);
 Vue.component("centered_text", CenteredText);
 Vue.component("events_form", EventsForm);
 Vue.component("awards_block", AwardsBlock);
+Vue.component("beers_cta_block", BeersCTABlock);
+Vue.component("home_grid", HomeGrid);
+Vue.component("testimonial", Testimonial);

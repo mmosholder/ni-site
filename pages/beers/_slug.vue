@@ -57,6 +57,15 @@
         </div>
       </div>
     </section>
+    <section class="ni-profile-grid" v-if="story.content.grid_images && story.content.grid_images.length > 0">
+      <div class="ni-container">
+        <div class="ni-row">
+          <div class="ni-profile-grid-image" v-for="(item, i) in story.content.grid_images" :key="i">
+            <SingleImage :item="item" />
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="ni-cta ni-cta-newsletter">
       <div class="ni-container">
         <div class="ni-row">
@@ -65,7 +74,7 @@
               <div class="ni-row">
                 <div class="ni-cta-content">
                   <h2>We're pretty fun</h2>
-                  <p>And we want you to have fun with us! Sign up to receive our newsletter, which includes perks and first to know updated about new beers &amp; events.</p>
+                  <p>And we want you to have fun with us! Sign up to receive our newsletter, which includes perks and first-to-know updates about new beers &amp; events.</p>
                   <div class="ni-cta-signup">
                     <form>
                       <input class="cta-input" type="email" placeholder="yourname@email.com">
@@ -83,8 +92,11 @@
 </template>
 
 <script>
+import SingleImage from "~/components/SingleImage";
 
 export default {
+  components: { SingleImage },
+
   data () {
     return { story: { content: {} } }
   },
@@ -107,7 +119,7 @@ export default {
     }).then((res) => {
       return res.data
     }).catch((res) => {
-      context.error({ statusCode: res.response.status, message: res.response.data })
+      context.error({ message: res.response.data })
     })
   },
 

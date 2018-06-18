@@ -1,5 +1,5 @@
 <template>
-  <section class="ni-form ni-form-sales" v-editable="$store.state.salesForm" v-if="$store.state.salesForm">
+  <section class="ni-form ni-form-sales" id="sales" v-editable="$store.state.salesForm" v-if="$store.state.salesForm">
     <div class="ni-container">
       <div class="ni-form-container">
         <div class="ni-row">

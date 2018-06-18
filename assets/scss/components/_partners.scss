@@ -1,28 +1,34 @@
 .ni-partners {
-  padding: 0 0 pxem(40) 0;
+  padding: pxem(40) 0;
+  background-color: $body-bg;
 
-  &-container {
+  &-title {
     @include col(12);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    hr {
-      width: 100%;
-      margin: pxem(40) 0;
-      height: 2px;
-      background-color: $border-gray;
-    }
-  }
-
-  h2 {
-    width: 100%;
-    text-align: left;
-    @include bold-40($dark-text);
     margin-bottom: pxem(50);
 
     @include mq($from: $breakpoint-small) {
-      text-align: center;
+      @include col(10);
+      @include offset(1);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+
+    h2 {
+      width: 100%;
+      text-align: left;
+      @include bold-40($dark-text);
+      margin-bottom: pxem(20);
+
+      @include mq($from: $breakpoint-small) {
+        text-align: center;
+      }
+    }
+
+    p {
+      @include regular-20($dark-text);
     }
   }
 
@@ -43,7 +49,7 @@
     }
 
     h3 {
-      @include bold-36($dark-text);
+      @include bold-30($dark-text);
     }
 
     a {

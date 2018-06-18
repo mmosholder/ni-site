@@ -104,7 +104,6 @@
   line-height: 1;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
-  letter-spacing: .75px;
 }
 
 @mixin extra-18($color) {
@@ -128,6 +127,14 @@
   @include plex-bold;
   $map: (576px: 20px, 992px: 36px);
   line-height: 1.25;
+  @include poly-fluid-sizing('font-size', $map);
+  color: $color;
+}
+
+@mixin bold-30($color) {
+  @include plex-bold;
+  $map: (576px: 20px, 768px: 30px);
+  line-height: 1.1;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
 }

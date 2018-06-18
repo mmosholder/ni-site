@@ -1,5 +1,5 @@
 <template>
-  <section class="ni-tap">
+  <section class="ni-tap" id="onTap">
     <div class="ni-container">
       <div class="ni-row">
         <div class="ni-tap-title">

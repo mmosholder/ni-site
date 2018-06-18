@@ -1,5 +1,5 @@
 <template>
-  <section class="ni-text-image">
+  <section class="ni-text-image" v-editable="blok">
     <div class="ni-container">
       <div class="ni-row">
         <div class="ni-text-image-img">

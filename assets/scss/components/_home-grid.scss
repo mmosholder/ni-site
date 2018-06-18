@@ -1,0 +1,34 @@
+.ni-home-grid {
+  padding: pxem(40) 0 pxem(10) 0;
+  background-color: $color-body;
+
+  &-image {
+    @include col(12);
+    margin-bottom: pxem(30);
+    position: relative;
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+    }
+
+    h2 {
+      @include calafia-110($color-white);
+      position: absolute;
+      top: pxem(20);
+      left: pxem(40);
+    }
+
+    .bg-image {
+      padding-top: 38%;
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mq($from: $breakpoint-small) {
+        padding-top: 65%;
+      }
+    }
+
+  }
+}

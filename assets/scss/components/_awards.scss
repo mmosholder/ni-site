@@ -3,9 +3,9 @@
   background-color: $body-bg;
 
   &-container {
-    background-image: url('~/assets/images/pattern.png');
-    background-position: top left;
-    background-repeat: repeat;
+    background-image: url('~/assets/images/hex-pattern.png');
+    background-position: center center;
+    background-repeat: no-repeat;
     background-color: $color-white;
   }
 

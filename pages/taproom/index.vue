@@ -19,7 +19,7 @@
       }
     },
     asyncData(context) {
-      return context.app.$storyapi.get('cdn/stories/brewpub', {
+      return context.app.$storyapi.get('cdn/stories/taproom', {
         version: 'draft'
       }).then((r) => {
         return r.data

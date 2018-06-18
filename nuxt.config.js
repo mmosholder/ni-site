@@ -46,7 +46,7 @@ module.exports = {
         )
         .then(r => {
           const beerPages = r.data.stories.map(page => page.full_slug);
-          return ["/", "/about", "/brewpub", "/beers", "/beerfinder", "/contact", ...beerPages];
+          return ["/", "/about", "/taproom", "/beers", "/beerfinder", "/contact", "/events", ...beerPages];
         });
     }
   },

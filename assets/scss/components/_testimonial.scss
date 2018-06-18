@@ -1,0 +1,50 @@
+.ni-testimonial {
+  padding: pxem(60) 0;
+  background-color: $color-body;
+
+  &-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(10);
+      @include offset(1);
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      @include col(8);
+      @include offset(2);
+    }
+  }
+
+  &-text {
+    p {
+      @include regular-20($dark-text);
+      margin-bottom: pxem(20);
+    }
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &-image {
+    background-position: center center;
+    width: pxem(125);
+    height: pxem(125);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: pxem(15);
+    border-radius: 50%;
+  }
+
+  &-attribution {
+    h4 {
+      @include semi-20($dark-text);
+    }
+
+    p {
+      @include regular-20($dark-text);
+    }
+  }
+}

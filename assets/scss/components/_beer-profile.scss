@@ -1,8 +1,8 @@
 .ni-profile {
-  padding: pxem(120) 0 pxem(80) 0;
+  padding: pxem(120) 0 pxem(40) 0;
 
   @include mq($from: $breakpoint-small) {
-    padding: pxem(180) 0 pxem(80) 0;
+    padding: pxem(180) 0 pxem(40) 0;
   }
 
   &-orange {
@@ -295,6 +295,32 @@
     &-red {
       a {
         @include pretty-text-underline($color-red, 2);
+      }
+    }
+  }
+
+  &-grid {
+    padding: pxem(60) 0;
+
+    &-image {
+      @include col(12);
+      margin-bottom: pxem(30);
+
+      @include mq($from: $breakpoint-small) {
+        @include span(4);
+        margin-bottom: 2px;
+      }
+
+      .bg-image {
+        width: 100%;
+        padding-top: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include mq($from: $breakpoint-small) {
+          padding-top: 75%;
+        }
       }
     }
   }

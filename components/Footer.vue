@@ -11,26 +11,28 @@
         </div>
         <div class="ni-footer-col">
           <ul>
-            <li><a href="#">Brewery</a></li>
-            <li><a href="#">Our Beers</a></li>
-            <li><a href="#">Beerfinder</a></li>
-            <li><a href="#">Sales</a></li>
+            <!-- <li><a href="#">Brewery</a></li> -->
+            <li><a href="/beers">Our Beers</a></li>
+            <li><a href="/beerfinder">Beerfinder</a></li>
+            <li><a href="/beerfinder#sales">Sales</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
           <ul>
-            <li><a href="about">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Careers</a></li>
+            <ul>
+              <li><a href="/taproom">Taproom</a></li>
+              <li><a href="/taproom#onTap">Beers on Tap</a></li>
+              <li><a href="/events">Events</a></li>
+            </ul>
           </ul>
         </div>
-        <div class="ni-footer-col">
+        <!-- <div class="ni-footer-col">
           <ul>
-            <li><a href="#">Brewpub</a></li>
-            <li><a href="#">Beers on Tap</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Events</a></li>
+            <li><a href="/brewpub">Taproom</a></li>
+            <li><a href="/brewpub#onTap">Beers on Tap</a></li>
+            <li><a href="/events">Events</a></li>
           </ul>
-        </div>
-        <div class="ni-footer-col">
+        </div> -->
+        <div class="ni-footer-col ni-footer-col-hours">
           <h4>Hours</h4>
           <div class="ni-footer-col-time">
             <h5>Monday - Wednesday</h5>

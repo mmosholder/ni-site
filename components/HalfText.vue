@@ -6,7 +6,7 @@
           <h2>{{ blok.title }}</h2>
           <p>{{ blok.text }}</p>
         </div>
-        <TaproomAddress v-if="$route.name == 'brewpub'" />
+        <TaproomAddress v-if="$route.name == 'taproom'" />
       </div>
     </div>
   </section>

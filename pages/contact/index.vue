@@ -24,7 +24,7 @@
       }).then((r) => {
         return r.data
       }).catch((r) => {
-        context.error({ statusCode: r.response.status, message: r.response.data })
+        context.error({ message: r.response.data })
       })
     }
   }

@@ -23,7 +23,7 @@
               <div class="ni-row">
                 <div class="ni-cta-content">
                   <h2>We're pretty fun</h2>
-                  <p>And we want you to have fun with us! Sign up to receive our newsletter, which includes perks and first to know updated about new beers &amp; events.</p>
+                  <p>And we want you to have fun with us! Sign up to receive our newsletter, which includes perks and first-to-know updates about new beers &amp; events.</p>
                   <div class="ni-cta-signup">
                     <form>
                       <input class="cta-input" type="email" placeholder="yourname@email.com">
