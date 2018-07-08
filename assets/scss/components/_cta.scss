@@ -1,7 +1,7 @@
 .ni-cta {
   margin-top: pxem(40);
   padding: pxem(60) 0;
-  background-image: url('~/assets/images/newsletter-cta-bg.jpg');
+  background-image: url('~/assets/images/newsletter-cheers-bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,9 +10,9 @@
     padding:pxem(100) 0;
   }
 
-  @include mq($from: $breakpoint-large) {
-    padding: pxem(140) 0;
-  }
+  // @include mq($from: $breakpoint-large) {
+  //   padding: pxem(140) 0;
+  // }
 
   .ni-container {
     padding-left: 0;
@@ -28,8 +28,8 @@
     @include span(12);
 
     @include mq($from: $breakpoint-small) {
-      @include col(10);
-      @include offset(1);
+      @include col(8);
+      @include offset(2);
     }
   }
 

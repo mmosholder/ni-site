@@ -11,7 +11,7 @@
           <div class="ni-finder-list">
             <div class="ni-finder-list-wrapper">
               <p class="ni-finder-list-none" v-if="!locationsReady">Loading...</p>
-              <!-- <p class="ni-finder-list-none" v-if="locations && locations.length == 0 && locationsReady">Sorry, no locations in this area!</p> -->
+              <p class="ni-finder-list-none" v-if="locations && locations.length == 0 && locationsReady">Sorry, no locations in this area!</p>
               <div v-if="locations && locations.length > 0 && locationsReady">
                 <div class="ni-finder-list-item" v-for="(loc, i) in locations" v-if="loc.inView && loc.active_account" :key="i">
                   <h3>{{ loc.name }} </h3>
@@ -63,6 +63,7 @@
     },
 
     mounted() {
+      // Make sure the map is ready
       this.$refs.gmap.$mapPromise.then((map) => {
         let t = this;
 
@@ -82,6 +83,7 @@
 
     methods: {
        setCenter(place) {
+         // Set the center of the map after searching for a new address
         this.center = {
           lat: place.geometry.location.lat(),
           lng: place.geometry.location.lng()
@@ -89,6 +91,7 @@
       },
 
       getLocations() {
+        // Get all locations from admin
         axios.get('https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=locations&cv="' +
             Math.floor(Date.now() / 1e3)
           )
@@ -98,7 +101,6 @@
       },
 
       setLocations(stories) {
-        console.log('setting locatons');
         this.locations = [];
 
         stories.forEach(item => {
@@ -109,35 +111,42 @@
       },
 
       setAddresses() {
-        console.log('setting addresses');
-        this.locations.forEach(loc => {
-
+        // Loop over locations and get the google map lat/long for each address and save it to data
+        this.locations.forEach((loc, i) => {
           if (!loc.position && loc.name.length >1) {
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2)
               .then(r => {
-                console.log(r.data.results)
                 this.$set(loc, 'position', {lat: r.data.results[0].geometry.location.lat,lng: r.data.results[0].geometry.location.lng});
                 this.$set(loc, 'inView', false);
+
+                // Find last iteration of loop
+                if ((i+1) == this.locations.length) {
+                  // Set any markers in view after getting all addresses
+                  this.setMarkerList();
+                }
               })
               .catch(error => {
                 console.log(error)
               })
           }
         });
-
-        this.setMarkerList();
       },
 
       setMarkerList() {
+        // Ensure the map is mounted and that there are locations
         if (this.$refs.gmap && (this.locations && this.locations.length > 0)) {
-          this.locationsReady = true;
           let bounds = this.$refs.gmap.$mapObject.getBounds();
 
-          this.locations.forEach((loc) => {
+          // Check if locations are in view
+          this.locations.forEach((loc, i) => {
             if (bounds.contains(loc.position)) {
               this.$set(loc, 'inView', true)
             } else {
               this.$set(loc, 'inView', false)
+            }
+
+            if ((i+1) == this.locations.length) {
+              this.locationsReady = true;
             }
           })
         }

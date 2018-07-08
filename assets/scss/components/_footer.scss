@@ -109,12 +109,17 @@
       width: 100%;
       border-top: 2px solid $border-gray;
       padding: pxem(20) 0;
-      text-align: center;
+      justify-content: center;
+      display: flex;
 
       p {
         @include bold-18($dark-text);
         text-transform: uppercase;
       }
+    }
+
+    &-divider {
+      margin: 0 pxem(10);
     }
   }
 }

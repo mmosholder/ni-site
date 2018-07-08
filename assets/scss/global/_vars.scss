@@ -10,6 +10,7 @@ $color-orange:                #E49842;
 $color-maroon:                #602418;
 $color-gold:                  #EAC11D;
 $color-medium-gray:           #979797;
+$color-dark-purple:           #230532;
 
 // Applied colors
 $body-bg: $color-body;
@@ -20,7 +21,7 @@ $border-gray: $color-gray;
 $t-1:                   			cubic-bezier(0.2, 0.3, 0.25, 0.9);
 
 // Shadows
-
+$card-shadow:		              0 2px 12px 0 rgba(0,0,0,0.20);
 
 // Filters
 $header:                      rgba(0,0,0,0.45);

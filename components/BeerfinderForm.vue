@@ -36,11 +36,13 @@
               <div class="ni-row">
                 <div class="form-group">
                   <label for="location">I have a: &#42;</label>
-                  <select name="location" v-model="newSalesInquiry.location">
-                    <option disabled selected>Choose One</option>
-                    <option value="bar">Bar</option>
-                    <option value="retail">Retail Store</option>
-                  </select>
+                  <div class="select">
+                    <select name="location" v-model="newSalesInquiry.location">
+                      <option disabled selected>Choose One</option>
+                      <option value="bar">Bar</option>
+                      <option value="retail">Retail Store</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="ni-row">
@@ -64,6 +66,7 @@
 
 <script>
   import marked from 'marked'
+  import Vuelidate from 'vuelidate'
 
   export default {
     data() {

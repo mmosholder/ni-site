@@ -56,6 +56,8 @@
         <div class="ni-footer-bottom">
           <div class="ni-footer-bottom-text">
             <p>New Image Brewing &copy; 2018</p>
+            <p class="ni-footer-bottom-divider">|</p>
+            <p><a href="/privacy-policy">Privacy Policy</a></p>
           </div>
         </div>
       </div>

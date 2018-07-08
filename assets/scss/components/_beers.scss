@@ -2,7 +2,7 @@
   padding: pxem(40) 0;
 
   &-title {
-    margin-bottom: pxem(38);
+    margin-bottom: pxem(50);
     @include col(12);
     text-align: center;
 
@@ -51,7 +51,7 @@
 
     &-content {
       background-color: $color-white;
-      border: 1px solid $border-gray;
+      box-shadow: $card-shadow;
       position: relative;
       display: flex;
       align-items: center;
@@ -59,26 +59,69 @@
       height: 100%;
       padding-top: pxem(45);
       padding-bottom: pxem(45);
+      overflow: hidden;
+
+      svg {
+        position: absolute;
+        top: 0;
+        opacity: .1;
+
+        @include mq($from: $breakpoint-small) {
+          top: pxem(-100);
+        }
+
+        &.-blur {
+          filter: blur(5px);
+        }
+      }
 
       img {
         width: auto;
-        height: 100%;
+        max-width: 90%;
+        height: auto;
         max-height: pxem(350);
         position: relative;
         z-index: 0;
+        filter: blur(0px);
 
         @include mq($from: $breakpoint-small) {
           max-height: pxem(225);
         }
+
+        &.-blur {
+          filter: blur(5px);
+        }
+      }
+    }
+
+    &-taproom {
+      height: pxem(441);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: pxem(30) pxem(20);
+
+      @include mq($from: $breakpoint-small) {
+        height: pxem(315);
       }
 
-      // &:hover,
-      // &:active {
-      //   .ni-beer-item-overlay {
-      //     opacity: 1;
-      //     transition: opacity 240ms $t-1;
-      //   }
-      // }
+      &.-blur {
+        filter: blur(5px);
+      }
+
+      &-title {
+        text-align: center;
+        @include semi-24($dark-text);
+        text-transform: uppercase;
+        margin-bottom: pxem(40);
+      }
+
+      &-name {
+        text-align: center;
+        @include bold-30($color-dark-purple);
+        text-transform: uppercase;
+      }
     }
 
     &-overlay {

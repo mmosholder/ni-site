@@ -34,7 +34,7 @@
       margin-bottom: pxem(50);
 
       @include mq($from: $breakpoint-small) {
-        @include col(10);
+        @include col(5);
         @include offset(1);
       }
 

@@ -1,22 +1,12 @@
 <template>
-  <section class="ni-home-grid" v-editable="blok">
+  <section class="ni-home-grid" v-if="blok"  v-editable="blok">
     <div class="ni-container">
       <div class="ni-row">
         <div class="ni-home-grid-image">
-          <h2>Beer</h2>
-          <div :style="{backgroundImage: 'url(' + blok.beer + ')'}" class="bg-image"></div>
+          <div class="bg-image" :style="{backgroundImage: 'url(' + blok.left_image + ')'}"></div>
         </div>
         <div class="ni-home-grid-image">
-          <h2>Food</h2>
-          <div :style="{backgroundImage: 'url(' + blok.food + ')'}" class="bg-image"></div>
-        </div>
-        <div class="ni-home-grid-image">
-          <h2>Passion</h2>
-          <div :style="{backgroundImage: 'url(' + blok.passion + ')'}" class="bg-image"></div>
-        </div>
-        <div class="ni-home-grid-image">
-          <h2>Purpose</h2>
-          <div :style="{backgroundImage: 'url(' + blok.purpose + ')'}" class="bg-image"></div>
+          <div class="bg-image" :style="{backgroundImage: 'url(' + blok.right_image + ')'}"></div>
         </div>
       </div>
     </div>
@@ -29,3 +19,4 @@ export default {
   props: ['blok']
 }
 </script>
+

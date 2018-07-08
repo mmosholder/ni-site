@@ -1,0 +1,59 @@
+.ni-rich-text {
+  padding: pxem(100) 0;
+
+  &-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(8);
+      @include offset(2);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: pxem(20)
+    }
+
+    h1 {
+      @include extra-50($dark-text);
+    }
+
+    h2 {
+      @include bold-40($dark-text);
+    }
+
+    h3 {
+      @include bold-36($dark-text);
+    }
+
+    h4 {
+      @include bold-30($dark-text);
+    }
+
+    h5 {
+      @include semi-30($dark-text);
+    }
+
+    h6 {
+      @include semi-24($dark-text);
+    }
+
+    p {
+      @include regular-18($dark-text);
+      margin-bottom: pxem(25);
+
+      a {
+        @include bold-18($dark-text);
+        @include pretty-text-underline($color-green, 2);
+
+        &:hover {
+          color: lighten($dark-text, 20%);
+        }
+      }
+    }
+  }
+}

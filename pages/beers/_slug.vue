@@ -4,8 +4,8 @@
       <div class="ni-container">
         <div class="ni-row">
           <div class="ni-profile-left">
-            <img class="-logo" :src="story.content.secondary_image" :alt="story.content.name">
-            <img class="-can" :src="story.content.main_image" :alt="story.content.name">
+            <img class="-logo" :src="story.content.secondary_image" :alt="story.content.name" v-if="story.content.secondary_image">
+            <img class="-can" :src="story.content.main_image" :alt="story.content.name" v-if="story.content.main_image">
             <nuxt-link :class="['ni-profile-left-link ni-profile-left-link-' + story.content.color]" :to="'/beers'">&lt; Back to All Beers</nuxt-link>
           </div>
           <div class="ni-profile-right">
@@ -15,7 +15,7 @@
             </div>
             <div class="ni-profile-science">
               <h2>The Science</h2>
-              <p>{{ story.content.science_blurb }} </p>
+              <p v-if="story.content.science_blurb">{{ story.content.science_blurb }}</p>
               <ul class="ni-profile-science-list">
                 <li>
                   <svg width="30" height="29" xmlns="http://www.w3.org/2000/svg">
@@ -44,14 +44,14 @@
                 </li>
               </ul>
             </div>
-            <div class="ni-profile-story">
+            <div class="ni-profile-story" v-if="story.content.story_text">
               <h2>The Story</h2>
               <p>{{ story.content.story_text }}</p>
             </div>
             <div class="ni-profile-info">
               <h2>Gotta Have It?</h2>
-              <p :class="['ni-profile-info-' + story.content.color]">Check out or <a href="/beerfinder">Beerfinder</a> to find a bar or retailer near you</p>
-              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="/contact">See our location.</a></p>
+              <p :class="['ni-profile-info-' + story.content.color]">Check out our <a href="/beerfinder">Beerfinder</a> to find a bar or retailer near you</p>
+              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="/taproom">See our location</a>.</p>
             </div>
           </div>
         </div>

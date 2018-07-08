@@ -5,7 +5,7 @@
         <div class="ni-header-title">
           <h1>{{ blok.title }}</h1>
         </div>
-        <div class="ni-header-text">
+        <div v-if="blok.text" class="ni-header-text">
           <p>{{ blok.text }}</p>
         </div>
       </div>

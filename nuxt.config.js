@@ -17,7 +17,8 @@ module.exports = {
   plugins: ["~/plugins/components", "~/plugins/map"],
 
   router: {
-    middleware: ["headerDetection", "salesFormDetection"]
+    middleware: ["headerDetection", "salesFormDetection"],
+    linkActiveClass: "active"
   },
 
   /*
@@ -34,7 +35,7 @@ module.exports = {
         content: "{{escape description }}"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "favicon.png" }]
   },
 
   generate: {
@@ -46,14 +47,24 @@ module.exports = {
         )
         .then(r => {
           const beerPages = r.data.stories.map(page => page.full_slug);
-          return ["/", "/about", "/taproom", "/beers", "/beerfinder", "/contact", "/events", ...beerPages];
+          return [
+            "/",
+            "/about",
+            "/taproom",
+            "/beers",
+            "/beerfinder",
+            "/contact",
+            "/events",
+            "/privacy-policy",
+            ...beerPages
+          ];
         });
     }
   },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: "#3B8070" },
+  loading: { color: "#CACB66" },
   /*
   ** Build configuration
   */
@@ -64,13 +75,13 @@ module.exports = {
       if (!isClient) {
         // This instructs Webpack to include `vue2-google-maps`'s Vue files
         // for server-side rendering
-        config.externals.splice(0, 0, function (context, request, callback) {
+        config.externals.splice(0, 0, function(context, request, callback) {
           if (/^vue2-google-maps($|\/)/.test(request)) {
-            callback(null, false)
+            callback(null, false);
           } else {
-            callback()
+            callback();
           }
-        })
+        });
       }
     }
   }

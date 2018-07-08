@@ -265,6 +265,10 @@
 
       a {
         @include bold-18($dark-text);
+
+        &:hover {
+          color: lighten($dark-text, 20%);
+        }
       }
     }
 

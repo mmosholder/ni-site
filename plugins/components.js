@@ -24,6 +24,7 @@ import AwardsBlock from "~/components/AwardsBlock";
 import BeersCTABlock from "~/components/BeersCTABlock";
 import HomeGrid from "~/components/HomeGrid";
 import Testimonial from "~/components/Testimonial";
+import RichText from "~/components/RichText";
 
 Vue.component("page", Page);
 Vue.component("heading", Header);
@@ -50,3 +51,4 @@ Vue.component("awards_block", AwardsBlock);
 Vue.component("beers_cta_block", BeersCTABlock);
 Vue.component("home_grid", HomeGrid);
 Vue.component("testimonial", Testimonial);
+Vue.component("rich_text", RichText);

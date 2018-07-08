@@ -19,7 +19,7 @@
       }
     },
     asyncData(context) {
-      return context.app.$storyapi.get('cdn/stories/contact', {
+      return context.app.$storyapi.get('cdn/stories/privacy-policy', {
         version: 'draft'
       }).then((r) => {
         return r.data

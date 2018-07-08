@@ -4,11 +4,12 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _b2d38b64 = () => import('../pages/taproom/index.vue' /* webpackChunkName: "pages/taproom/index" */).then(m => m.default || m)
-const _0c3e9ec2 = () => import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */).then(m => m.default || m)
-const _21274c93 = () => import('../pages/beers/index.vue' /* webpackChunkName: "pages/beers/index" */).then(m => m.default || m)
-const _ef32fbc8 = () => import('../pages/beerfinder/index.vue' /* webpackChunkName: "pages/beerfinder/index" */).then(m => m.default || m)
-const _1eca695d = () => import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */).then(m => m.default || m)
 const _5c1024f0 = () => import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */).then(m => m.default || m)
+const _1eca695d = () => import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */).then(m => m.default || m)
+const _ef32fbc8 = () => import('../pages/beerfinder/index.vue' /* webpackChunkName: "pages/beerfinder/index" */).then(m => m.default || m)
+const _21274c93 = () => import('../pages/beers/index.vue' /* webpackChunkName: "pages/beers/index" */).then(m => m.default || m)
+const _0c3e9ec2 = () => import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */).then(m => m.default || m)
+const _18a11bc6 = () => import('../pages/privacy-policy/index.vue' /* webpackChunkName: "pages/privacy-policy/index" */).then(m => m.default || m)
 const _1f70ab4b = () => import('../pages/beers/_slug.vue' /* webpackChunkName: "pages/beers/_slug" */).then(m => m.default || m)
 const _2c27691f = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -66,7 +67,7 @@ export function createRouter () {
   return new Router({
     mode: 'history',
     base: '/',
-    linkActiveClass: 'nuxt-link-active',
+    linkActiveClass: 'active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
     routes: [
@@ -76,19 +77,9 @@ export function createRouter () {
 			name: "taproom"
 		},
 		{
-			path: "/events",
-			component: _0c3e9ec2,
-			name: "events"
-		},
-		{
-			path: "/beers",
-			component: _21274c93,
-			name: "beers"
-		},
-		{
-			path: "/beerfinder",
-			component: _ef32fbc8,
-			name: "beerfinder"
+			path: "/contact",
+			component: _5c1024f0,
+			name: "contact"
 		},
 		{
 			path: "/about",
@@ -96,9 +87,24 @@ export function createRouter () {
 			name: "about"
 		},
 		{
-			path: "/contact",
-			component: _5c1024f0,
-			name: "contact"
+			path: "/beerfinder",
+			component: _ef32fbc8,
+			name: "beerfinder"
+		},
+		{
+			path: "/beers",
+			component: _21274c93,
+			name: "beers"
+		},
+		{
+			path: "/events",
+			component: _0c3e9ec2,
+			name: "events"
+		},
+		{
+			path: "/privacy-policy",
+			component: _18a11bc6,
+			name: "privacy-policy"
 		},
 		{
 			path: "/beers/:slug",
