@@ -20,11 +20,13 @@ export default {
   },
   asyncData (context) {
     return context.app.$storyapi.get('cdn/stories/home', {
-      version: 'draft'
+      version: 'published'
     }).then((r) => {
-      return r.data
+      console.log(r);
+      // return r.data;
     }).catch((r) => {
-      context.error({ statusCode: r.response.status, message: r.response })
+      console.log(r);
+      // context.error({ statusCode: r.response.status, message: r.response })
     })
   }
 }

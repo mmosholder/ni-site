@@ -2,7 +2,7 @@
   <div>
     <Nav />
     <main id="main" role="main" :class="[this.$route.name == 'index' ? 'home' : '']">
-      <nuxt/>
+    <nuxt/>
     </main>
     <Footer />
   </div>
