@@ -36,7 +36,14 @@ module.exports = {
         content: "{{escape description }}"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "favicon.png" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "favicon.png" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,600i,700"
+      }
+    ]
   },
 
   generate: {
@@ -75,13 +82,13 @@ module.exports = {
       if (!isClient) {
         // This instructs Webpack to include `vue2-google-maps`'s Vue files
         // for server-side rendering
-        config.externals.splice(0, 0, function (context, request, callback) {
+        config.externals.splice(0, 0, function(context, request, callback) {
           if (/^vue2-google-maps($|\/)/.test(request)) {
-            callback(null, false)
+            callback(null, false);
           } else {
-            callback()
+            callback();
           }
-        })
+        });
       }
     }
   }
