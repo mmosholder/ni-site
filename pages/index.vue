@@ -9,6 +9,9 @@ export default {
   data () {
     return { story: { content: {} } }
   },
+  created() {
+    console.log('testing creation')
+  },
   mounted () {
     if (this.$storyblok.inEditor) {
       this.$storyblok.init()
