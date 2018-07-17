@@ -25,8 +25,8 @@ export default {
     return context.app.$storyapi.get('cdn/stories/home', {
       version: 'published'
     }).then((r) => {
-      console.log(r);
-      // return r.data;
+      console.log(r.data.story.content);
+      return json.parse(json.stringify(r.data));
     }).catch((r) => {
       console.log(r);
       // context.error({ statusCode: r.response.status, message: r.response })
