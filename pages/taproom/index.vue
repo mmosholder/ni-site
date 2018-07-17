@@ -19,10 +19,12 @@
       }
     },
     asyncData(context) {
+      let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
       return context.app.$storyapi.get('cdn/stories/taproom', {
-        version: 'draft'
+        version: version
       }).then((r) => {
-        return r.data
+        return JSON.parse(JSON.stringify(r.data));
       }).catch((r) => {
         context.error({ statusCode: r.response.status, message: r.response.data })
       })

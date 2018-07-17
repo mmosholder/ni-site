@@ -116,10 +116,10 @@ export default {
 
     return context.app.$storyapi.get(`cdn/stories/beers/${context.params.slug}`, {
       version: version
-    }).then((res) => {
-      return res.data
-    }).catch((res) => {
-      context.error({ message: res.response.data })
+    }).then((r) => {
+      return JSON.parse(JSON.stringify(r.data));
+    }).catch((r) => {
+      context.error({ message: r.response.data })
     })
   },
 

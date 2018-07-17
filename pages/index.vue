@@ -22,14 +22,14 @@ export default {
     }
   },
   asyncData (context) {
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
     return context.app.$storyapi.get('cdn/stories/home', {
       version: 'published'
     }).then((r) => {
-      console.log(r.data.story.content);
       return JSON.parse(JSON.stringify(r.data));
     }).catch((r) => {
-      console.log(r);
-      // context.error({ statusCode: r.response.status, message: r.response })
+      context.error({ statusCode: r.response.status, message: r.response })
     })
   }
 }
