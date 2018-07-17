@@ -70,7 +70,7 @@ module.exports = {
   build: {
     vendor: ["lodash"],
 
-    extend(config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }, ctx) {
       if (!isClient) {
         // This instructs Webpack to include `vue2-google-maps`'s Vue files
         // for server-side rendering
@@ -82,16 +82,14 @@ module.exports = {
           }
         });
       }
-    },
 
-    extend(config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
