@@ -26,7 +26,7 @@ export default {
       version: 'published'
     }).then((r) => {
       console.log(r.data.story.content);
-      return json.parse(json.stringify(r.data));
+      return JSON.parse(JSON.stringify(r.data));
     }).catch((r) => {
       console.log(r);
       // context.error({ statusCode: r.response.status, message: r.response })
