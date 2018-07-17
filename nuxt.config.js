@@ -49,7 +49,6 @@ module.exports = {
           const beerPages = r.data.stories.map(page => page.full_slug);
           return [
             "/",
-            "/about",
             "/taproom",
             "/beers",
             "/beerfinder",
