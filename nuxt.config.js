@@ -1,4 +1,5 @@
 const axios = require('axios');
+const path = require('path');
 
 module.exports = {
   modules: [
@@ -74,22 +75,13 @@ module.exports = {
       if (!isClient) {
         // This instructs Webpack to include `vue2-google-maps`'s Vue files
         // for server-side rendering
-        config.externals.splice(0, 0, function(context, request, callback) {
+        config.externals.splice(0, 0, function (context, request, callback) {
           if (/^vue2-google-maps($|\/)/.test(request)) {
-            callback(null, false);
+            callback(null, false)
           } else {
-            callback();
+            callback()
           }
-        });
-      }
-
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
+        })
       }
     }
   }
