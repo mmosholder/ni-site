@@ -10,6 +10,7 @@
         <li><nuxt-link :to="'/taproom'">Taproom</nuxt-link></li>
         <li><nuxt-link :to="'/beerfinder'">Beerfinder</nuxt-link></li>
         <li><nuxt-link :to="'/events'">Events</nuxt-link></li>
+        <li><nuxt-link :to="'/swag'">Swag</nuxt-link></li>
         <li><nuxt-link :to="'/contact'">Contact</nuxt-link></li>
       </ul>
       <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"
@@ -29,11 +30,10 @@
             <li @click="navOpen = false"><nuxt-link :to="'/beerfinder'">Beerfinder</nuxt-link></li>
             <li @click="navOpen = false"><a href="/beerfinder#sales">Sales</a></li>
             <li @click="navOpen = false"><nuxt-link :to="'/contact'">Contact</nuxt-link></li>
-          </ul>
-          <ul class="ni-nav-links ni-nav-links-mobile">
             <li @click="navOpen = false"><nuxt-link :to="'/taproom'">Taproom</nuxt-link></li>
             <li @click="navOpen = false"><a href="/taproom#onTap">Beers on Tap</a></li>
             <li @click="navOpen = false"><nuxt-link :to="'/events'">Events</nuxt-link></li>
+            <li @click="navOpen = false"><nuxt-link :to="'/swag'">Swag</nuxt-link></li>
           </ul>
         </div>
       </div>

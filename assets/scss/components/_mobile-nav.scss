@@ -31,9 +31,12 @@
     width: 100%;
 
     &-mobile {
-      margin-bottom: pxem(30);
       opacity: 0;
       transition: opacity 240ms 240ms $t-1;
+
+      &:last-of-type {
+        margin-bottom: pxem(30);
+      }
 
       li {
         margin: pxem(12) 0;
@@ -59,4 +62,24 @@
       transition: opacity 240ms 240ms $t-1;
     }
   }
+}
+
+.hamburger-box {
+  height: pxem(15);
+}
+
+.hamburger-inner {
+  top: 1px;
+
+  &:before {
+    top: 6px !important;
+  }
+
+  &:after {
+    top: 11px !important;
+  }
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  top: 10px !important;
 }

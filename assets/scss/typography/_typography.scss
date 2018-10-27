@@ -6,7 +6,7 @@
 @mixin calafia-200 {
   @include calafia;
   $map: (576px: 100px, 768px: 150px, 992px: 200px);
-  line-height: 1.2;
+  line-height: .9;
   // letter-spacing: .5px;
   @include poly-fluid-sizing('font-size', $map);
   color: $color-green;

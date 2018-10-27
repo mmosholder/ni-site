@@ -1,0 +1,36 @@
+.ni-error {
+  background-image: url('~/assets/images/home-bg.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: pxem(200) 0;
+  position: relative;
+
+  &-content {
+    @include col(12);
+
+    @include mq($from: $breakpoint-small) {
+      @include col(6);
+      @include offset(4);
+    }
+
+    h1 {
+      @include extra-80($color-white);
+      margin-bottom: pxem(10);
+    }
+
+    h2 {
+      @include semi-30($color-white);
+    }
+
+    a {
+      margin-top: pxem(50);
+      width: 100%;
+
+      @include mq($from: $breakpoint-small) {
+        width: 80%;
+      }
+    }
+
+  }
+}

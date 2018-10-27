@@ -22,6 +22,7 @@
               <li><a href="/taproom">Taproom</a></li>
               <li><a href="/taproom#onTap">Beers on Tap</a></li>
               <li><a href="/events">Events</a></li>
+              <li><a href="/swag">Swag</a></li>
             </ul>
           </ul>
         </div>

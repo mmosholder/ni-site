@@ -63,6 +63,7 @@ module.exports = {
             "/contact",
             "/events",
             "/privacy-policy",
+            "/swag",
             ...beerPages
           ];
         });

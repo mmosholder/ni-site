@@ -85,7 +85,8 @@
         }
 
         &:hover,
-        &.active {
+        &.active,
+        &:focus {
           &:after {
             opacity: 1;
             display: block;

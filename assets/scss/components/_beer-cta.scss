@@ -40,6 +40,35 @@
     }
   }
 
+  &-text {
+    @include span(12);
+    margin-bottom: pxem(40);
+    display: flex;
+
+    &.-centered {
+      p {
+        @include mq($from: $breakpoint-small) {
+          @include offset(2);
+        }
+      }
+    }
+
+    p {
+      @include regular-22($dark-text);
+      @include col(12);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(8);
+      }
+    }
+  }
+
+  &-buttons {
+    @include span(12);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &-button {
     @include col(12);
     margin-bottom: pxem(30);
@@ -48,18 +77,11 @@
       @include col(5);
       margin-bottom: 0;
 
-      &:first-of-type {
-        @include offset(1);
-      }
     }
 
     @include mq($from: $breakpoint-medium) {
       @include col(4);
       margin-bottom: 0;
-
-      &:first-of-type {
-        @include offset(2);
-      }
     }
   }
 }
