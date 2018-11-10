@@ -30,7 +30,7 @@
                 <transition name="fade">
                   <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
                     <div class="ni-beer-item-text">
-                      <div class="ni-beer-item-overlay-title">
+                      <div class="ni-beer-overlay-title">
                         <i :class="setIcon(beer.type)"></i>
                         <h3>{{ beer.name }}</h3>
                       </div>
@@ -51,7 +51,7 @@
                 <transition name="fade">
                   <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
                     <div class="ni-beer-item-text">
-                      <div class="ni-beer-item-overlay-title">
+                      <div class="ni-beer-overlay-title">
                         <i :class="setIcon(beer.type)"></i>
                         <h3>{{ beer.name }}</h3>
                       </div>
@@ -72,7 +72,7 @@
                 <transition name="fade">
                   <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
                     <div class="ni-beer-item-text">
-                      <div class="ni-beer-item-overlay-title">
+                      <div class="ni-beer-overlay-title">
                         <i :class="setIcon(beer.type)"></i>
                         <h3>{{ beer.name }}</h3>
                       </div>
@@ -93,7 +93,7 @@
                 <transition name="fade">
                   <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
                     <div class="ni-beer-item-text">
-                      <div class="ni-beer-item-overlay-title">
+                      <div class="ni-beer-overlay-title">
                         <i :class="setIcon(beer.type)"></i>
                         <h3>{{ beer.name }}</h3>
                       </div>
