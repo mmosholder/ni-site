@@ -4,104 +4,105 @@
     <section class="ni-beer">
       <div class="ni-container">
         <div class="ni-row">
-          <div class="ni-beer-title">
-            <div class="ni-beer-title-container">
-              <h2>Core</h2>
+          <div class="ni-beer-categories">
+            <h2>Categories</h2>
+            <div class="ni-beer-category">
+              <i class="fas fa-atom"></i>
+              <span>Core</span>
             </div>
-            <hr>
-          </div>
-          <div class="ni-beer-item" v-for="(beer, i) in coreBeers" :key="i">
-            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-              class="ni-beer-item-content">
-              <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-              <transition name="fade">
-                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                  <div class="ni-beer-item-text">
-                    <h3>{{ beer.name }}</h3>
-                    <p>{{ beer.blurb }}</p>
-                  </div>
-                  <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                </a>
-              </transition>
+            <div class="ni-beer-category">
+              <i class="far fa-sun"></i>
+              <span>Seasonal</span>
+            </div>
+            <div class="ni-beer-category">
+              <i class="far fa-star"></i>
+              <span>Special</span>
             </div>
           </div>
         </div>
         <div class="ni-row">
-          <div class="ni-beer-title">
-            <div class="ni-beer-title-container">
-              <h2>Seasonal</h2>
-            </div>
-            <hr>
-          </div>
-          <div class="ni-beer-item" v-for="(beer, i) in seasonalBeers" :key="i">
-            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-              class="ni-beer-item-content">
-              <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-              <transition name="fade">
-                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                  <div class="ni-beer-item-text">
-                    <h3>{{ beer.name }}</h3>
-                    <p>{{ beer.blurb }}</p>
-                  </div>
-                  <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                </a>
-              </transition>
-            </div>
-          </div>
-        </div>
-        <div class="ni-row">
-          <div class="ni-beer-title">
-            <div class="ni-beer-title-container">
-              <h2>Barrel</h2>
-            </div>
-            <hr>
-          </div>
-          <div class="ni-beer-item" v-for="(beer, i) in barrelBeers" :key="i">
-            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-              class="ni-beer-item-content">
-              <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-              <transition name="fade">
-                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                  <div class="ni-beer-item-text">
-                    <h3>{{ beer.name }}</h3>
-                    <p>{{ beer.blurb }}</p>
-                  </div>
-                  <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                </a>
-              </transition>
-            </div>
-          </div>
-        </div>
-        <div class="ni-row">
-          <div class="ni-beer-title">
-            <div class="ni-beer-title-container">
-              <h2>Special</h2>
-            </div>
-            <hr>
-          </div>
-          <div class="ni-beer-item" v-for="(beer, i) in specialBeers" :key="i">
-            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-              class="ni-beer-item-content">
-              <svg v-if="!beer.main_image" width="532" height="463" xmlns="http://www.w3.org/2000/svg">
-                <path d="M528.678 432.903l-86.336-47.889 41.385-11.782 25.743 14.253c7.327 3.99 14.257-6.652 6.535-11.023-2.179-1.14 1.584.76-25.743-14.252-.198 0-.198-.19-.198-.19l-1.584-.95L317.788 72.403c0-32.496.198-26.605-.198-28.506-1.386-7.791-13.07-6.46-13.07.95v28.506l-31.484 28.696V6.27c0-8.361-13.268-8.361-13.268 0v95.589l-30.692-27.936c0-.57-.198-.95-.595-1.52 0-32.496.199-26.605-.198-28.506-1.386-7.791-13.069-6.46-13.069.95v29.836L42.344 361.64c-27.723 15.393-24.158 13.302-26.336 14.632-6.337 3.611-2.575 13.303 4.752 11.593 1.98-.38-.792.95 27.525-14.823l41.583 11.782-86.534 47.89c-7.524 4.18-.99 15.202 6.535 11.021l86.336-47.889-10.099 40.288c-27.128 15.013-23.564 13.112-25.742 14.253-7.129 3.99-1.386 15.393 6.534 11.022l25.545-14.063c.198 0 .396-.19.396-.19l.99-.57h343.76l26.93 15.013c7.525 4.18 14.258-6.842 6.535-11.022-2.178-1.14 1.584.95-25.742-14.253l-10.1-40.478 86.535 47.89c7.92 4.37 14.455-6.652 6.93-10.833zM220.493 229.076l36.738 33.476v27.355l-24.36 13.582-48.717-13.773 36.339-60.64zm91.42 0l35.933 60.569-49.256 13.844-23.82-13.075v-27.88l37.143-33.458zm-45.811 72.954l24.427 13.381 12.01 47.9h-73.077l12.01-47.9 24.63-13.38zm54.316 7.728l30.485-7.553a4.794 4.794 0 0 1 3.432.335l17.565 8.393c3.432 1.679 2.826 5.875-1.01 6.714l-30.485 7.554a4.794 4.794 0 0 1-3.432-.336l-17.565-8.393c-3.432-1.678-2.826-5.875 1.01-6.714zm39.374-19.81l-42.638-69.706v-21.807L380 300.571l-20.208-10.624zm-54.33-91.723v19.05c0 1.144-.389 2.287-1.36 3.049l-22.145 20.764c-2.72 2.477-7.188.572-7.188-3.048v-19.05c0-1.143.389-2.286 1.36-3.048l22.145-20.765c2.72-2.476 7.188-.571 7.188 3.048zm-52.5 42.863l-22.14-20.764c-.778-.762-1.36-1.905-1.36-3.048v-19.05c0-3.62 4.467-5.525 7.186-3.049l22.14 20.765c.777.762 1.36 1.905 1.36 3.048v19.05c.194 3.62-4.273 5.525-7.186 3.048zm-38.116-20.767L171.4 290.283 152 300.57l62.846-102.136v21.886zm-35.21 81.884l30.485 7.553c3.836 1.007 4.441 5.204 1.01 6.714l-17.565 8.393a4.794 4.794 0 0 1-3.432.336l-30.486-7.554c-3.836-1.007-4.441-5.203-1.01-6.714l17.565-8.393a4.794 4.794 0 0 1 3.432-.335zm39.457 32.84l-6.778 29.78c-.184 1.167-.916 2.14-1.832 2.724l-15.939 9.732c-3.114 1.946-6.779-.973-5.863-4.671l6.779-29.78c.183-1.167.916-2.14 1.832-2.724l15.939-9.732c2.93-1.946 6.778.973 5.862 4.671zm5.636 42.857h84.004l20.113 10.214h-124.23l20.113-10.214zm89.111-13.078l-6.78-29.779c-.915-3.698 2.933-6.617 5.864-4.67l15.942 9.73c.916.585 1.649 1.558 1.832 2.726l6.78 29.779c.916 3.698-2.932 6.617-5.864 4.67l-15.941-9.73c-.916-.585-1.65-1.558-1.833-2.726zm49.414-24.883c-3.432-1.655-2.826-5.793 1.01-6.62l32.302-7.946 3.836 1.821 15.344 7.283c3.432 1.655 2.826 5.793-1.01 6.621l-30.485 7.449a4.855 4.855 0 0 1-3.432-.332l-17.565-8.276zm37.265-30.133l-.777-.373-82.588-139.874v-22.194l103.77 173.631-20.405-11.19zm-96.417-140.362l-22.145 20.574c-2.72 2.477-7.188.572-7.188-3.048v-19.05c0-1.143.389-2.286 1.36-3.048l22.145-20.764c2.72-2.477 7.188-.572 7.188 3.048v19.05c0 1.333-.389 2.286-1.36 3.238zm-50.96 20.454l-21.545-19.952c-.583-1.33-1.359-3.23-2.135-4.75v-18.051c0-3.61 4.464-5.51 7.181-3.04l22.128 20.711c.777.76 1.36 1.9 1.36 3.04v19.002c.387 3.8-4.077 5.7-6.989 3.04zm-41.219-42.533v22.218l-82.28 139.464-.387.187-21.102 11.762 103.77-173.63zm-77.595 178.11l30.485 7.577c3.836 1.01 4.442 5.22 1.01 6.735l-17.565 8.42a4.78 4.78 0 0 1-3.432.337l-30.485-7.578c-3.836-1.01-4.442-5.22-1.01-6.736l17.565-8.42c1.01-.504 2.422-.504 3.432-.336zm40.914 32.914l-6.778 29.779c-.183 1.167-.916 2.14-1.831 2.724l-15.936 9.732c-3.114 1.946-6.778-.973-5.862-4.671l6.778-29.779c.183-1.168.915-2.14 1.831-2.725l15.936-9.731c3.114-1.947 6.777.973 5.862 4.67zm6.323 39.939h170.53l5.545 2.723 15.052 7.49H160.77l20.796-10.213zm176.122-10.16l-6.78-29.78c-.916-3.697 2.932-6.617 5.863-4.67l15.942 9.731c.916.584 1.649 1.557 1.832 2.725l6.78 29.779c.916 3.698-2.932 6.617-5.864 4.671l-15.941-9.732c-.916-.583-1.65-1.557-1.832-2.724zm48.82-30.262l30.566-7.554a4.818 4.818 0 0 1 3.44.336l17.611 8.393c3.442 1.678 2.834 5.875-1.012 6.714l-30.565 7.554a4.818 4.818 0 0 1-3.441-.336l-17.611-8.393c-3.239-1.678-2.631-5.875 1.012-6.714zm39.794-21.69L317.154 120.863V96.299L466.23 347.262l-19.93-11.044zM305.46 100.483v18.935c0 1.148-.388 2.295-1.36 3.06l-22.144 20.847c-2.72 2.487-7.188.574-7.188-3.06v-18.934c0-1.148.389-2.295 1.36-3.06l22.145-20.848c2.72-2.486 7.188-.573 7.188 3.06zm-52.5 42.721l-22.14-20.602c-.777-.764-1.36-1.908-1.36-3.053v-19.076c0-3.625 4.468-5.532 7.187-3.053l22.14 20.603c.777.763 1.36 1.908 1.36 3.052v19.077c.194 3.815-4.273 5.723-7.186 3.052zm-36.85-21.66L87.881 335.72l-20.65 11.542L216.308 99.218v22.325h-.197zM73.418 365.903c-3.836-.993-4.442-5.13-1.01-6.62l18.17-8.608 1.01-.496 32.302 7.945c3.836.993 4.442 5.131 1.01 6.62l-17.363 8.277a4.855 4.855 0 0 1-3.432.33l-30.687-7.448zm60.9 17.291l-6.777 29.779c-.183 1.168-.916 2.141-1.831 2.725l-15.936 9.732c-3.114 1.946-6.778-.974-5.862-4.672l6.778-29.778c.183-1.168.915-2.141 1.831-2.725l15.936-9.732c3.114-1.946 6.777.973 5.862 4.671zm1.984 39.519l2.19-1.04h259.003L418 431.889H118.385l17.917-9.174zm281.503 2.717l-15.85-9.732c-.922-.584-1.66-1.557-1.843-2.725l-6.82-29.779c-.921-3.698 2.95-6.617 5.898-4.671l15.85 9.732c.922.584 1.659 1.557 1.843 2.725l6.82 29.778c.92 3.698-2.765 6.618-5.898 4.672z" fill="#282828" fill-rule="nonzero" fill-opacity=".5"/>
-              </svg>
-              <div :class="[beer.overlay_visible ? '-blur' : '']" v-if="!beer.main_image" class="ni-beer-item-taproom">
-                <h4 class="ni-beer-item-taproom-title">Taproom Exclusive</h4>
-                <p class="ni-beer-item-taproom-name">{{beer.name}}</p>
+          <div class="ni-beer-col">
+            <div class="ni-beer-item" v-for="beer in col1" :key="beer.name">
+              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+                class="ni-beer-item-content">
+                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
+                <transition name="fade">
+                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                    <div class="ni-beer-item-text">
+                      <div class="ni-beer-item-overlay-title">
+                        <i :class="setIcon(beer.type)"></i>
+                        <h3>{{ beer.name }}</h3>
+                      </div>
+                      <p>{{ beer.blurb }}</p>
+                    </div>
+                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
+                  </a>
+                </transition>
               </div>
-              <transition name="fade">
-                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                  <div class="ni-beer-item-text">
-                    <h3>{{ beer.name }}</h3>
-                    <p>{{ beer.blurb }}</p>
-                  </div>
-                  <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                </a>
-              </transition>
+            </div>
+          </div>
+          <div class="ni-beer-col">
+            <div class="ni-beer-item" v-for="beer in col2" :key="beer.name">
+              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+                class="ni-beer-item-content">
+                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
+                <transition name="fade">
+                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                    <div class="ni-beer-item-text">
+                      <div class="ni-beer-item-overlay-title">
+                        <i :class="setIcon(beer.type)"></i>
+                        <h3>{{ beer.name }}</h3>
+                      </div>
+                      <p>{{ beer.blurb }}</p>
+                    </div>
+                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
+                  </a>
+                </transition>
+              </div>
+            </div>
+          </div>
+          <div class="ni-beer-col">
+            <div class="ni-beer-item" v-for="beer in col3" :key="beer.name">
+              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+                class="ni-beer-item-content">
+                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
+                <transition name="fade">
+                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                    <div class="ni-beer-item-text">
+                      <div class="ni-beer-item-overlay-title">
+                        <i :class="setIcon(beer.type)"></i>
+                        <h3>{{ beer.name }}</h3>
+                      </div>
+                      <p>{{ beer.blurb }}</p>
+                    </div>
+                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
+                  </a>
+                </transition>
+              </div>
+            </div>
+          </div>
+          <div class="ni-beer-mobile">
+            <div class="ni-beer-item" v-for="beer in mobileCol" :key="beer.name">
+              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+                class="ni-beer-item-content">
+                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
+                <transition name="fade">
+                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                    <div class="ni-beer-item-text">
+                      <div class="ni-beer-item-overlay-title">
+                        <i :class="setIcon(beer.type)"></i>
+                        <h3>{{ beer.name }}</h3>
+                      </div>
+                      <p>{{ beer.blurb }}</p>
+                    </div>
+                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
+                  </a>
+                </transition>
+              </div>
             </div>
           </div>
         </div>
@@ -125,7 +126,11 @@
         data: {
           stories: []
         },
-        beers: []
+        beers: [],
+        col1: [],
+        col2: [],
+        col3: [],
+        mobileCol: []
       }
     },
 
@@ -142,25 +147,11 @@
     },
 
     computed: {
-      coreBeers() {
-        return _.filter(this.beers, function(o) {return o.type == "core"})
-      },
 
-      seasonalBeers() {
-        return _.filter(this.beers, function(o) {return o.type == "seasonal"})
-      },
-
-      barrelBeers() {
-        return _.filter(this.beers, function(o) {return o.type == "barrel"})
-      },
-
-      specialBeers() {
-        return _.filter(this.beers, function(o) {return o.type == "special"})
-      },
     },
 
     asyncData (context) {
-      let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+      let version = context.query._storyblok || context.isDev ? 'published' : 'published'
 
       return context.app.$storyapi.get('cdn/stories', {
         version: version,
@@ -175,13 +166,33 @@
     methods: {
       setBeers() {
         let beer = {};
-        this.data.stories.forEach(item => {
+        this.data.stories.forEach((item, i) => {
           beer = item.content;
           this.$set(beer, 'full_slug', item.full_slug);
-          this.$set(beer, 'overlay_visible', false)
-          this.beers.push(beer);
+          this.$set(beer, 'overlay_visible', false);
+          this.$set(beer, 'position', i + 1);
+
+          if (beer.position % 3 === 0) {
+            this.col1.push(beer);
+          } else if (beer.position % 3 === 1) {
+            this.col2.push(beer);
+          } else if (beer.position % 3 === 2) {
+            this.col3.push(beer);
+          }
+
+          this.mobileCol.push(beer);
           beer = {};
-        })
+        });
+      },
+
+       setIcon(cat) {
+        if (cat == "core") {
+          return "fas fa-atom";
+        } else if (cat == "seasonal") {
+          return "far fa-sun";
+        } else if (cat == "special") {
+          return "far fa-star";
+        }
       }
     }
   }

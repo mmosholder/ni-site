@@ -43,6 +43,14 @@ module.exports = {
         href:
           "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,600i,700"
       }
+    ],
+    script: [
+      {
+        defer: true,
+        src: "https://use.fontawesome.com/releases/v5.5.0/js/all.js",
+        integrity: "sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0",
+        crossorigin: "anonymous"
+      }
     ]
   },
 

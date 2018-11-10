@@ -9,7 +9,7 @@
   height: 100vh;
   background-color: rgba(0,0,0,0.95);
 
-  @include mq($from: $breakpoint-small) {
+  @include mq($from: 900px) {
     display: none;
   }
 
@@ -69,15 +69,6 @@
 }
 
 .hamburger-inner {
-  top: 1px;
-
-  &:before {
-    top: 6px !important;
-  }
-
-  &:after {
-    top: 11px !important;
-  }
 }
 
 .hamburger--slider.is-active .hamburger-inner::after {

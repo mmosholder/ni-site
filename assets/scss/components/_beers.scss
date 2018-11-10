@@ -1,95 +1,104 @@
 .ni-beer {
-  padding: pxem(40) 0;
+  padding: 0 0 pxem(40) 0;
 
-  &-title {
-    margin-bottom: pxem(50);
+  &-categories {
     @include col(12);
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: pxem(40);
 
-    &-container {
-      position: relative;
-      padding: 0 pxem(8);
-      background-color: $body-bg;
-      display: inline-block;
-      z-index: 1;
+    @include mq($from: $breakpoint-small) {
+      justify-content: flex-end;
     }
 
     h2 {
-      @include bold-36($dark-text);
-      position: relative;
-    }
-
-    hr {
-      z-index: 0;
+      margin-bottom: pxem(10);
       width: 100%;
-      height: 2px;
-      background-color: $color-medium-gray;
-      margin-top: pxem(-22);
+      text-align: left;
+      @include bold-12($color-medium-gray);
+
+      @include mq($from: $breakpoint-small) {
+        text-align: right;
+      }
     }
   }
 
-  .ni-row {
-    margin-bottom: pxem(80);
+  &-category {
+    display: flex;
+    align-items: center;
+    margin: 0 pxem(20) 0 0;
+
+    @include mq($from: $breakpoint-small) {
+      margin: 0 0 0 pxem(20);
+    }
+
+
+    span {
+      @include bold-12($dark-text);
+      margin-left: 5px;
+    }
   }
 
-  &-item {
-    @include col(12);
-    margin-bottom: pxem(30);
-
-    @include mq($from: 600px) {
-      @include col(6);
-    }
+  &-col {
+    display: none;
 
     @include mq($from: $breakpoint-small) {
       @include col(4);
-      height: pxem(315);
+      display: inline-block;
+    }
+  }
+
+  &-mobile {
+    display: block;
+    @include col(12);
+
+    @include mq($from: 600px) {
+      @include col(8);
+      @include offset(2);
     }
 
-    @include mq($from: $breakpoint-medium) {
-      @include col(3);
+    @include mq($from: $breakpoint-small) {
+      display: none;
     }
+  }
+
+  &-item {
+    margin-bottom: $gutter-width+rem;
 
     &-content {
-      background-color: $color-white;
-      box-shadow: $card-shadow;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      padding-top: pxem(45);
-      padding-bottom: pxem(45);
-      overflow: hidden;
 
-      svg {
-        position: absolute;
-        top: 0;
-        opacity: .1;
+      // svg {
+      //   position: absolute;
+      //   top: 0;
+      //   opacity: .1;
 
-        @include mq($from: $breakpoint-small) {
-          top: pxem(-100);
-        }
+      //   @include mq($from: $breakpoint-small) {
+      //     top: pxem(-100);
+      //   }
 
-        &.-blur {
-          filter: blur(5px);
-        }
-      }
+      //   &.-blur {
+      //     filter: blur(1px);
+      //   }
+      // }
 
       img {
-        width: auto;
-        max-width: 90%;
+        width: 100%;
         height: auto;
-        max-height: pxem(350);
         position: relative;
         z-index: 0;
         filter: blur(0px);
 
         @include mq($from: $breakpoint-small) {
-          max-height: pxem(225);
+          // max-height: pxem(225);
         }
 
         &.-blur {
-          filter: blur(5px);
+          filter: blur(1px);
         }
       }
     }
@@ -138,28 +147,46 @@
       justify-content: space-between;
       display: flex;
 
-      h3 {
-        @include bold-26($color-white);
-        padding-bottom: pxem(2);
-        border-bottom-width: 5px;
+      &-title {
+        display: flex;
+        padding-bottom: pxem(5);
+        border-bottom-width: 3px;
         border-bottom-style: solid;
+        align-items: center;
+        margin-bottom: pxem(10);
+      }
+
+      h3 {
+        @include bold-20($color-white);
         text-transform: uppercase;
-        margin-bottom: pxem(15);
         line-height: 1.1;
       }
 
       p {
         @include regular-16($color-white);
-        margin-bottom: pxem(30);
+        margin-bottom: pxem(10);
       }
 
       a {
         @include bold-18($color-white);
         align-self: flex-start;
+        display: none;
+
+        @include mq($from: 850px) {
+          display: inline-flex;
+        }
+      }
+
+      svg {
+        font-size: pxem(22);
+        margin-right: 8px;
+        position: relative;
+        color: white;
       }
 
       &-orange {
-        h3 {
+
+        .ni-beer-item-overlay-title {
           border-bottom-color: $color-orange;
         }
 
@@ -169,7 +196,8 @@
       }
 
       &-gold {
-        h3 {
+
+        .ni-beer-item-overlay-title {
           border-bottom-color: $color-gold;
         }
 
@@ -179,7 +207,8 @@
       }
 
       &-green {
-        h3 {
+
+        .ni-beer-item-overlay-title {
           border-bottom-color: $color-green;
         }
 
@@ -189,7 +218,8 @@
       }
 
       &-maroon {
-        h3 {
+
+        .ni-beer-item-overlay-title {
           border-bottom-color: $color-maroon;
         }
 
@@ -199,7 +229,8 @@
       }
 
       &-red {
-        h3 {
+
+        .ni-beer-item-overlay-title {
           border-bottom-color: $color-red;
         }
 

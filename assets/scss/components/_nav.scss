@@ -31,7 +31,7 @@
       }
     }
 
-    @include mq($from: $breakpoint-small) {
+    @include mq($from: 900px) {
       display: none;
     }
   }
@@ -49,10 +49,10 @@
   &-links {
     list-style: none;
     display: none;
-    width: 70%;
+    width: 75%;
     justify-content: flex-end;
 
-    @include mq($from: $breakpoint-small) {
+    @include mq($from: 900px) {
       display: flex;
     }
 
