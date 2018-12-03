@@ -116,7 +116,7 @@
         // Loop over locations and get the google map lat/long for each address and save it to data
         this.locations.forEach((loc, i) => {
           if (!loc.position && loc.name.length >1) {
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ`)
+            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=` + process.env.maps)
               .then(r => {
                 // if (r.data.results[0] && r.data.results[0].length) {
                   console.log(r);

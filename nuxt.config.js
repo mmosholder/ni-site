@@ -15,6 +15,10 @@ module.exports = {
     ]
   ],
 
+  env: {
+    maps: 'AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ'
+  },
+
   plugins: ["~/plugins/components", "~/plugins/map"],
 
   router: {
