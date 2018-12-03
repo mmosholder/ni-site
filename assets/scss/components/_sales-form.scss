@@ -33,7 +33,7 @@
       @include col(12);
       margin-bottom: pxem(50);
 
-      @include mq($from: $breakpoint-small) {
+      @include mq($from: $breakpoint-medium) {
         @include col(5);
         @include offset(1);
       }
@@ -55,7 +55,7 @@
     &-form {
       @include col(12);
 
-      @include mq($from: $breakpoint-small) {
+      @include mq($from: $breakpoint-medium) {
         @include col(10);
         @include offset(1);
       }

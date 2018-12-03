@@ -104,7 +104,9 @@
         this.locations = [];
 
         stories.forEach(item => {
-          this.locations.push(item.content);
+          if (item.content.active_account) {
+            this.locations.push(item.content);
+          }
         })
 
         this.setAddresses();
@@ -114,16 +116,19 @@
         // Loop over locations and get the google map lat/long for each address and save it to data
         this.locations.forEach((loc, i) => {
           if (!loc.position && loc.name.length >1) {
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2)
+            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ`)
               .then(r => {
-                this.$set(loc, 'position', {lat: r.data.results[0].geometry.location.lat,lng: r.data.results[0].geometry.location.lng});
-                this.$set(loc, 'inView', false);
+                // if (r.data.results[0] && r.data.results[0].length) {
+                  console.log(r);
+                  this.$set(loc, 'position', {lat: r.data.results[0].geometry.location.lat,lng: r.data.results[0].geometry.location.lng});
+                  this.$set(loc, 'inView', false);
 
-                // Find last iteration of loop
-                if ((i+1) == this.locations.length) {
-                  // Set any markers in view after getting all addresses
-                  this.setMarkerList();
-                }
+                  // Find last iteration of loop
+                  if ((i+1) == this.locations.length) {
+                    // Set any markers in view after getting all addresses
+                    this.setMarkerList();
+                  }
+                // }
               })
               .catch(error => {
                 console.log(error)

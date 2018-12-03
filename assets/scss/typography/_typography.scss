@@ -125,7 +125,7 @@
 
 @mixin bold-36($color) {
   @include plex-bold;
-  $map: (576px: 20px, 992px: 36px);
+  $map: (576px: 28px, 992px: 36px);
   line-height: 1.25;
   @include poly-fluid-sizing('font-size', $map);
   color: $color;
@@ -234,6 +234,14 @@
   color: $color;
 }
 
+@mixin semi-nav-16($color) {
+  @include plex-semi;
+  $map: (576px: 18px, 768px: 16px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1;
+  color: $color;
+}
+
 // Roboto Regular
 @mixin regular-26($color) {
   @include plex-regular;
@@ -272,6 +280,14 @@
   $map: (576px: 16px, 992px: 18px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.27;
+  color: $color;
+}
+
+@mixin regular-nav-16($color) {
+  @include plex-regular;
+  $map: (576px: 18px, 768px: 16px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1;
   color: $color;
 }
 

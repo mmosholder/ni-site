@@ -1,27 +1,37 @@
 <template>
-  <nav class="ni-nav">
-    <div class="nav-container">
-      <a class="ni-nav-logo" href="/">
-        <img v-if="this.$route.name != 'beers-slug'" src="~/assets/images/ni-logo-light@4x.png" alt="New Image Brewing logo">
-        <img v-else src="~/assets/images/ni-logo-dark@4x.png" alt="New Image Brewing logo">
-      </a>
-      <ul :class="[this.$route.name == 'beers-slug' ? 'ni-nav-links ni-nav-links-dark' : 'ni-nav-links']">
-        <li><nuxt-link :to="'/beers'">Our Beers</nuxt-link></li>
-        <li><nuxt-link :to="'/taproom'">Taproom</nuxt-link></li>
-        <li><nuxt-link :to="'/beerfinder'">Beerfinder</nuxt-link></li>
-        <li><nuxt-link :to="'/events'">Events</nuxt-link></li>
-        <li><nuxt-link :to="'/swag'">Swag</nuxt-link></li>
-        <li><nuxt-link :to="'/contact'">Contact</nuxt-link></li>
-      </ul>
-      <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"
-        aria-label="Menu" aria-controls="navigation" aria-expanded="false">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <div :class="['ni-nav-mobile ' + computedNavClass]">
+  <nav>
+    <div class="ni-nav">
+      <div class="nav-container">
+        <a class="ni-nav-logo" href="/">
+          <img v-if="!dark" src="~/assets/images/ni-logo-light@4x.png" alt="New Image Brewing logo">
+          <img v-else src="~/assets/images/ni-logo-dark@4x.png" alt="New Image Brewing logo">
+        </a>
+        <ul :class="[this.$route.name == 'beers-slug' ? 'ni-nav-links ni-nav-links-dark' : 'ni-nav-links']">
+          <li><nuxt-link :to="'/beers'">Our Beers</nuxt-link></li>
+          <li><nuxt-link :to="'/taproom'">Taproom</nuxt-link></li>
+          <li><nuxt-link :to="'/beerfinder'">Beerfinder</nuxt-link></li>
+          <li><nuxt-link :to="'/events'">Events</nuxt-link></li>
+          <li><nuxt-link :to="'/swag'">Swag</nuxt-link></li>
+          <li><nuxt-link :to="'/contact'">Contact</nuxt-link></li>
+        </ul>
+        <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"
+          aria-label="Menu" aria-controls="navigation" aria-expanded="false">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div :class="['ni-nav-mobile ' + computedNavClass]">
+      <div class="nav-mobile-inner">
         <div class="ni-nav-mobile-logo">
           <svg width="192" height="46" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="nonzero"><path d="M50.087 43.01l-8.166-4.719 3.92-1.161 2.431 1.415c.69.4 1.343-.653.617-1.089-.218-.109.145.073-2.432-1.415l-.036-.036-.145-.11L30.125 7.44c0-3.193 0-2.613-.037-2.794-.145-.762-1.234-.617-1.234.109v2.794l-2.976 2.831V.944c0-.835-1.234-.835-1.234 0v9.436l-2.903-2.758c0-.036-.037-.109-.037-.145 0-3.194 0-2.613-.036-2.795-.145-.762-1.234-.653-1.234.109v2.904L4.065 35.968c-2.613 1.525-2.287 1.307-2.504 1.452-.617.363-.254 1.307.472 1.125.181-.036-.073.073 2.613-1.452l3.92 1.162-8.167 4.718c-.726.4-.109 1.488.617 1.089l8.167-4.718-.944 3.956c-2.577 1.488-2.214 1.27-2.432 1.415-.69.4-.145 1.525.617 1.09l2.432-1.38s.036 0 .036-.036l.11-.037h32.52l2.54 1.452c.726.4 1.343-.653.617-1.089-.218-.109.145.11-2.432-1.415l-.943-3.993 8.166 4.719c.726.508 1.343-.581.617-1.017zM21.233 23.083l3.448 3.266v2.686l-2.287 1.307L17.821 29l3.412-5.916zm8.13 0L32.702 29l-4.573 1.343-2.214-1.27V26.35l3.448-3.266zm-4.102 7.04l2.25 1.307 1.126 4.61h-6.715l1.125-4.61 2.214-1.306zm5.3.8l2.83-.836a.353.353 0 0 1 .327.037l1.633.943c.327.182.254.654-.072.763l-2.831.834a.353.353 0 0 1-.327-.036l-1.633-.944c-.363-.181-.29-.653.072-.762zm3.52-2.033l-3.956-6.969v-2.178l5.843 10.272-1.887-1.125zm-5.19-9.147v1.888a.33.33 0 0 1-.145.29l-2.142 2.033a.405.405 0 0 1-.69-.29v-1.888a.33.33 0 0 1 .146-.29l2.141-2.033a.405.405 0 0 1 .69.29zm-4.936 4.21l-2.142-2.032c-.072-.072-.145-.181-.145-.29v-1.888c0-.363.436-.544.69-.29l2.141 2.033c.073.072.145.181.145.29v1.887c.037.363-.399.545-.69.29zm-3.521-2.068l-4.029 7.005-1.814 1.052 5.807-10.235v2.178h.036zm-3.303 8.202l2.831.835c.363.11.4.581.073.762l-1.633.944a.353.353 0 0 1-.327.036l-2.831-.834c-.363-.11-.4-.581-.073-.763l1.634-.943a.353.353 0 0 1 .326-.037zm4.138 3.122l-.69 2.867c-.036.109-.109.218-.181.254l-1.634.944c-.326.181-.69-.109-.617-.472l.69-2.867c.036-.11.109-.218.182-.254l1.633-.944c.326-.145.726.109.617.472zm0 4.101h7.985l1.923 1.089H19.381l1.888-1.089zm8.638-1.234l-.69-2.867c-.072-.363.29-.653.617-.472l1.634.944c.109.072.181.145.181.254l.69 2.867c.072.363-.29.653-.617.472l-1.634-.944c-.072-.036-.145-.145-.181-.254zm4.646-2.032c-.327-.182-.254-.654.072-.763l3.013-.907.363.218 1.415.835c.327.181.254.653-.072.762l-2.831.835a.353.353 0 0 1-.327-.037l-1.633-.943zm3.63-2.795l-.073-.036-7.985-14.047v-2.214l9.98 17.422-1.923-1.125zm-9.437-14.046l-2.142 2.032a.405.405 0 0 1-.69-.29v-1.887a.33.33 0 0 1 .146-.29l2.141-2.033a.405.405 0 0 1 .69.29v1.887c0 .073-.037.182-.145.29zm-4.791 2.032l-2.07-1.96a2.52 2.52 0 0 1-.18-.471v-1.779c0-.363.435-.544.689-.29l2.141 2.032c.073.073.146.182.146.29v1.888c0 .327-.436.544-.726.29zm-3.521-4.283v2.25l-7.949 14.01-.036.037-2.032 1.198 10.017-17.495zM13.03 32.448l2.83.834c.364.11.4.581.073.763l-1.633.943a.353.353 0 0 1-.326.037l-2.831-.835c-.363-.11-.4-.58-.073-.762l1.633-.944c.11-.036.218-.073.327-.036zm4.137 3.121l-.69 2.867c-.035.11-.108.218-.18.254l-1.634.944c-.327.182-.69-.109-.617-.472l.69-2.867c.036-.109.109-.218.181-.254l1.633-.944c.327-.145.726.145.617.472zm.037 4.065h16.115l.544.29 1.416.835H15.244l1.96-1.125zm16.804-1.161l-.69-2.868c-.072-.363.291-.653.618-.472l1.633.944c.109.073.181.145.181.254l.69 2.867c.073.363-.29.654-.617.472l-1.633-.943c-.073-.073-.145-.146-.182-.254zm4.755-2.831l2.831-.835a.353.353 0 0 1 .327.036l1.633.944c.327.181.254.653-.073.762l-2.83.835a.353.353 0 0 1-.327-.037l-1.634-.943c-.363-.182-.29-.654.073-.762zm3.52-1.997L30.126 12.45v-2.432l14.01 24.68-1.851-1.052zM28.892 10.308v1.85a.33.33 0 0 1-.145.291l-2.142 2.033a.405.405 0 0 1-.69-.29V12.34a.33.33 0 0 1 .146-.29l2.141-2.033c.254-.29.69-.072.69.29zm-4.936 4.174l-2.142-2.033c-.072-.072-.145-.181-.145-.29V10.27c0-.362.436-.544.69-.29l2.141 2.033c.073.072.145.181.145.29v1.887c.037.363-.399.545-.69.29zm-3.521-2.07L8.203 33.61l-1.96 1.125L20.434 10.2v2.214zM7.078 36.55c-.363-.109-.4-.58-.073-.762l1.67-.98.072-.036 3.013.907c.362.109.399.58.072.762l-1.597.944a.353.353 0 0 1-.326.036l-2.831-.871zm6.024 1.415l-.69 2.868c-.035.109-.108.218-.18.254l-1.634.943c-.327.182-.69-.108-.617-.471l.69-2.868c.036-.109.109-.217.181-.254l1.633-.943c.29-.182.69.109.617.471zm-.254 4.174l.218-.109H37.42l1.924 1.09H11.143l1.705-.98zm27.076-.109l-1.597-.943c-.108-.073-.181-.145-.181-.254l-.69-2.868c-.072-.362.29-.653.617-.471l1.597.943c.11.073.182.145.182.254l.69 2.868c.072.363-.291.653-.618.471zM62.609 17.276v9.981h-2.214V11.868h.181l9.727 10.2v-9.982h2.214v15.39h-.181zM77.38 12.086h9.655v2.105h-7.259v5.3h6.46v2.068h-6.46v3.557h7.586v2.105H77.38zM95.819 12.086h2.395l1.38 3.194 1.306-3.194h2.25l-2.468 5.771 2.033 4.646 4.065-10.417h2.359l-6.316 15.39h-.181l-3.085-6.933c.036-.036-2.976 6.932-2.976 6.932h-.182l-6.497-15.389h2.469l4.282 10.417 1.815-4.428-2.65-5.989zM119.99 12.086h2.396v15.171h-2.395zM129.21 11.76h.145l5.989 9.291 5.988-9.291h.146l1.67 15.461h-2.324l-.98-9.4-4.5 7.077h-.073l-4.537-7.077-.98 9.4h-2.214zM149.063 27.257h-2.395l6.642-15.461h.145l6.678 15.461h-2.504l-1.307-3.12h-5.916l-1.343 3.12zm4.283-10.235l-2.069 5.009h4.138l-2.07-5.009zM162.347 19.672c0-4.5 3.52-7.767 7.84-7.767 2.794 0 4.863 1.089 6.17 3.048l-1.779 1.343c-.943-1.379-2.214-2.214-4.428-2.214-3.085 0-5.335 2.396-5.335 5.626 0 3.194 2.214 5.626 5.335 5.626 2.65 0 4.03-1.234 4.574-2.686h-4.283v-2.105h7.041c-.073 4.355-2.904 6.969-7.332 6.969-4.282-.073-7.803-3.376-7.803-7.84zM182.055 12.086h9.655v2.105h-7.26v5.3h6.461v2.068h-6.46v3.557H192v2.105h-9.981V12.086z"/><g><path d="M77.38 35.206h2.142c1.198 0 1.742.69 1.742 1.524 0 .545-.29.908-.726 1.126.69.217 1.162.725 1.162 1.524 0 1.016-.653 1.815-2.033 1.815h-2.286v-5.989zm2.07 2.36c.653 0 .87-.291.87-.8 0-.471-.217-.761-.87-.761h-1.126v1.56h1.126zm.145 2.83c.834 0 1.125-.399 1.125-1.016s-.327-1.053-1.162-1.053h-1.27v2.07h1.307zM96.762 41.158h-1.125l-1.016-1.451c-.145 0-.29.036-.436.036h-.58v1.415h-.944v-6.025h1.524c1.67 0 2.577.908 2.577 2.287 0 .944-.4 1.633-1.198 1.996l1.198 1.742zm-2.613-2.214c1.161 0 1.633-.544 1.633-1.451 0-.908-.472-1.452-1.633-1.452h-.544v2.94h.544v-.037zM107.76 35.17h3.81v.835h-2.867v2.105h2.54v.834h-2.54v1.416h3.013v.835h-3.956zM125.036 35.133h.944l.544 1.27.508-1.27h.908l-.98 2.287.798 1.851 1.597-4.138h.944l-2.505 6.098h-.072l-1.234-2.758-1.162 2.758h-.072l-2.577-6.098h.98l1.706 4.138.725-1.742-1.052-2.396zM141.296 35.17h.944v6.025h-.944zM155.306 37.239v3.956h-.871v-6.098h.072l3.848 4.029v-3.92h.87v6.098h-.072zM168.989 38.182c0-1.778 1.38-3.085 3.121-3.085 1.126 0 1.924.436 2.432 1.198l-.69.544c-.362-.544-.87-.87-1.742-.87-1.234 0-2.105.943-2.105 2.213s.871 2.25 2.105 2.25c1.053 0 1.597-.471 1.815-1.052h-1.706v-.835h2.795c-.036 1.742-1.161 2.759-2.904 2.759-1.705-.037-3.121-1.343-3.121-3.122z"/></g></g></svg>
+          <button @click="navOpen = !navOpen" :class="['hamburger hamburger--slider ni-nav-icon ' + computedIconClass]" type="button" id="navToggle"
+            aria-label="Menu" aria-controls="navigation" aria-expanded="false">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div class="ni-nav-mobile-content">
           <ul class="ni-nav-links ni-nav-links-mobile">
@@ -42,20 +52,67 @@
 </template>
 
 <script>
+  import $ from "jquery";
+
   export default {
     data() {
       return {
-        navOpen: false
+        navOpen: false,
+        dark: false,
+        scrollTop: 0
       }
+    },
+
+    created() {
+      if (this.$route.name == 'beers-slug') {
+        this.dark = true;
+      } else {
+        false;
+      }
+    },
+
+    mounted() {
+      const t = this;
+
+      $(window).scroll(function() {
+        t.scroll = $(window).scrollTop();
+        if (t.scroll >= 80 && $(window).width() >= 990) {
+          if (!t.dark) {
+            $('.ni-nav').addClass("ni-nav-scrolled ni-nav-scrolled-dark");
+          } else {
+            $('.ni-nav').addClass("ni-nav-scrolled");
+          }
+        } else if (t.scroll >= 80 && $(window).width() <= 990) {
+          if (!t.dark) {
+            $('.ni-nav').addClass("ni-nav-scrolled ni-nav-scrolled-dark");
+          } else {
+            $('.ni-nav').addClass("ni-nav-scrolled");
+          }
+        } else {
+          if (!t.dark) {
+            $('.ni-nav').removeClass("ni-nav-scrolled ni-nav-scrolled-dark");
+          } else {
+            $('.ni-nav').removeClass("ni-nav-scrolled");
+          }
+
+          $('.ni-nav').removeClass("ni-nav-scrolled");
+          $('body').css("margin-top", "0px");
+        }
+      })
     },
 
     computed: {
       computedIconClass() {
-        if (this.navOpen && this.$route.name == 'beers-slug') {
-          return 'ni-nav-icon-dark is-active'
+        if (this.navOpen && this.$route.name == 'beers-slug' ) {
+          if ($(window).width() >= 990) {
+            return 'ni-nav-icon-dark is-active'
+          } else {
+            return 'is-active'
+          }
+
         } else if (this.navOpen && this.$route.name != 'beers-slug') {
           return 'is-active'
-        } else if (!this.navOpen && this.$route.name == 'beers-slug') {
+        } else if (!this.navOpen && this.$route.name == 'beers-slug' ) {
           return 'ni-nav-icon-dark';
         } else {
           return '';

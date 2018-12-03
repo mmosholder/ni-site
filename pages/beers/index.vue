@@ -4,105 +4,94 @@
     <section class="ni-beer">
       <div class="ni-container">
         <div class="ni-row">
-          <div class="ni-beer-categories">
-            <h2>Categories</h2>
-            <div class="ni-beer-category">
-              <i class="fas fa-atom"></i>
-              <span>Core</span>
+          <div class="ni-beer-title">
+            <div class="ni-beer-title-container">
+              <h2>Core</h2>
             </div>
-            <div class="ni-beer-category">
-              <i class="far fa-sun"></i>
-              <span>Seasonal</span>
-            </div>
-            <div class="ni-beer-category">
-              <i class="far fa-star"></i>
-              <span>Special</span>
+            <hr>
+          </div>
+          <div class="ni-beer-item" v-for="(beer, i) in coreBeers" :key="i">
+            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+              v-on:click="beer.overlay_visible = !beer.overlay_visible"
+              class="ni-beer-item-content"
+              :style="{backgroundImage: 'url(' + beer.main_image + ')'}">
+              <!-- <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" /> -->
+              <transition name="fade">
+                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible"
+                :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                  <img :src="beer.secondary_image" :alt="beer.name">
+                  <p>{{ beer.short_description}}</p>
+                </a>
+              </transition>
             </div>
           </div>
         </div>
         <div class="ni-row">
-          <div class="ni-beer-col">
-            <div class="ni-beer-item" v-for="beer in col1" :key="beer.name">
-              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-                class="ni-beer-item-content">
-                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-                <transition name="fade">
-                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                    <div class="ni-beer-item-text">
-                      <div class="ni-beer-overlay-title">
-                        <i :class="setIcon(beer.type)"></i>
-                        <h3>{{ beer.name }}</h3>
-                      </div>
-                      <p>{{ beer.blurb }}</p>
-                    </div>
-                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                  </a>
-                </transition>
-              </div>
+          <div class="ni-beer-title">
+            <div class="ni-beer-title-container">
+              <h2>Seasonal</h2>
+            </div>
+            <hr>
+          </div>
+          <div class="ni-beer-item" v-for="(beer, i) in seasonalBeers" :key="i">
+            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+              class="ni-beer-item-content"
+              :style="{backgroundImage: 'url(' + beer.main_image + ')'}">
+              <!-- <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" /> -->
+              <transition name="fade">
+                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible"
+                :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                  <img :src="beer.secondary_image" :alt="beer.name">
+                  <p>{{ beer.short_description}}</p>
+                </a>
+              </transition>
             </div>
           </div>
-          <div class="ni-beer-col">
-            <div class="ni-beer-item" v-for="beer in col2" :key="beer.name">
-              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-                class="ni-beer-item-content">
-                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-                <transition name="fade">
-                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                    <div class="ni-beer-item-text">
-                      <div class="ni-beer-overlay-title">
-                        <i :class="setIcon(beer.type)"></i>
-                        <h3>{{ beer.name }}</h3>
-                      </div>
-                      <p>{{ beer.blurb }}</p>
-                    </div>
-                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                  </a>
-                </transition>
-              </div>
+        </div>
+        <div class="ni-row" v-if="barrelBeers.length > 0">
+          <div class="ni-beer-title">
+            <div class="ni-beer-title-container">
+              <h2>Barrel</h2>
+            </div>
+            <hr>
+          </div>
+          <div class="ni-beer-item" v-for="(beer, i) in barrelBeers" :key="i">
+            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+              class="ni-beer-item-content"
+              :style="{backgroundImage: 'url(' + beer.main_image + ')'}">
+              <!-- <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" /> -->
+              <transition name="fade">
+                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible"
+                :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                  <img :src="beer.secondary_image" :alt="beer.name">
+                  <p>{{ beer.short_description}}</p>
+                </a>
+              </transition>
             </div>
           </div>
-          <div class="ni-beer-col">
-            <div class="ni-beer-item" v-for="beer in col3" :key="beer.name">
-              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-                class="ni-beer-item-content">
-                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-                <transition name="fade">
-                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                    <div class="ni-beer-item-text">
-                      <div class="ni-beer-overlay-title">
-                        <i :class="setIcon(beer.type)"></i>
-                        <h3>{{ beer.name }}</h3>
-                      </div>
-                      <p>{{ beer.blurb }}</p>
-                    </div>
-                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                  </a>
-                </transition>
-              </div>
+        </div>
+        <div class="ni-row">
+          <div class="ni-beer-title">
+            <div class="ni-beer-title-container">
+              <h2>Special</h2>
             </div>
+            <hr>
           </div>
-          <div class="ni-beer-mobile">
-            <div class="ni-beer-item" v-for="beer in mobileCol" :key="beer.name">
-              <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
-                v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
-                class="ni-beer-item-content">
-                <img :class="[beer.overlay_visible ? '-blur' : '']" :src="beer.main_image" :alt="beer.name" />
-                <transition name="fade">
-                  <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible" :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
-                    <div class="ni-beer-item-text">
-                      <div class="ni-beer-overlay-title">
-                        <i :class="setIcon(beer.type)"></i>
-                        <h3>{{ beer.name }}</h3>
-                      </div>
-                      <p>{{ beer.blurb }}</p>
-                    </div>
-                    <nuxt-link :to="'/' + beer.full_slug">More Info</nuxt-link>
-                  </a>
-                </transition>
-              </div>
+          <div class="ni-beer-item" v-for="(beer, i) in specialBeers" :key="i">
+            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+              class="ni-beer-item-content"
+              :style="{backgroundImage: 'url(' + beer.main_image + ')'}">
+              <transition name="fade">
+                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible"
+                :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                  <img :src="beer.secondary_image" :alt="beer.name">
+                  <p>{{ beer.short_description}}</p>
+                </a>
+              </transition>
             </div>
           </div>
         </div>
@@ -126,11 +115,7 @@
         data: {
           stories: []
         },
-        beers: [],
-        col1: [],
-        col2: [],
-        col3: [],
-        mobileCol: []
+        beers: []
       }
     },
 
@@ -147,11 +132,25 @@
     },
 
     computed: {
+      coreBeers() {
+        return _.filter(this.beers, function(o) {return o.type == "core"})
+      },
 
+      seasonalBeers() {
+        return _.filter(this.beers, function(o) {return o.type == "seasonal"})
+      },
+
+      barrelBeers() {
+        return _.filter(this.beers, function(o) {return o.type == "barrel"})
+      },
+
+      specialBeers() {
+        return _.filter(this.beers, function(o) {return o.type == "special"})
+      },
     },
 
     asyncData (context) {
-      let version = context.query._storyblok || context.isDev ? 'published' : 'published'
+      let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
       return context.app.$storyapi.get('cdn/stories', {
         version: version,
@@ -166,33 +165,13 @@
     methods: {
       setBeers() {
         let beer = {};
-        this.data.stories.forEach((item, i) => {
+        this.data.stories.forEach(item => {
           beer = item.content;
           this.$set(beer, 'full_slug', item.full_slug);
-          this.$set(beer, 'overlay_visible', false);
-          this.$set(beer, 'position', i + 1);
-
-          if (beer.position % 3 === 0) {
-            this.col1.push(beer);
-          } else if (beer.position % 3 === 1) {
-            this.col2.push(beer);
-          } else if (beer.position % 3 === 2) {
-            this.col3.push(beer);
-          }
-
-          this.mobileCol.push(beer);
+          this.$set(beer, 'overlay_visible', false)
+          this.beers.push(beer);
           beer = {};
-        });
-      },
-
-       setIcon(cat) {
-        if (cat == "core") {
-          return "fas fa-atom";
-        } else if (cat == "seasonal") {
-          return "far fa-sun";
-        } else if (cat == "special") {
-          return "far fa-star";
-        }
+        })
       }
     }
   }

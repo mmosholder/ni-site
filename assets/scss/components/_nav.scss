@@ -1,10 +1,33 @@
 .ni-nav {
   z-index: 1000;
-  padding: pxem(34) 0 pxem(25) 0;
+  padding: pxem(20) 0 pxem(20) 0;
   background-color: transparent;
   margin-bottom: pxem(-106);
   position: relative;
-  z-index: 1000;
+  z-index: 700;
+  width: 100%;
+  overflow-x: visible;
+
+  &-scrolled {
+    position: fixed;
+    box-shadow: $nav-shadow;
+    background-color: $body-bg;
+    top: 0;
+
+    &-dark {
+      background-color:rgba($color-black, 0.7);
+    }
+
+    @include mq($from: 900px) {
+      padding: pxem(34) 0 pxem(25) 0;
+    }
+  }
+
+
+  @include mq($from: 900px) {
+    position: relative;
+    box-shadow: none;
+  }
 
   .nav-container {
     justify-content: space-between;
@@ -66,7 +89,7 @@
       }
 
       a {
-        @include bold-nav-16($color-white);
+        @include regular-nav-16($color-white);
         text-transform: uppercase;
         letter-spacing: 1px;
         position: relative;
@@ -99,7 +122,7 @@
     &-dark {
       li {
         a {
-          @include bold-nav-16($dark-text);
+          @include regular-nav-16($dark-text);
         }
       }
     }
