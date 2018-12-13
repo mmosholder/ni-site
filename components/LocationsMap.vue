@@ -84,15 +84,16 @@
     methods: {
        setCenter(place) {
          // Set the center of the map after searching for a new address
+
         this.center = {
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng()
+          lat: this.$refs.gmap.$mapObject.getCenter().lat(),
+          lng: this.$refs.gmap.$mapObject.getCenter().lng()
         };
       },
 
       getLocations() {
         // Get all locations from admin
-        axios.get('https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=locations&cv="' +
+        axios.get('https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=locations&per_page=1000&cv="' +
             Math.floor(Date.now() / 1e3)
           )
           .then(r => {
@@ -118,8 +119,9 @@
           if (!loc.position && loc.name.length >1) {
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=` + process.env.maps)
               .then(r => {
-                // if (r.data.results[0] && r.data.results[0].length) {
-                  console.log(r);
+                console.log(r.data.results[0], loc.name);
+                if (r.data.results[0]) {
+
                   this.$set(loc, 'position', {lat: r.data.results[0].geometry.location.lat,lng: r.data.results[0].geometry.location.lng});
                   this.$set(loc, 'inView', false);
 
@@ -128,7 +130,7 @@
                     // Set any markers in view after getting all addresses
                     this.setMarkerList();
                   }
-                // }
+                }
               })
               .catch(error => {
                 console.log(error)

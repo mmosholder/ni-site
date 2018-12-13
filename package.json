@@ -21,6 +21,7 @@
     "storyblok-nuxt": "0.0.3"
   },
   "devDependencies": {
+    "@nuxtjs/google-gtag": "^1.0.4",
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.5",
