@@ -2,7 +2,7 @@
   <section class="ni-finder" v-if="blok" v-editable="blok">
     <div class="ni-container">
       <div class="ni-row">
-        <div class="ni-finder-search" v-if="center">
+        <div class="ni-finder-search" v-if="latLng">
           <label>Search</label>
           <gmap-autocomplete @place_changed="setCenter">
           </gmap-autocomplete>
@@ -26,7 +26,7 @@
           </div>
           <div class="ni-finder-map">
             <GmapMap
-              :center="center"
+              :center="latLng"
               :zoom="14"
               @idle="setMarkerList"
               ref="gmap"
@@ -36,7 +36,7 @@
                 :key="index"
                 v-for="(m, index) in locations"
                 :position="m.position"
-                @click="center=m.position"
+                @click="latLng=m.position"
               ></gmap-marker>
             </GmapMap>
           </div>
@@ -54,7 +54,7 @@
     props: ['blok'],
     data() {
       return {
-        center: {lat: 39.7996433, lng: -105.0845088},
+        latLng: {lat: 39.7996433, lng: -105.0845088},
         currentPlaces: [],
         locations: null,
         bounds: undefined,
@@ -63,14 +63,8 @@
     },
 
     mounted() {
-      // Make sure the map is ready
-      this.$refs.gmap.$mapPromise.then((map) => {
-        let t = this;
-
-        setTimeout(function() {
-          t.getLocations();
-        }, 600)
-      })
+      this.geolocate();
+      this.getLocations();
     },
 
     created() {
@@ -82,13 +76,21 @@
     },
 
     methods: {
-       setCenter(place) {
+      geolocate() {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.latLng = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        });
+      },
+      setCenter(place) {
          // Set the center of the map after searching for a new address
-
-        this.center = {
-          lat: this.$refs.gmap.$mapObject.getCenter().lat(),
-          lng: this.$refs.gmap.$mapObject.getCenter().lng()
-        };
+        console.log('place', place);
+        this.latLng = {
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng()
+        }
       },
 
       getLocations() {
@@ -99,57 +101,75 @@
           .then(r => {
             this.setLocations(r.data.stories);
           })
+          .catch(err => {
+            console.log('getLoc error', err);
+          })
       },
 
       setLocations(stories) {
         this.locations = [];
 
-        stories.forEach(item => {
+        stories.forEach((item, i) => {
           if (item.content.active_account) {
             this.locations.push(item.content);
           }
+          if (i+1 == stories.length) {
+            console.log('firing set addresses');
+            this.setAddresses();
+          }
         })
 
-        this.setAddresses();
+
       },
 
       setAddresses() {
         // Loop over locations and get the google map lat/long for each address and save it to data
+        console.log('setting addresses');
         this.locations.forEach((loc, i) => {
-          if (!loc.position && loc.name.length >1) {
+          if (!loc.position && loc.name.length > 1) {
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=` + process.env.maps)
               .then(r => {
-                console.log(r.data.results[0], loc.name);
+                // console.log(r.data.results[0], loc.name);
                 if (r.data.results[0]) {
+                  const tempPos = {
+                    lat: r.data.results[0].geometry.location.lat, lng: r.data.results[0].geometry.location.lng
+                  }
 
-                  this.$set(loc, 'position', {lat: r.data.results[0].geometry.location.lat,lng: r.data.results[0].geometry.location.lng});
-                  this.$set(loc, 'inView', false);
-
-                  // Find last iteration of loop
-                  if ((i+1) == this.locations.length) {
-                    // Set any markers in view after getting all addresses
-                    this.setMarkerList();
+                  if (tempPos) {
+                    this.$set(loc, 'position', tempPos);
+                    this.$set(loc, 'inView', false);
                   }
                 }
+
+                // Find last iteration of loop
+                if ((i+1) == this.locations.length) {
+                  // Set any markers in view after getting all addresses
+                  console.log('setting markers from then');
+                  this.setMarkerList();
+                }
               })
-              .catch(error => {
-                console.log(error)
-              })
+
           }
         });
       },
 
       setMarkerList() {
         // Ensure the map is mounted and that there are locations
+        console.log('seting markers')
         if (this.$refs.gmap && (this.locations && this.locations.length > 0)) {
+          console.log('actually setting markers')
           let bounds = this.$refs.gmap.$mapObject.getBounds();
 
           // Check if locations are in view
           this.locations.forEach((loc, i) => {
-            if (bounds.contains(loc.position)) {
-              this.$set(loc, 'inView', true)
-            } else {
-              this.$set(loc, 'inView', false)
+
+            if (loc.position && loc.position.lat && loc.position.lng) {
+
+              if (bounds.contains(JSON.parse(JSON.stringify(loc.position)))) {
+                this.$set(loc, 'inView', true)
+              } else {
+                this.$set(loc, 'inView', false)
+              }
             }
 
             if ((i+1) == this.locations.length) {
