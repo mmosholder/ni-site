@@ -19,14 +19,14 @@
     }
 
     .bg-image {
-      padding-top: 38%;
+      padding-top: 40%;
       width: 100%;
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
 
       @include mq($from: $breakpoint-small) {
-        padding-top: 65%;
+        padding-top: 80%;
       }
     }
 
