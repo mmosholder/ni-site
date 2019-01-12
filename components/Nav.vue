@@ -138,7 +138,14 @@
       },
 
       '$route' (to, from) {
+        console.log(to);
         this.navOpen = false;
+
+        if (to.name == 'beers-slug') {
+          this.dark = true;
+        } else {
+          this.dark = false;
+        }
       }
     }
   }

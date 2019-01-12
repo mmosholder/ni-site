@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" style="background-color: #F9F9F9;">
-    <section class="ni-beer-cta home-cta">
+    <section :class="['ni-beer-cta', $route.name == 'index' ? 'home-cta' : '']">
       <div class="ni-container">
         <div class="ni-row">
           <div class="ni-beer-cta-title"><h2>{{blok.title}}</h2></div>

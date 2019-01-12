@@ -22,11 +22,21 @@
     &-title {
       @include col(12);
       margin-bottom: pxem(30);
-      margin-top: pxem(-150);
+
+      @include mq($from: $breakpoint-medium) {
+        @include col(10);
+        @include offset(1);
+      }
 
       h2 {
-        @include calafia-120($color-green)
+        @include extra-50($dark-text);
+        text-transform: uppercase;
       }
+      // margin-top: pxem(-150);
+
+      // h2 {
+      //   @include calafia-120($color-green)
+      // }
     }
 
     &-text {
