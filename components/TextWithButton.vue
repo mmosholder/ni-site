@@ -8,7 +8,7 @@
         </div>
         <div class="ni-text-block-right">
           <div class="ni-text-block-button">
-            <a class="button button-green" :href="blok.button_url">{{ blok.button_text }}</a>
+            <a class="button button-green" :href="blok.button_url.url">{{ blok.button_text }}</a>
           </div>
         </div>
       </div>
