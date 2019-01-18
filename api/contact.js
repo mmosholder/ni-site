@@ -47,16 +47,31 @@ const validateAndSanitize = (key, value) => {
 };
 
 const sendMail = (name, email, msg, phone) => {
-  console.log("sending mail");
-  let transporter = nodemailer.createTransport({
-    sendmail: true,
-    newline: "unix",
-    path: "/usr/sbin/sendmail"
+
+  var transporter = nodemailer.createTransport({
+    service: "Mailgun",
+    auth: {
+      api_key: "e32d8fab3e074b64072712a377b038e0-3939b93a-8786e5a5",
+      domain: "sandboxd0a95e612c6a4705b8140d842f4fa2e5.mailgun.org"
+    }
   });
-  transporter.sendMail({
-    from: email,
-    to: "m.mosholder@aspenware.com",
-    subject: "New website contact form message",
-    text: msg + " " + phone + ". From " + name
-  });
+
+  var mailOptions = {
+    // sender address
+    from: name + " " + email,
+    // list of receivers
+    to: 'm.mosholder@aspenware.com',
+    // Subject line
+    subject: 'Testing test ✔',
+    // plaintext body
+    text: 'It works! ✔',
+    // rich text html body
+    html: "<p>It works</p>",
+  };
+  // let transporter = nodemailer.createTransport({
+  //   sendmail: true,
+  //   newline: "unix",
+  //   path: "/usr/sbin/sendmail"
+  // });
+  transporter.sendMail(mailOptions);
 };
