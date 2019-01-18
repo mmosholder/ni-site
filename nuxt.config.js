@@ -16,10 +16,11 @@ module.exports = {
   ],
 
   env: {
-    maps: 'AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ'
+    maps: "AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ",
+    baseUrl: process.env.BASE_URL || '://localhost:3333'
   },
 
-  plugins: ["~/plugins/components", "~/plugins/map"],
+  plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate"],
 
   router: {
     middleware: ["headerDetection", "salesFormDetection"],
@@ -27,8 +28,8 @@ module.exports = {
   },
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "New Image Brewing",
     meta: [
@@ -37,20 +38,34 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: "{{escape description }}",
+        content: "{{escape description }}"
       },
-      {property: "og:title", content: 'New Image Brewing' },
+      { property: "og:title", content: "New Image Brewing" },
       { property: "og:url", content: "//www.nibrewing.com/" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "New Image Brewing" },
-      { property: "og:description", content: "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining." },
-      { property: "og:image", content: "//www.nibrewing.com/images/ni-social-share.jpg" },
+      {
+        property: "og:description",
+        content:
+          "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining."
+      },
+      {
+        property: "og:image",
+        content: "//www.nibrewing.com/images/ni-social-share.jpg"
+      },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "twitter:title", content: "New Image Brewing" },
       { property: "twitter:card", content: "summary_large_image" },
-      { property: "twitter:description", content: "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining." },
-      { property: "twitter:image", content: "//www.nibrewing.com/images/ni-social-share.jpg" },
+      {
+        property: "twitter:description",
+        content:
+          "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining."
+      },
+      {
+        property: "twitter:image",
+        content: "//www.nibrewing.com/images/ni-social-share.jpg"
+      }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
@@ -64,11 +79,14 @@ module.exports = {
       {
         defer: true,
         src: "https://use.fontawesome.com/releases/v5.5.0/js/all.js",
-        integrity: "sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0",
+        integrity:
+          "sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0",
         crossorigin: "anonymous"
       }
     ]
   },
+
+  serverMiddleware: ["~/api/contact"],
 
   generate: {
     routes: function() {
@@ -94,14 +112,16 @@ module.exports = {
     }
   },
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: "#CACB66" },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     vendor: ["lodash"],
+
+    postcss: [require("autoprefixer")],
 
     extend(config, { isDev, isClient }, ctx) {
       if (!isClient) {
