@@ -101,34 +101,23 @@ export default {
 
     formSubmit () {
       this.submitting = true;
-      var mailgun = require('mailgun.js');
-      var mg = mailgun.client({username: 'api', key: process.env.mailgun || 'key-yourkeyhere'});
-      mg.messages.create('sandboxd0a95e612c6a4705b8140d842f4fa2e5.mailgun.org', {
-        // from: "Excited User <mailgun@sandboxd0a95e612c6a4705b8140d842f4fa2e5.mailgun.org>",
-        to: ["m.m.mosholder@gmail.com"],
-        subject: "Hello",
-        text: "Testing some Mailgun awesomness!",
-        html: "<h1>Testing some Mailgun awesomness!</h1>"
-      })
-      .then(msg => console.log(msg)) // logs response data
-      .catch(err => console.log(err)); // logs any error
-      // this.error = false;
-      // axios.post('/api/contact', {
-      //   name: this.firstName + " " + this.lastName,
-      //   email: this.email,
-      //   msg: this.message,
-      //   phone: this.phone
-      // })
-      // .then(r => {
-      //   this.submitting = false
-      //   this.isSubmitted = true
-      // })
-      // .catch(e => {
-      //   this.submitting = false
-      //   this.error = true
-      //   console.error(e)
-      // })
-    }
+      this.error = false;
+      axios.post('/api/contact', {
+          name: this.firstName + " " + this.lastName,
+          email: this.email,
+          msg: this.message,
+          phone: this.phone
+        })
+        .then(r => {
+          this.submitting = false
+          this.isSubmitted = true
+        })
+        .catch(e => {
+          this.submitting = false
+          this.error = true
+          console.error(e)
+        })
+      }
   }
 }
 </script>
