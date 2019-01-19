@@ -11,10 +11,10 @@
           </div>
           <div class="ni-beer-cta-buttons" :style="computedButtonsStyle">
             <div class="ni-beer-cta-button" v-if="blok.hollow_button_text">
-              <nuxt-link class="button button-knockout" :to="'/' +  blok.hollow_button_url.cached_url">{{blok.hollow_button_text}}</nuxt-link>
+              <a class="button button-knockout" :href="blok.hollow_button_url.cached_url">{{blok.hollow_button_text}}</a>
             </div>
             <div class="ni-beer-cta-button" v-if="blok.color_button_text">
-              <nuxt-link class="button button-green" :to="'/' + blok.color_button_url.cached_url">{{blok.color_button_text}}</nuxt-link>
+              <a class="button button-green" :href="blok.color_button_url.cached_url">{{blok.color_button_text}}</a>
             </div>
           </div>
         </div>
