@@ -21,6 +21,7 @@
     "mailgun.js": "^2.0.1",
     "marked": "^0.3.19",
     "nodemailer": "^5.1.1",
+    "nodemailer-sendmail-transport": "^1.0.2",
     "nuxt": "^1.0.0",
     "storyblok-nuxt": "0.0.3",
     "validator": "^10.11.0",
