@@ -59,6 +59,7 @@
                   <span v-show="$v.message.$error" class="error">Message is required</span>
                 </div>
               </div>
+              <input type="hidden" v-model="hidden">
               <div class="ni-row">
                 <div class="ni-form-form-submit">
                   <button class="button button-submit" :disabled="submitting">Send Message</button>
@@ -86,6 +87,7 @@
         phone: "",
         location: "",
         message: "",
+        hidden: "",
         isSubmitted: false,
         submitting: false,
         error: false
@@ -118,7 +120,7 @@
   methods: {
     validate () {
 
-      if (this.$v.$error || this.submitting) {
+      if (this.$v.$error || this.submitting || this.hidden.length > 0) {
         return
       }
       this.formSubmit()
