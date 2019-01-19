@@ -50,7 +50,7 @@ module.exports = {
         content: "{{escape description }}"
       },
       { property: "og:title", content: "New Image Brewing" },
-      { property: "og:url", content: "//www.nibrewing.com/" },
+      { property: "og:url", content: "//nibrewing.com/" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "New Image Brewing" },
       {
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         property: "og:image",
-        content: "//www.nibrewing.com/images/ni-social-share.jpg"
+        content: "//nibrewing.com/images/ni-social-share.jpg"
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -73,7 +73,7 @@ module.exports = {
       },
       {
         property: "twitter:image",
-        content: "//www.nibrewing.com/images/ni-social-share.jpg"
+        content: "//nibrewing.com/images/ni-social-share.jpg"
       }
     ],
     link: [
