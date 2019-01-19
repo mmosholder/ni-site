@@ -58,8 +58,13 @@ const sendMail = (name, email, msg) => {
     subject: 'Message ' + name,
     text: msg
   }, (err, info) => {
-    console.log(info.envelope);
-    console.log(info.messageId);
-    console.log(err);
+    if (info) {
+      console.log(info.envelope);
+      console.log(info.messageId);
+    }
+
+    if (err) {
+      console.log(err);
+    }
   });
 };
