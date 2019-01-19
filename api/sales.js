@@ -48,7 +48,7 @@ const validateAndSanitize = (key, value) => {
 };
 
 const sendMail = (name, email, msg, phone, location) => {
-  var api_key = "87acdc8afadff24679d8537a0d1bb1ed-3939b93a-a8653a9e";
+  var api_key = process.env.api_key;
   var domain = "sandbox6e3380ed9f7d46cfaf5161c890a4f0a9.mailgun.org";
   var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
