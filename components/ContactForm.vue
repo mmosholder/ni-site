@@ -32,7 +32,8 @@
               </div>
               <div class="form-group">
                 <label for="phoneNumber">Phone Number</label>
-                <input type="tel" v-model="phone" placeholder="(303) 555-5555">
+                <input type="text" v-model="phone" placeholder="(303) 555-5555">
+                <span v-show="$v.phone.$error" class="error">A valid phone number is required</span>
               </div>
             </div>
             <div class="ni-row">
@@ -55,7 +56,7 @@
 </template>
 
 <script>
-import { email, minLength, required } from 'vuelidate/lib/validators'
+import { email, minLength, required, numeric } from 'vuelidate/lib/validators'
 import axios from 'axios';
 
 export default {
@@ -86,7 +87,10 @@ export default {
     },
     email: {
       required,
-      email
+      email: email
+    },
+    phone: {
+      numeric
     }
   },
 

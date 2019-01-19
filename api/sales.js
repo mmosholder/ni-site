@@ -7,12 +7,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.status(405).json({ error: "sorry!" });
 });
 
-app.post("/", function(req, res) {
-  const attributes = ["name", "email", "msg", "phone"];
+app.post("/", function (req, res) {
+  const attributes = ["name", "email", "msg", "phone", "location"];
   const sanitizedAttributes = attributes.map(n =>
     validateAndSanitize(n, req.body[n])
   );
@@ -27,7 +27,7 @@ app.post("/", function(req, res) {
 });
 
 module.exports = {
-  path: "/api/contact",
+  path: "/api/sales",
   handler: app
 };
 
@@ -36,7 +36,8 @@ const validateAndSanitize = (key, value) => {
     name: v => v.length < 1,
     email: v => !validator.isEmail(v),
     msg: v => validator.isEmpty(v) || v.length < 0,
-    phone: v => validator.isEmpty(v) || v.length < 0
+    phone: v => validator.isEmpty(v) || v.length < 0,
+    location: v => validator.isEmpty(v) || v.length < 0,
   };
 
   // If object has key and function returns false, return sanitized input. Else, return false
@@ -47,7 +48,7 @@ const validateAndSanitize = (key, value) => {
   );
 };
 
-const sendMail = (name, email, msg, phone) => {
+const sendMail = (name, email, msg, phone, location) => {
   var api_key = "87acdc8afadff24679d8537a0d1bb1ed-3939b93a-a8653a9e";
   var domain = "sandbox6e3380ed9f7d46cfaf5161c890a4f0a9.mailgun.org";
   var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
@@ -55,9 +56,9 @@ const sendMail = (name, email, msg, phone) => {
   var data = {
     from: name + " <" + email + ">",
     replyTo: email,
-    to: 'gavin@nibrewing.com',
-    subject: 'Contact from the website',
-    text: msg + ". Phone: " + phone
+    to: 'm.m.mosholder@gmail.com',
+    subject: 'Sales contact from the website',
+    text: msg + ". Phone: " + phone + ". Location Type: " + location
   };
 
   mailgun.messages().send(data, function (error, body) {

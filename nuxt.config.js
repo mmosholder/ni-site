@@ -12,12 +12,23 @@ module.exports = {
             : "YhyWNXIZZrl7cMygbmgJYgtt",
         cacheProvider: "memory"
       }
+    ],
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-130585646-1",
+        debug: {
+          sendHitTask: process.env.NODE_ENV === "production"
+        },
+        set: [{ field: "anonymizeIp", value: true }]
+      }
     ]
   ],
 
   env: {
     maps: "AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ",
-    baseUrl: process.env.BASE_URL || '://localhost:3333'
+    baseUrl: process.env.BASE_URL || "://localhost:3333",
+    api_key: "87acdc8afadff24679d8537a0d1bb1ed-3939b93a-a8653a9e"
   },
 
   plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate"],
@@ -73,6 +84,10 @@ module.exports = {
         rel: "stylesheet",
         href:
           "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,600i,700"
+      },
+      {
+        rel: "stylesheet",
+        href: "//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
       }
     ],
     script: [
@@ -86,7 +101,7 @@ module.exports = {
     ]
   },
 
-  serverMiddleware: ["~/api/contact"],
+  serverMiddleware: ["~/api/contact", "~/api/sales", "~/api/events"],
 
   generate: {
     routes: function() {

@@ -18,11 +18,13 @@
     "autoprefixer": "^9.4.5",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
+    "mailgun-js": "^0.22.0",
     "mailgun.js": "^2.0.1",
     "marked": "^0.3.19",
     "nodemailer": "^5.1.1",
     "nodemailer-sendmail-transport": "^1.0.2",
     "nuxt": "^1.0.0",
+    "sendgrid": "^5.2.3",
     "storyblok-nuxt": "0.0.3",
     "validator": "^10.11.0",
     "xss-filters": "^1.2.7"

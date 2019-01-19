@@ -48,3 +48,10 @@
     }
   }
 }
+
+#mc_embed_signup .btn {
+  @extend .button;
+  border: 0;
+  width: 100%;
+  margin: 0;
+}
