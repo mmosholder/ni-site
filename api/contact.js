@@ -60,5 +60,6 @@ const sendMail = (name, email, msg) => {
   }, (err, info) => {
     console.log(info.envelope);
     console.log(info.messageId);
+    console.log(err);
   });
 };
