@@ -27,8 +27,7 @@ module.exports = {
 
   env: {
     maps: "AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ",
-    baseUrl: process.env.BASE_URL || "://localhost:3333",
-    api_key: "87acdc8afadff24679d8537a0d1bb1ed-3939b93a-a8653a9e"
+    baseUrl: process.env.BASE_URL || "://localhost:3333"
   },
 
   plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate"],
