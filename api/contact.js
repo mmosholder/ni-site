@@ -54,7 +54,7 @@ const sendMail = (name, email, msg, phone) => {
   var data = {
     from: name + " <" + email + ">",
     replyTo: email,
-    to: 'gavin@nibrewing.com',
+    to: 'm.m.mosholder@gmail.com',
     subject: 'Contact from the website',
     text: msg + ". Phone: " + phone
   };
