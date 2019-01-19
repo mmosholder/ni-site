@@ -1,5 +1,4 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
 const validator = require("validator");
 const xssFilters = require("xss-filters");
 
