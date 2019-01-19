@@ -1,6 +1,11 @@
 .ni-image-grid {
 
   &-two {
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+
     .ni-image-grid-item {
       margin-bottom: 2px;
       @include span(12);
