@@ -54,7 +54,7 @@ const sendMail = (name, email, msg, phone) => {
   var data = {
     from: name + " <" + email + ">",
     replyTo: email,
-    to: 'm.m.mosholder@gmail.com',
+    to: process.env.CONTACT_EMAIL,
     subject: 'Contact from the website',
     text: msg + ". Phone: " + phone
   };

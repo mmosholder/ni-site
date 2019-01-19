@@ -55,7 +55,7 @@ const sendMail = (name, email, msg, phone, date) => {
   var data = {
     from: name + " <" + email + ">",
     replyTo: email,
-    to: "m.m.mosholder@gmail.com",
+    to: process.env.EVENTS_EMAIL,
     subject: "Events contact from the website",
     text: msg + ". Phone: " + phone + " . Date of event: " + date
   };

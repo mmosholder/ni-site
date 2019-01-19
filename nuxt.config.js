@@ -19,8 +19,7 @@ module.exports = {
         id: "UA-130585646-1",
         debug: {
           sendHitTask: process.env.NODE_ENV === "production"
-        },
-        set: [{ field: "anonymizeIp", value: true }]
+        }
       }
     ]
   ],
