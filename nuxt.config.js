@@ -65,7 +65,7 @@ module.exports = {
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "twitter:title", content: "New Image Brewing" },
-      { property: "og:type", content: "Brewery"},
+      { property: "og:type", content: "website"},
       { property: "twitter:card", content: "summary_large_image" },
       {
         property: "twitter:description",
