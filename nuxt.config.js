@@ -51,6 +51,7 @@ module.exports = {
       },
       { property: "og:title", content: "New Image Brewing" },
       { property: "og:url", content: "//www.nibrewing.com/" },
+      { property: "og:url", content: "//nibrewing.com/" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "New Image Brewing" },
       {
@@ -62,20 +63,22 @@ module.exports = {
         property: "og:image",
         content: "//www.nibrewing.com/images/ni-social-share.jpg"
       },
+      {
+        property: "og:image",
+        content: "//nibrewing.com/images/ni-social-share.jpg"
+      },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "twitter:title", content: "New Image Brewing" },
-      { property: "og:type", content: "website"},
+      { property: "og:type", content: "website" },
       { property: "twitter:card", content: "summary_large_image" },
       {
         property: "twitter:description",
         content:
           "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining."
       },
-      {
-        property: "twitter:image",
-        content: "//www.nibrewing.com/images/ni-social-share.jpg"
-      }
+      { property: "twitter:image", content: "//www.nibrewing.com/images/ni-social-share.jpg" },
+      { property: "twitter:image", content: "//nibrewing.com/images/ni-social-share.jpg" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
