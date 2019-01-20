@@ -74,7 +74,7 @@ module.exports = {
         content:
           "Juicy, citrusy IPAs, unique takes on sours, and everything in between. Come to our taproom in Olde Town Arvada to enjoy our craft beers, craft cocktails, tapas-style food, and social dining."
       },
-      { property: "twitter:image", content: "//www.nibrewing.com/ni-social-share.jpg" },
+      { property: "twitter:image", content: "https://www.nibrewing.com/ni-social-share.jpg" },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
