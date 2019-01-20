@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         property: "og:image",
-        content: "/ni-social-share.jpg"
+        content: "http://www.nibrewing.com/ni-social-share.jpg"
       },
       { property: "og:image:secure_url", content: "https://www.nibrewing.com/ni-social-share.jpg"},
       { property: "og:image:width", content: "1200" },
