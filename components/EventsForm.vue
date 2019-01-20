@@ -18,19 +18,19 @@
               <div class="form-group">
                 <label for="name">Name &#42;</label>
                 <input type="text" v-model="name" placeholder="Your Name">
-                <span v-show="$v.name.$error" class="error">Name is required</span>
+                <span v-if="$v.name.$error" class="error">Name is required</span>
               </div>
               <div class="form-group">
                 <label for="emial">Email &#42;</label>
                 <input type="email" v-model="email" placeholder="you@email.com">
-                <span v-show="$v.email.$error" class="error">A valid email is required</span>
+                <span v-if="$v.email.$error" class="error">A valid email is required</span>
               </div>
             </div>
             <div class="ni-row">
               <div class="form-group">
                 <label for="phoneNumber">Phone Number</label>
                 <input type="text" v-model="phone" placeholder="(303) 555-5555">
-                <span v-show="$v.phone.$error" class="error">A valid phone number is required</span>
+                <span v-if="$v.phone.$error" class="error">A valid phone number is required</span>
               </div>
               <div class="form-group">
                 <label for="eventDate">Event Date</label>
@@ -41,7 +41,7 @@
               <div class="form-group form-group-full">
                 <label for="message">Message</label>
                 <textarea name="message" v-model="message" cols="30" rows="10"></textarea>
-                <span v-show="$v.message.$error" class="error">Message is required</span>
+                <span v-if="$v.message.$error" class="error">Message is required</span>
               </div>
             </div>
             <input type="hidden" v-model="hidden">
@@ -100,6 +100,7 @@ export default {
 
   methods: {
     validate () {
+      this.$v.$touch();
 
       if (this.$v.$error || this.submitting || this.hidden.length > 0) {
         return

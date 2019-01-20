@@ -19,24 +19,24 @@
                 <div class="form-group">
                   <label for="firstName">First Name &#42;</label>
                   <input type="text" v-model="firstName" placeholder="Cold">
-                  <span v-show="$v.firstName.$error" class="error">First Name is required</span>
+                  <span v-if="$v.firstName.$error" class="error">First Name is required</span>
                 </div>
                 <div class="form-group">
                   <label for="lastName">Last Name &#42;</label>
                   <input type="text" v-model="lastName" placeholder="Beer">
-                  <span v-show="$v.lastName.$error" class="error">Last Name is required</span>
+                  <span v-if="$v.lastName.$error" class="error">Last Name is required</span>
                 </div>
               </div>
               <div class="ni-row">
                 <div class="form-group">
                   <label for="email">Email &#42;</label>
                   <input type="email" v-model="email" placeholder="beer@now.com">
-                  <span v-show="$v.email.$error" class="error">Email is required</span>
+                  <span v-if="$v.email.$error" class="error">Email is required</span>
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Phone Number &#42;</label>
                   <input type="text" v-model="phone" placeholder="(303) 555-5555">
-                  <span v-show="$v.phone.$error" class="error">Phone is required and must be a number</span>
+                  <span v-if="$v.phone.$error" class="error">Phone is required and must be a number</span>
                 </div>
               </div>
               <div class="ni-row">
@@ -49,14 +49,14 @@
                       <option value="retail">Retail Store</option>
                     </select>
                   </div>
-                  <span v-show="$v.location.$error" class="error">Location is required</span>
+                  <span v-if="$v.location.$error" class="error">Location is required</span>
                 </div>
               </div>
               <div class="ni-row">
                 <div class="form-group form-group-full">
                   <label for="message">Message &#42;</label>
                   <textarea name="message" v-model="message" cols="30" rows="10"></textarea>
-                  <span v-show="$v.message.$error" class="error">Message is required</span>
+                  <span v-if="$v.message.$error" class="error">Message is required</span>
                 </div>
               </div>
               <input type="hidden" v-model="hidden">
@@ -119,6 +119,7 @@
 
   methods: {
     validate () {
+      this.$v.$touch();
 
       if (this.$v.$error || this.submitting || this.hidden.length > 0) {
         return
