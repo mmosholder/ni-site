@@ -56,6 +56,9 @@
 </template>
 
 <script>
+import jQuery from 'jquery';
+import $ from 'jquery';
+
 export default {
 
 }
