@@ -127,7 +127,8 @@
         console.log('setting addresses');
         this.locations.forEach((loc, i) => {
           if (!loc.position && loc.name.length > 1) {
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=` + process.env.maps)
+            setTimeout(() => {
+              axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=` + loc.address_line_1 + loc.address_line_2 + `&key=` + process.env.maps)
               .then(r => {
                 // console.log(r.data.results[0], loc.name);
                 if (r.data.results[0]) {
@@ -148,6 +149,7 @@
                   this.setMarkerList();
                 }
               })
+            }, 1000);
 
           }
         });
