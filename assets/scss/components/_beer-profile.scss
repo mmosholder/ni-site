@@ -250,6 +250,10 @@
     p {
       @include regular-18($dark-text);
     }
+
+    .button {
+      margin-top: pxem(30);
+    }
   }
 
   &-info {

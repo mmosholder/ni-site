@@ -47,11 +47,12 @@
             <div class="ni-profile-story" v-if="story.content.story_text">
               <h2>The Story</h2>
               <p>{{ story.content.story_text }}</p>
+              <a class="button button-submit" :href="story.content.button_url.cached_url" v-if="story.content.button_text">{{ story.content.button_text}}</a>
             </div>
             <div class="ni-profile-info">
               <h2>Gotta Have It?</h2>
               <p :class="['ni-profile-info-' + story.content.color]">Check out our <a href="/beerfinder">Beerfinder</a> to find a bar or retailer near you</p>
-              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="/taproom">See our location</a>.</p>
+              <p :class="['ni-profile-info-' + story.content.color]">{{ story.content.name }} is currently <strong>{{ computedStatus }}</strong> at the taproom. <a v-if="story.content.on_tap" href="/taproom">See our location</a></p>
             </div>
           </div>
         </div>
