@@ -1,0 +1,6 @@
+[
+  {
+    "from": "/pendingapproval",
+    "to": "/beers/pending-approval"
+  }
+]

@@ -99,7 +99,7 @@ module.exports = {
     ]
   },
 
-  serverMiddleware: ["~/api/contact", "~/api/sales", "~/api/events"],
+  serverMiddleware: ["~/api/contact", "~/api/sales", "~/api/events", "~/serverMiddleware/redirect"],
 
   generate: {
     routes: function() {
