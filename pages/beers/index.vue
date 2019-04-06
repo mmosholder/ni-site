@@ -95,6 +95,28 @@
             </div>
           </div>
         </div>
+        <div class="ni-row" v-if="archivedBeers && archivedBeers.length > 0">
+          <div class="ni-beer-title">
+            <div class="ni-beer-title-container">
+              <h2>Archived</h2>
+            </div>
+            <hr>
+          </div>
+          <div class="ni-beer-item" v-for="(beer, i) in archivedBeers" :key="i">
+            <div v-on:mouseenter="beer.overlay_visible = !beer.overlay_visible"
+              v-on:mouseleave="beer.overlay_visible = !beer.overlay_visible"
+              class="ni-beer-item-content"
+              :style="{backgroundImage: 'url(' + beer.main_image + ')'}">
+              <transition name="fade">
+                <a :href="`/${beer.full_slug}`" v-if="beer.overlay_visible"
+                :class="['ni-beer-item-overlay ni-beer-item-overlay-' + beer.color]">
+                  <img :src="beer.secondary_image" :alt="beer.name">
+                  <p>{{ beer.short_description}}</p>
+                </a>
+              </transition>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <BeersCTA v-if="beers.length" />
@@ -146,6 +168,10 @@
 
       specialBeers() {
         return _.filter(this.beers, function(o) {return o.type == "special"})
+      },
+
+      archivedBeers() {
+        return _.filter(this.beers, function(o) {return o.type == "archived"})
       },
     },
 
