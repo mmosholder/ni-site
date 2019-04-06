@@ -98,7 +98,7 @@
         <div class="ni-row" v-if="archivedBeers && archivedBeers.length > 0">
           <div class="ni-beer-title">
             <div class="ni-beer-title-container">
-              <h2>Archived</h2>
+              <h2>Beer Archives</h2>
             </div>
             <hr>
           </div>
