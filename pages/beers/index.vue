@@ -180,7 +180,8 @@
 
       return context.app.$storyapi.get('cdn/stories', {
         version: version,
-        starts_with: 'beers'
+        starts_with: 'beers',
+        per_page: 1000
       }).then((r) => {
         return r
       }).catch((r) => {

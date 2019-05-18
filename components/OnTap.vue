@@ -52,7 +52,7 @@
 
     methods: {
       getBeers() {
-        axios.get("https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=beers&cv=" + Math.floor(Date.now() / 1e3))
+        axios.get("https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=beers&per_page=100cv=" + Math.floor(Date.now() / 1e3))
           .then((r) => {
           this.setBeers(r.data.stories);
         }).catch((r) => {
