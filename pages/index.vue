@@ -10,7 +10,8 @@ export default {
     return { story: { content: {} } }
   },
   mounted () {
-    if (this.$storyblok.inEditor) {
+    console.log(this.$storyblok)
+    if (this.$storyblok && this.$storyblok.inEditor) {
       this.$storyblok.init()
 
       this.$storyblok.on('change', () => {

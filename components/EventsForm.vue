@@ -58,14 +58,13 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker';
 import axios from "axios";
 import { email, minLength, required, numeric } from 'vuelidate/lib/validators'
 
 export default {
   props: ['blok'],
 
-  components: { Datepicker },
+  components: { 'Datepicker': () => import('vuejs-datepicker') },
 
   data() {
     return {

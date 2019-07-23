@@ -142,15 +142,21 @@
     },
 
     mounted () {
-      this.$storyblok.init()
-      this.$storyblok.on('change', () => {
-        location.reload(true)
-      })
-      this.$storyblok.on('published', () => {
-        location.reload(true)
-      })
+      if (this.$storyblok) {
+        this.$storyblok.init()
+      }
 
-      this.setBeers();
+      if (this.$storyblok) {
+
+        this.$storyblok.on('change', () => {
+          location.reload(true)
+        })
+        this.$storyblok.on('published', () => {
+          location.reload(true)
+        })
+      }
+
+        this.setBeers();
     },
 
     computed: {

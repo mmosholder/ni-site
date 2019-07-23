@@ -15,7 +15,7 @@
       return { story: { content: {} } }
     },
     mounted() {
-      if (this.$storyblok.inEditor) {
+      if (this.$storyblok && this.$storyblok.inEditor) {
         this.$storyblok.init()
 
         this.$storyblok.on('change', () => {
