@@ -15,6 +15,20 @@
     }
   }
 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    &-text {
+        margin: 0 10px;
+        cursor: pointer;
+        @include semi-24($dark-text);
+        @include pretty-text-underline($color-green, 2);
+
+    }
+  }
+
   &-info {
     width: 100%;
     display: flex;
@@ -35,6 +49,13 @@
       @include col(3);
       max-height: auto;
       height: pxem(700);
+    }
+
+    &.-temp {
+      @include col(12);
+      max-height: none;
+      height: auto;
+      order: 0;
     }
 
     &-none {

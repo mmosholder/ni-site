@@ -19,10 +19,12 @@
     "autoprefixer": "^9.4.5",
     "express": "^4.16.4",
     "jquery": "^3.4.1",
+    "json2csv": "^4.5.2",
     "mailgun-js": "^0.22.0",
     "marked": "^0.7.0",
     "nuxt": "^2.8.1",
     "sendgrid": "^5.2.3",
+    "storyblok-js-client": "^1.0.28",
     "storyblok-nuxt": "^1.0.1",
     "validator": "^10.11.0",
     "xss-filters": "^1.2.7"
