@@ -29,7 +29,7 @@ module.exports = {
     baseUrl: process.env.BASE_URL || "://localhost:3333"
   },
 
-  plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate"],
+  plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate", {src: "~/plugins/datepicker", mode: 'client'}],
 
   router: {
     middleware: ["headerDetection", "salesFormDetection"],

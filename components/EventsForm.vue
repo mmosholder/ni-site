@@ -26,17 +26,18 @@
                 <span v-if="$v.email.$error" class="error">A valid email is required</span>
               </div>
             </div>
-            <div class="ni-row">
-              <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="text" v-model="phone" placeholder="(303) 555-5555">
-                <span v-if="$v.phone.$error" class="error">A valid phone number is required</span>
+              <div class="ni-row">
+                <div class="form-group">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" v-model="phone" placeholder="(303) 555-5555">
+                  <span v-if="$v.phone.$error" class="error">A valid phone number is required</span>
+                </div>
+                <div class="form-group">
+                  <label for="eventDate">Event Date</label>
+                  <datepicker v-model="date" name="eventDate"></datepicker>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="eventDate">Event Date</label>
-                <datepicker v-model="date" name="eventDate"></datepicker>
-              </div>
-            </div>
+
             <div class="ni-row">
               <div class="form-group form-group-full">
                 <label for="message">Message</label>
@@ -64,7 +65,9 @@ import { email, minLength, required, numeric } from 'vuelidate/lib/validators'
 export default {
   props: ['blok'],
 
-  components: { 'Datepicker': () => import('vuejs-datepicker') },
+  components: {
+    'datepicker': () => import('vuejs-datepicker')
+  },
 
   data() {
     return {
