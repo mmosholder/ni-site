@@ -1,5 +1,6 @@
 const axios = require('axios');
 const path = require('path');
+require('dotenv').config();
 
 module.exports = {
   modules: [
@@ -25,7 +26,7 @@ module.exports = {
   ],
 
   env: {
-    maps: "AIzaSyBnZmc-ydhJ9Wi9LY5EmaNLS6HA679EQ4Y",
+    maps: process.env.MAP_KEY || "AIzaSyBnZmc-ydhJ9Wi9LY5EmaNLS6HA679EQ4Y",
     baseUrl: process.env.BASE_URL || "://localhost:3333"
   },
 
