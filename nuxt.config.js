@@ -25,7 +25,7 @@ module.exports = {
   ],
 
   env: {
-    maps: "AIzaSyCHa5ynyRCTTcgK6xodoEVDK-h6lM051xQ",
+    maps: "AIzaSyBnZmc-ydhJ9Wi9LY5EmaNLS6HA679EQ4Y",
     baseUrl: process.env.BASE_URL || "://localhost:3333"
   },
 
