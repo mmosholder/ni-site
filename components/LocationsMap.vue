@@ -140,8 +140,6 @@
 
               // Find last iteration of loop
               if ((i+1) == this.locations.length) {
-                // Set any markers in view after getting all addresses
-                console.log('setting markers from then');
                 this.setMarkerList();
               }
 
@@ -155,7 +153,6 @@
         // Ensure the map is mounted and that there are locations
         console.log('seting markers')
         if (this.$refs.gmap && (this.locations && this.locations.length > 0)) {
-          console.log('actually setting markers')
           let bounds = this.$refs.gmap.$mapObject.getBounds();
 
           // Check if locations are in view
