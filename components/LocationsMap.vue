@@ -129,7 +129,7 @@
           if (!loc.position && loc.name.length > 1) {
             setTimeout(() => {
               const tempPos = {
-                lat: loc.latitude, lng: loc.longitude
+                lat: parseFloat(loc.latitude), lng: parseFloat(loc.longitude)
               }
 
               if (tempPos) {
