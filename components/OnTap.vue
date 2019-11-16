@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="ni-row">
-        <div class="ni-tap-item" v-for="(beer, i) in onTapBeers" v-if="onTapBeers" :key="i">
+        <div class="ni-tap-item" v-for="(beer, i) in beersWithInfo" v-if="beersWithInfo.length" :key="i">
           <nuxt-link :to="'/' + beer.full_slug" class="ni-tap-item-wrapper">
             <div class="ni-tap-item-info">
               <h3>{{ beer.name }}</h3>
@@ -36,12 +36,15 @@
 
     data () {
       return {
-        beers: []
+        beers: null,
+        untappedBeers: null,
+        beersWithInfo: []
       }
     },
 
     created() {
       this.getBeers();
+      this.getUntappedBeers();
     },
 
     computed: {
@@ -50,24 +53,59 @@
       }
     },
 
+    watch: {
+      beers() {
+        if (this.untappedBeers && this.beers) {
+          this.setBeers();
+        }
+      }
+    },
+
     methods: {
       getBeers() {
         axios.get("https://api.storyblok.com/v1/cdn/stories?version=published&token=LnX8nlr2iiejA5zBOCt8Zgtt&starts_with=beers&per_page=100cv=" + Math.floor(Date.now() / 1e3))
           .then((r) => {
-          this.setBeers(r.data.stories);
+          this.beers = r.data.stories;
         }).catch((r) => {
 
         })
       },
 
-      setBeers(beers) {
+      getUntappedBeers() {
+        let headers =
+        axios.get('https://business.untappd.com/api/v1/sections/327217/items', { headers: { Authorization: `Basic ${process.env.UNTAPPD` } })
+          .then(r => {
+            this.untappedBeers = r.data.items;
+          })
+      },
+
+      setBeers() {
         // console.log(beers);
-        let beer = {};
-        beers.forEach(item => {
-          beer = item.content;
-          this.$set(beer, 'full_slug', item.full_slug);
-          this.beers.push(beer);
-          beer = {};
+        let onTapBeer = {};
+
+        this.untappedBeers.forEach(item => {
+          let foundBeer = this.findFromBeers(item);
+          let beer = {};
+           if (foundBeer) {
+             beer.name = foundBeer.name;
+             beer.full_slug = foundBeer.full_slug;
+             beer.short_description = foundBeer.content.short_description;
+             beer.taproom_exclusive = foundBeer.content.taproom_exclusive;
+             this.beersWithInfo.push(beer);
+             beer = {};
+           }
+          // beer = item.content;
+          // this.$set(beer, 'full_slug', item.full_slug);
+          // this.beers.push(beer);
+          // beer = {};
+        })
+      },
+
+      findFromBeers(untappedBeer) {
+        return this.beers.find(beer => {
+          if (beer.name === untappedBeer.name) {
+            return beer;
+          }
         })
       }
     }

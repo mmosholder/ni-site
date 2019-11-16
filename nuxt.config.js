@@ -27,7 +27,8 @@ module.exports = {
 
   env: {
     maps: process.env.MAP_KEY || "AIzaSyBnZmc-ydhJ9Wi9LY5EmaNLS6HA679EQ4Y",
-    baseUrl: process.env.BASE_URL || "://localhost:3333"
+    baseUrl: process.env.BASE_URL || "://localhost:3333",
+    untappd: process.env.UNTAPPD
   },
 
   plugins: ["~/plugins/components", "~/plugins/map", "~/plugins/vuelidate", {src: "~/plugins/datepicker", mode: 'client'}],
