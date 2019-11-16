@@ -73,7 +73,7 @@
 
       getUntappedBeers() {
         let headers =
-        axios.get('https://business.untappd.com/api/v1/sections/327217/items', { headers: { Authorization: `Basic ${process.env.UNTAPPD}` }})
+        axios.get('https://business.untappd.com/api/v1/sections/327217/items', { headers: { Authorization: `Basic ${process.env.untappd}` }})
           .then(r => {
             this.untappedBeers = r.data.items;
           })
