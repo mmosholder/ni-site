@@ -27,7 +27,7 @@
     "sendgrid": "^5.2.3",
     "storyblok-js-client": "^1.0.28",
     "storyblok-nuxt": "^1.0.1",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "xss-filters": "^1.2.7"
   },
   "devDependencies": {
