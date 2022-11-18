@@ -23,7 +23,7 @@
     "json2csv": "^4.5.2",
     "mailgun-js": "^0.22.0",
     "marked": "^0.7.0",
-    "nuxt": "^2.8.1",
+    "nuxt": "^2.15.8",
     "sendgrid": "^5.2.3",
     "storyblok-js-client": "^1.0.28",
     "storyblok-nuxt": "^1.0.1",
