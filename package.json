@@ -18,7 +18,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.0.2",
     "autoprefixer": "^9.4.5",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "json2csv": "^4.5.2",
     "mailgun-js": "^0.22.0",
